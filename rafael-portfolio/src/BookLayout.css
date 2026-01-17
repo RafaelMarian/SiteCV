@@ -1,0 +1,33 @@
+/* src/BookLayout.css */
+
+
+.page-image-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3; /* A light background for the page */
+    padding: 15px; /* A bit of padding */
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure nothing escapes this container */
+}
+
+.page-image-content img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+.beautiful-title {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: #8c6b5d;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #c9b7ad;
+    padding-bottom: 1rem;
+}

@@ -12,6 +12,7 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Education from './pages/Education';
 import Contact from './pages/Contact';
+import HobbyDetail from './pages/HobbyDetail';
 import Hobbies from './pages/Hobbies'; // <--- IMPORT NOU
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
@@ -119,6 +120,7 @@ function App() {
               <Route path="/projects" element={<Projects lang={lang} />} />
               <Route path="/education" element={<Education lang={lang} />} />
               <Route path="/hobbies" element={<Hobbies lang={lang} />} />
+              <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
               <Route path="/contact" element={<Contact lang={lang} />} />
             </Routes>
           </div>

@@ -1,0 +1,40 @@
+/* src/SportsBook.css */
+
+.sports-page {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border-color: #d1d5db;
+}
+
+.sports-cover {
+    background: #111827;
+    text-align: center;
+}
+
+.sports-cover h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.sports-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #4b5563;
+    border-bottom: 1px solid #9ca3af;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.principle-item-sports {
+    margin-bottom: 1rem;
+}
+
+.principle-item-sports h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.sports-back-cover {
+    background: #111827;
+}

@@ -1520,41 +1520,299 @@ body {
   flex: 1;
 }
 
-/* Fun Fact Box */
-.fun-fact-box {
-  background: var(--bg-color);
-  border-left: 3px solid #ccc; /* Se suprascrie inline */
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 15px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
+.hobby-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hobby-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.hobby-card-link:hover .hobby-card-footer {
+  color: var(--primary-color);
+}
+
+/* --- HOBBY DETAIL PAGE --- */
+.hobby-detail-page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hobby-detail-header {
+  height: 50vh;
+  min-height: 300px;
+  max-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hobby-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.hobby-detail-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: slideUp 0.8s ease-out;
+}
+
+.back-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  color: white;
+  background: rgba(0,0,0,0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.back-link-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.back-link-inline:hover {
+    color: var(--accent-color);
+}
+
+
+.hobby-detail-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.hobby-section {
+  margin-bottom: 4rem;
+}
+
+.hobby-section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.hobby-section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
+}
+
+.hobby-summary-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--secondary-text);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Journey Timeline Styles */
+.hobby-journey-timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 2rem 0;
+}
+
+.hobby-journey-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+.journey-item {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.journey-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.journey-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+  padding-left: 3rem;
+}
+
+.journey-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px);
+  background-color: var(--card-bg);
+  border: 4px solid var(--accent-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.journey-item:nth-child(odd)::after {
+  right: -10px;
+}
+
+.journey-item:nth-child(even)::after {
+  left: -10px;
+}
+
+.journey-item h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+.journey-item p {
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+}
+
+/* Principles Grid */
+.hobby-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.principle-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
-.fun-fact-box.visible {
-  max-height: 100px; /* Destul loc */
-  opacity: 1;
-  margin-top: 5px;
-  padding: 10px; /* Refacem padding-ul la deschidere */
+.principle-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.07);
 }
 
-.fun-fact-btn {
-  background: transparent;
-  border: 2px solid; /* Culoare setata inline */
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: all 0.2s;
-  font-size: 0.85rem;
+.principle-card svg {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
 }
 
-.fun-fact-btn:hover {
-  background: rgba(0,0,0,0.05);
+.principle-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* Gallery Grid */
+.hobby-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hobby-gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  aspect-ratio: 16/10;
+}
+
+.hobby-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hobby-gallery-item:hover img {
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hobby-detail-header h1 {
+    font-size: 2.5rem;
+  }
+  .hobby-journey-timeline::before {
+    left: 20px;
+  }
+  .journey-item, .journey-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    padding-left: 3rem;
+    text-align: left;
+  }
+  .journey-item:nth-child(odd) {
+    padding-right: 1rem;
+  }
+  .journey-item::after, .journey-item:nth-child(odd)::after, .journey-item:nth-child(even)::after {
+    left: 10px;
+  }
+  .hobby-gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- CERTIFICATES STYLES --- */
@@ -1587,4 +1845,311 @@ body {
 .certificate-link span {
   flex-grow: 1;
   font-size: 0.9rem;
+}
+
+/* Certificate Filters and Search */
+.cert-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cert-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: var(--card-bg);
+  color: var(--secondary-text);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.filter-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.search-bar {
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.5rem; /* Left padding for icon */
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondary-text);
+  pointer-events: none; /* Icon isn't clickable */
+}
+
+@media (max-width: 768px) {
+  .cert-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-bar {
+    max-width: 100%;
+  }
+}
+
+/* --- HOBBY GALLERY --- */
+.hobby-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gallery-main-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.thumbnail-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.thumbnail-item:hover {
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.thumbnail-item.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- BOOK INTERFACE STYLES --- */
+
+.book-background {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.book-container {
+  width: 90%;
+  height: 90%;
+  max-width: 1000px;
+}
+  max-height: 700px;
+}
+
+.hobby-book {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.book-page {
+  background: #fdfaf7;
+  border: 1px solid #e0d9d3;
+  color: #594a41;
+}
+
+.page-content {
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Cover Styles */
+.book-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.book-cover h1 {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Back Cover */
+.book-back-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #333;
+  color: #ccc;
+}
+
+
+/* General Page Content */
+.page-text-content {
+  padding: 20px;
+}
+.page-text-content h2 {
+  color: #8c6b5d;
+  border-bottom: 2px solid #c9b7ad;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.page-text-content p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Gallery inside book */
+.page-gallery-content {
+    padding: 15px;
+}
+.book-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.book-gallery-item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.book-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Journey inside book */
+.book-journey-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.journey-item-book h4 {
+  margin: 0 0 5px 0;
+  color: #8c6b5d;
+}
+.journey-item-book p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Principles inside book */
+.book-principles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.principle-card-book {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f2ee;
+  padding: 10px;
+  border-radius: 6px;
+}
+.principle-card-book svg {
+  color: #8c6b5d;
+}
+
+/* Back link for book */
+.back-link-book {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  color: var(--text-color);
+  background: var(--card-bg);
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.back-link-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }

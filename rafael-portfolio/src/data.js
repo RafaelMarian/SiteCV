@@ -1,38 +1,34 @@
-// src/data.js
-
 export const labels = {
   en: {
-    // ADĂUGĂM "hobbies" ÎN NAVIGARE
     nav: { home: "Home", exp: "Experience", proj: "Projects", edu: "Education", hobbies: "Hobbies", contact: "Contact" },
     titles: { 
       skills: "Technical Skills", 
       exp: "Work Experience", 
       proj: "Projects Showcase", 
       edu: "Education", 
-      hobbies: "My Passions & Hobbies", // Titlu nou
+      hobbies: "My Passions & Hobbies",
       contact: "Get in Touch",
       certifications: "Certifications"
     },
-    // ... restul raman la fel
     buttons: { viewGithub: "View on GitHub", grade: "Grade", readMore: "Read Summary", readLess: "Hide Summary", sendMessage: "Send Message", funFact: "See Fun Fact", viewCurriculum: "View Curriculum & Courses", hideCurriculum: "Hide Curriculum" },
     filters: { all: "General (All)", embSw: "Embedded Software", web: "Web Sites & Apps", hw: "Embedded Hardware", soft: "General Software" },
+    certFilters: { all: "All", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Cybersecurity", prof_skills: "Professional Skills" },
     contact: { name: "Your Name", email: "Your Email", subject: "Subject", message: "Message", copy: "Copied!", hello: "Say Hello!" }
   },
   ro: {
-    // ADĂUGĂM "hobbies" ÎN NAVIGARE
     nav: { home: "Acasă", exp: "Experiență", proj: "Proiecte", edu: "Studii", hobbies: "Hobby", contact: "Contact" },
     titles: { 
       skills: "Abilități Tehnice", 
       exp: "Experiență Profesională", 
       proj: "Portofoliu Proiecte", 
       edu: "Educație", 
-      hobbies: "Pasiuni & Timp Liber", // Titlu nou
+      hobbies: "Pasiuni & Timp Liber",
       contact: "Intră în legătură",
       certifications: "Certificări"
     },
-    // ... restul raman la fel
     buttons: { viewGithub: "Vezi pe GitHub", grade: "Notă", readMore: "Vezi Descrierea", readLess: "Ascunde Descrierea", sendMessage: "Trimite Mesaj", funFact: "Curiozitate", viewCurriculum: "Vezi Curriculum & Cursuri", hideCurriculum: "Ascunde Curriculum" },
     filters: { all: "General (Toate)", embSw: "Embedded Software", web: "Site-uri Web & App", hw: "Embedded Hardware", soft: "Software Simplu" },
+    certFilters: { all: "Toate", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Securitate Cibernetică", prof_skills: "Abilități Profesionale" },
     contact: { name: "Numele Tău", email: "Email-ul Tău", subject: "Subiect", message: "Mesajul Tău", copy: "Copiat!", hello: "Salut!" }
   }
 };
@@ -576,104 +572,243 @@ export const projects = [
     }
   }
 ];
-// === LISTA NOUA DE HOBBY-URI ===
 export const hobbies = [
   {
     id: "fitness",
     title: { en: "Fitness & Bodybuilding", ro: "Fitness & Culturism" },
-    icon: "Dumbbell", // Numele iconitei din Lucide
-    color: "#ef4444", // Rosu
+    icon: "Dumbbell",
+    color: "#ef4444",
+    layout: "sports-book",
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
-    desc: {
-      en: "Discipline is key. I train 4-5 times a week, focusing on strength and hypertrophy.",
-      ro: "Disciplina este cheia. Mă antrenez de 4-5 ori pe săptămână, axându-mă pe forță și hipertrofie."
+    summary: {
+      en: "A lifelong passion for physical and mental discipline through strength training.",
+      ro: "O pasiune de-o viață pentru disciplina fizică și mentală prin antrenamentul de forță."
     },
-    funFact: {
-      en: "I built my own fitness app (NRStrength) because I didn't like the ones on the market!",
-      ro: "Mi-am construit propria aplicație de fitness (NRStrength) pentru că nu îmi plăceau cele de pe piață!"
-    }
+    journey: [
+      {
+        title: { en: "The Spark (Age 10)", ro: "Scânteia (10 ani)" },
+        description: { en: "A 6-month introduction to fitness that planted the seed for a lifelong passion.", ro: "Prima mea introducere în fitness, o călătorie de 6 luni care a plantat sămânța pentru o pasiune de o viață." }
+      },
+      {
+        title: { en: "The Foundation (High School)", ro: "Fundația (Liceu)" },
+        description: { en: "Two dedicated years during high school where I learned the fundamentals of training and discipline.", ro: "Doi ani dedicați în timpul liceului, unde am învățat fundamentele antrenamentului și disciplinei." }
+      },
+      {
+        title: { en: "Mastering Bodyweight (University)", ro: "Stăpânirea Greutății Corporale (Facultate)" },
+        description: { en: "A 2-year deep dive into calisthenics, exploring the limits of what can be achieved with bodyweight alone.", ro: "O explorare de 2 ani a calistenicii, descoperind limitele a ceea ce se poate realiza doar cu greutatea corporală." }
+      },
+      {
+        title: { en: "The Pursuit of Strength (Present)", ro: "În Căutarea Forței (Prezent)" },
+        description: { en: "For the last 3+ years, my focus has been on powerbuilding—a hybrid approach to getting stronger and building muscle.", ro: "În ultimii 3+ ani, focusul meu a fost pe powerbuilding—o abordare hibridă pentru a deveni mai puternic și a construi masă musculară." }
+      }
+    ],
+    principles: [
+      { title: { en: "Discipline", ro: "Disciplină" }, icon: "Zap" },
+      { title: { en: "Consistency", ro: "Consecvență" }, icon: "Repeat" },
+      { title: { en: "Patience", ro: "Răbdare" }, icon: "Hourglass" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1581009137052-c2b6b3588570?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=800"
+    ]
   },
   {
     id: "hiking",
     title: { en: "Hiking & Nature", ro: "Drumeții & Natură" },
     icon: "Mountain",
-    color: "#22c55e", // Verde
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800",
-    desc: {
-      en: "I love exploring the Carpathian Mountains. There's nothing like the fresh air and the view from the top to recharge my batteries.",
-      ro: "Ador să explorez Munții Carpați. Nimic nu se compară cu aerul curat și priveliștea din vârf pentru a-mi reîncărca bateriile."
+    color: "#22c55e",
+    layout: "book",
+    image: "/images/hiking/cover.jpg",
+    summary: {
+      en: "Exploring the Carpathian Mountains to recharge and reconnect with nature.",
+      ro: "Explorarea Munților Carpați pentru a mă reîncărca și a mă reconecta cu natura."
     },
-    funFact: {
-      en: "I once hiked for 12 hours straight just to see a specific waterfall.",
-      ro: "Odată am mers 12 ore în continuu doar ca să văd o anumită cascadă."
-    }
+    journey: [
+      {
+        title: { en: "Discovering the Trails", ro: "Descoperirea Potecilor" },
+        description: { en: "From short local trails to challenging mountain peaks, every hike is a new adventure.", ro: "De la trasee locale scurte la vârfuri montane provocatoare, fiecare drumeție este o nouă aventură." }
+      }
+    ],
+    principles: [
+      { title: { en: "Perseverance", ro: "Perseverență" }, icon: "Zap" },
+      { title: { en: "Respect for Nature", ro: "Respect pentru Natură" }, icon: "Repeat" }
+    ],
+    gallery: [
+      "/images/hiking/image-1.jpg",
+      "/images/hiking/image-2.jpg",
+      "/images/hiking/image-3.jpg",
+      "/images/hiking/image-4.jpg",
+      "/images/hiking/image-5.jpg",
+      "/images/hiking/image-6.jpg",
+      "/images/hiking/image-7.jpg",
+      "/images/hiking/image-8.jpg",
+      "/images/hiking/image-9.jpg",
+      "/images/hiking/image-10.jpg",
+      "/images/hiking/image-11.jpg"
+    ]
+  },
+  {
+    id: "traveling",
+    title: { en: "Traveling the World", ro: "Călătorind prin Lume" },
+    icon: "Plane",
+    color: "#3b82f6",
+    layout: "book",
+    image: "/images/traveling/image-1.jpg",
+    summary: {
+      en: "Discovering new cultures, tasting different cuisines, and creating unforgettable memories around the globe.",
+      ro: "Descoperind culturi noi, gustând bucătării diferite și creând amintiri de neuitat în jurul lumii."
+    },
+    journey: [
+      {
+        title: { en: "First Trip Abroad", ro: "Prima Călătorie în Străinătate" },
+        description: { en: "The journey that ignited my passion for exploring the world.", ro: "Călătoria care mi-a aprins pasiunea pentru a explora lumea." }
+      },
+      {
+        title: { en: "Backpacking through Europe", ro: "Cu rucsacul prin Europa" },
+        description: { en: "An adventure of a lifetime, visiting 10 countries in 30 days.", ro: "O aventură de-o viață, vizitând 10 țări în 30 de zile." }
+      }
+    ],
+    principles: [
+      { title: { en: "Open Mind", ro: "Minte Deschisă" }, icon: "Zap" },
+      { title: { en: "Adventure", ro: "Aventură" }, icon: "Repeat" }
+    ],
+    gallery: [
+      "/images/traveling/image-2.jpg",
+      "/images/traveling/image-3.jpg",
+      "/images/traveling/image-4.jpg",
+      "/images/traveling/image-5.jpg",
+      "/images/traveling/image-6.jpg",
+      "/images/traveling/image-7.jpg",
+      "/images/traveling/image-8.jpg",
+      "/images/traveling/image-9.jpg",
+      "/images/traveling/image-10.jpg",
+      "/images/traveling/image-11.jpg",
+      "/images/traveling/image-12.jpg"
+    ]
   },
   {
     id: "tech",
     title: { en: "Gaming & Tech Tinkering", ro: "Gaming & Gadget-uri" },
     icon: "Gamepad2",
-    color: "#8b5cf6", // Violet
+    color: "#8b5cf6",
+    layout: "gamer-page",
     image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=800",
-    desc: {
-      en: "From strategy games that challenge my logic to dismantling and fixing old electronics. I'm a geek at heart.",
-      ro: "De la jocuri de strategie care îmi provoacă logica, până la demontarea și repararea electronicelor vechi. Sunt un 'geek' la bază."
+    summary: {
+      en: "From strategy games that challenge my logic to dismantling and fixing old electronics.",
+      ro: "De la jocuri de strategie care îmi provoacă logica, până la demontarea și repararea electronicelor vechi."
     },
-    funFact: {
-      en: "I have a collection of old microcontrollers that I plan to revive someday.",
-      ro: "Am o colecție de microcontrolere vechi pe care plănuiesc să le 'învii' într-o zi."
-    }
+    journey: [
+       {
+        title: { en: "Problem-Solving Through Play", ro: "Rezolvarea Problemelor prin Joc" },
+        description: { en: "Strategy games have always been a passion, teaching me to think ahead and adapt.", ro: "Jocurile de strategie au fost mereu o pasiune, învățându-mă să gândesc în avans și să mă adaptez." }
+      },
+      {
+        title: { en: "Hardware Curiosity", ro: "Curiozitate Hardware" },
+        description: { en: "I enjoy taking apart old electronics to understand how they work, from microcontrollers to classic consoles.", ro: "Îmi place să demontez electronice vechi pentru a înțelege cum funcționează, de la microcontrolere la console clasice." }
+      }
+    ],
+    principles: [
+      { title: { en: "Strategic Thinking", ro: "Gândire Strategică" }, icon: "Zap" },
+      { title: { en: "Curiosity", ro: "Curiozitate" }, icon: "Repeat" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1593305842219-928d3a82d073?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1582287132239-2b8135da0752?auto=format&fit=crop&q=80&w=800"
+    ]
   }
 ];
 
+
 export const certificates = [
-  { title: "Advanced C Data Structure And Pointers", path: "/Certificate/AdvancedCDataStructureAndPointers.pdf" },
-  { title: "Battery and Charging", path: "/Certificate/BatteryandCharging.pdf" },
-  { title: "Calculation Methods", path: "/Certificate/CalculationMethods.pdf" },
-  { title: "CAN Analyser Basic", path: "/Certificate/CANAnalyserBasic.pdf" },
-  { title: "C Best Practices for Developers", path: "/Certificate/CertificateOfCompletion_C Best Practices for Developers.pdf" },
-  { title: "C Essential Training", path: "/Certificate/CertificateOfCompletion_C Essential Training.pdf" },
-  { title: "C Programming for Embedded Applications", path: "/Certificate/CertificateOfCompletion_C Programming for Embedded Applications.pdf" },
-  { title: "Complete Guide to C Programming Foundations", path: "/Certificate/CertificateOfCompletion_Complete Guide to C Programming Foundations.pdf" },
-  { title: "Git Essential Training", path: "/Certificate/CertificateOfCompletion_Git Essential Training.pdf" },
-  { title: "Learning C", path: "/Certificate/CertificateOfCompletion_Learning C.pdf" },
-  { title: "Software Architecture Foundations", path: "/Certificate/CertificateOfCompletion_Software Architecture Foundations.pdf" },
-  { title: "Training Neural Networks in C", path: "/Certificate/CertificateOfCompletion_Training Neural Networks in C.pdf" },
-  { title: "Cyber Security Essentials", path: "/Certificate/CyberSecurityEssentials.pdf" },
-  { title: "Electrification Program 2 Module 1 Electrical Machines Advanced", path: "/Certificate/ElectrificationProgram2Module1ElectricalMachinesAdvanced.pdf" },
-  { title: "Electrification Program 2 Module 2 Power Electronics Advanced", path: "/Certificate/ElectrificationProgram2Module2PowerElectronicsAdvanced.pdf" },
-  { title: "Electrification Program 2 Module 3 Energy Storage And Charging Advanced", path: "/Certificate/ElectrificationProgram2Module3EnergyStorageAndChargingAdvanced.pdf" },
-  { title: "Electrification Program 2 Module 4 Electrical Control Advanced", path: "/Certificate/ElectrificationProgram2Module4ElectricalControlAdvanced.pdf" },
-  { title: "Electrification Program 2 Module 5 System Electrical Vehicles Advanced", path: "/Certificate/ElectrificationProgram2Module5SystemElectricalVehiclesAdvanced.pdf" },
-  { title: "Electrification Program 2 Module 6 Autonomous Driving Advanced", path: "/Certificate/ElectrificationProgram2Module6AutonomousDrivingAdvanced.pdf" },
-  { title: "Electrification Program Module 1 Physical Basic", path: "/Certificate/ElectrificationProgramModule1PhysicalBasic.pdf" },
-  { title: "Electrification Program Module 2 Electric Machines", path: "/Certificate/ElectrificationProgramModule2ElectricMachines.pdf" },
-  { title: "Electrification Program Module 3 Power Electronics", path: "/Certificate/ElectrificationProgramModule3PowerElectronics.pdf" },
-  { title: "Electrification Program Module 4 Energy Storage And Charging", path: "/Certificate/ElectrificationProgramModule4EnergyStorageAndCharging.pdf" },
-  { title: "Electrification Program Module 5 System Electrical Vehicles", path: "/Certificate/ElectrificationProgramModule5SystemElectricalVehicles.pdf" },
-  { title: "Electrification Program Module 6 EMC High Voltage", path: "/Certificate/ElectrificationProgramModule6EMCHighVoltage.pdf" },
-  { title: "Electrification Program Module 7 Electrical Control", path: "/Certificate/ElectrificationProgramModule7ElectricalControl.pdf" },
-  { title: "Filed Oriented Control (FOC) and PWM Advanced", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Advanced.pdf" },
-  { title: "Filed Oriented Control (FOC) and PWM Basic", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Basic.pdf" },
-  { title: "German A1.1", path: "/Certificate/GermanA1.1.pdf" },
-  { title: "GitHub and CICD", path: "/Certificate/GitHubandCICD.pdf" },
-  { title: "Introduction to Motor Control Mathworks", path: "/Certificate/Introduction to Motor Control Mathworks.pdf" },
-  { title: "IT Project Management", path: "/Certificate/ITProjectManagement.pdf" },
-  { title: "IT Project Management Basic Knowledge", path: "/Certificate/ITPROJECTManagementBasicKnowledge.pdf" },
-  { title: "IT Project Management Intro", path: "/Certificate/ITProjectManagementIntro.pdf" },
-  { title: "Matlab Simulink Basics", path: "/Certificate/MatlabSimulinkBasics.pdf" },
-  { title: "Multi Core Software Arhitecture", path: "/Certificate/MultiCoreSoftwareArhitecture.pdf" },
-  { title: "OMS Polarion Onboarding", path: "/Certificate/OMSPolarionOnboarding.pdf" },
-  { title: "PCB Technology & Basics of Printed Circuits Boards", path: "/Certificate/PCBTechnology&BasicsofPrintedCircuitsBoards.pdf" },
-  { title: "Physical Basics", path: "/Certificate/PhysicalBasics.pdf" },
-  { title: "Power Electronics", path: "/Certificate/PowerElectronics.pdf" },
-  { title: "Product Security", path: "/Certificate/ProductSecurity.pdf" },
-  { title: "Prototipe Protection", path: "/Certificate/PrototipeProtection.pdf" },
-  { title: "Rafael-Marian Vanca Certificate EP II", path: "/Certificate/Rafael-Marian Vanca_Certificate EP II.pdf" },
-  { title: "SAP Time Management", path: "/Certificate/SAPTimeManagement.pdf" },
-  { title: "Software Arhitecture Design", path: "/Certificate/SoftwareArhitectureDesign.pdf" },
-  { title: "Software Configuration Management", path: "/Certificate/SoftwareConfigurationManagement.pdf" },
-  { title: "Software Construction Methods", path: "/Certificate/SoftwareConstructionMethods.pdf" },
-  { title: "Software Development Guidline", path: "/Certificate/SoftwareDevelopmentGuidline.pdf" },
-  { title: "Software Quality Assurance", path: "/Certificate/SoftwareQualityAssurance.pdf" },
-  { title: "Software Release And Prototypes", path: "/Certificate/SoftwareReleaseAndPrototypes.pdf" }
+  { title: "Advanced C Data Structure And Pointers", path: "/Certificate/AdvancedCDataStructureAndPointers.pdf", category: "embed_hw" },
+  { title: "Battery and Charging", path: "/Certificate/BatteryandCharging.pdf", category: "embed_hw" },
+  { title: "Calculation Methods", path: "/Certificate/CalculationMethods.pdf", category: "embed_hw" },
+  { title: "CAN Analyser Basic", path: "/Certificate/CANAnalyserBasic.pdf", category: "embed_hw" },
+  { title: "C Best Practices for Developers", path: "/Certificate/CertificateOfCompletion_C Best Practices for Developers.pdf", category: "embed_hw" },
+  { title: "C Essential Training", path: "/Certificate/CertificateOfCompletion_C Essential Training.pdf", category: "embed_hw" },
+  { title: "C Programming for Embedded Applications", path: "/Certificate/CertificateOfCompletion_C Programming for Embedded Applications.pdf", category: "embed_hw" },
+  { title: "Complete Guide to C Programming Foundations", path: "/Certificate/CertificateOfCompletion_Complete Guide to C Programming Foundations.pdf", category: "embed_hw" },
+  { title: "Git Essential Training", path: "/Certificate/CertificateOfCompletion_Git Essential Training.pdf", category: "soft_dev" },
+  { title: "Learning C", path: "/Certificate/CertificateOfCompletion_Learning C.pdf", category: "embed_hw" },
+  { title: "Software Architecture Foundations", path: "/Certificate/CertificateOfCompletion_Software Architecture Foundations.pdf", category: "soft_dev" },
+  { title: "Training Neural Networks in C", path: "/Certificate/CertificateOfCompletion_Training Neural Networks in C.pdf", category: "ai_ml" },
+  { title: "Cyber Security Essentials", path: "/Certificate/CyberSecurityEssentials.pdf", category: "cybersec" },
+  { title: "Electrification Program 2 Module 1 Electrical Machines Advanced", path: "/Certificate/ElectrificationProgram2Module1ElectricalMachinesAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program 2 Module 2 Power Electronics Advanced", path: "/Certificate/ElectrificationProgram2Module2PowerElectronicsAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program 2 Module 3 Energy Storage And Charging Advanced", path: "/Certificate/ElectrificationProgram2Module3EnergyStorageAndChargingAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program 2 Module 4 Electrical Control Advanced", path: "/Certificate/ElectrificationProgram2Module4ElectricalControlAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program 2 Module 5 System Electrical Vehicles Advanced", path: "/Certificate/ElectrificationProgram2Module5SystemElectricalVehiclesAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program 2 Module 6 Autonomous Driving Advanced", path: "/Certificate/ElectrificationProgram2Module6AutonomousDrivingAdvanced.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 1 Physical Basic", path: "/Certificate/ElectrificationProgramModule1PhysicalBasic.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 2 Electric Machines", path: "/Certificate/ElectrificationProgramModule2ElectricMachines.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 3 Power Electronics", path: "/Certificate/ElectrificationProgramModule3PowerElectronics.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 4 Energy Storage And Charging", path: "/Certificate/ElectrificationProgramModule4EnergyStorageAndCharging.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 5 System Electrical Vehicles", path: "/Certificate/ElectrificationProgramModule5SystemElectricalVehicles.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 6 EMC High Voltage", path: "/Certificate/ElectrificationProgramModule6EMCHighVoltage.pdf", category: "embed_hw" },
+  { title: "Electrification Program Module 7 Electrical Control", path: "/Certificate/ElectrificationProgramModule7ElectricalControl.pdf", category: "embed_hw" },
+  { title: "Filed Oriented Control (FOC) and PWM Advanced", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Advanced.pdf", category: "embed_hw" },
+  { title: "Filed Oriented Control (FOC) and PWM Basic", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Basic.pdf", category: "embed_hw" },
+  { title: "German A1.1", path: "/Certificate/GermanA1.1.pdf", category: "prof_skills" },
+  { title: "GitHub and CICD", path: "/Certificate/GitHubandCICD.pdf", category: "soft_dev" },
+  { title: "Introduction to Motor Control Mathworks", path: "/Certificate/Introduction to Motor Control Mathworks.pdf", category: "embed_hw" },
+  { title: "IT Project Management", path: "/Certificate/ITProjectManagement.pdf", category: "prof_skills" },
+  { title: "IT Project Management Basic Knowledge", path: "/Certificate/ITPROJECTManagementBasicKnowledge.pdf", category: "prof_skills" },
+  { title: "IT Project Management Intro", path: "/Certificate/ITProjectManagementIntro.pdf", category: "prof_skills" },
+  { title: "Matlab Simulink Basics", path: "/Certificate/MatlabSimulinkBasics.pdf", category: "embed_hw" },
+  { title: "Multi Core Software Arhitecture", path: "/Certificate/MultiCoreSoftwareArhitecture.pdf", category: "soft_dev" },
+  { title: "OMS Polarion Onboarding", path: "/Certificate/OMSPolarionOnboarding.pdf", category: "soft_dev" },
+  { title: "PCB Technology & Basics of Printed Circuits Boards", path: "/Certificate/PCBTechnology&BasicsofPrintedCircuitsBoards.pdf", category: "embed_hw" },
+  { title: "Physical Basics", path: "/Certificate/PhysicalBasics.pdf", category: "embed_hw" },
+  { title: "Power Electronics", path: "/Certificate/PowerElectronics.pdf", category: "embed_hw" },
+  { title: "Product Security", path: "/Certificate/ProductSecurity.pdf", category: "cybersec" },
+  { title: "Prototipe Protection", path: "/Certificate/PrototipeProtection.pdf", category: "cybersec" },
+  { title: "Rafael-Marian Vanca Certificate EP II", path: "/Certificate/Rafael-Marian Vanca_Certificate EP II.pdf", category: "embed_hw" },
+  { title: "SAP Time Management", path: "/Certificate/SAPTimeManagement.pdf", category: "prof_skills" },
+  { title: "Software Arhitecture Design", path: "/Certificate/SoftwareArhitectureDesign.pdf", category: "soft_dev" },
+  { title: "Software Configuration Management", path: "/Certificate/SoftwareConfigurationManagement.pdf", category: "soft_dev" },
+  { title: "Software Construction Methods", path: "/Certificate/SoftwareConstructionMethods.pdf", category: "soft_dev" },
+  { title: "Software Development Guidline", path: "/Certificate/SoftwareDevelopmentGuidline.pdf", category: "soft_dev" },
+  { title: "Software Quality Assurance", path: "/Certificate/SoftwareQualityAssurance.pdf", category: "soft_dev" },
+  { title: "Software Release And Prototypes", path: "/Certificate/SoftwareReleaseAndPrototypes.pdf", category: "soft_dev" },
+  { title: "Algoritm Training And Essentials", path: "/Certificate/NewCerficicates/AlgoritmTrainingAndEssentials.pdf", category: "soft_dev" },
+  { title: "Becoming Indestructible", path: "/Certificate/NewCerficicates/BecomingIndestructible.pdf", category: "prof_skills" },
+  { title: "Career Essentials in Cybersecurity by Microsoft and LinkedIn", path: "/Certificate/NewCerficicates/CertificateOfCompletion_Career_Essentials_in_Cybersecurity_by_Microsoft_and_LinkedIn.pdf", category: "cybersec" },
+  { title: "Career Essentials in Generative AI by Microsoft and LinkedIn", path: "/Certificate/NewCerficicates/CertificateOfCompletion_Career_Essentials_in_Generative_AI_by_Microsoft_and_LinkedIn.pdf", category: "ai_ml" },
+  { title: "Complete Guide To C Programming", path: "/Certificate/NewCerficicates/CompleteGuideToCProgramming.pdf", category: "embed_hw" },
+  { title: "C++ Best Practice For Developing", path: "/Certificate/NewCerficicates/CPlusPlusBestPracticeForDeveloping.pdf", category: "embed_hw" },
+  { title: "C++ Essential Training", path: "/Certificate/NewCerficicates/CPlusPlusEssentialTraining.pdf", category: "embed_hw" },
+  { title: "C Programming For Embedded Applications", path: "/Certificate/NewCerficicates/CProgrammingForEmbeddedApplications.pdf", category: "embed_hw" },
+  { title: "Critical Thinking And Problem Solving", path: "/Certificate/NewCerficicates/CriticalThinkingAndProblemSolving.pdf", category: "prof_skills" },
+  { title: "CyberSecurity Awerness", path: "/Certificate/NewCerficicates/CyberSecurityAwerness.pdf", category: "cybersec" },
+  { title: "CyberSecurity Fundation", path: "/Certificate/NewCerficicates/CyberSecurityFundation.pdf", category: "cybersec" },
+  { title: "Flutter Basics", path: "/Certificate/NewCerficicates/FlutterBasics.pdf", category: "soft_dev" },
+  { title: "Generative AI", path: "/Certificate/NewCerficicates/GenerativeAI.pdf", category: "ai_ml" },
+  { title: "GitHub", path: "/Certificate/NewCerficicates/GitHub.pdf", category: "soft_dev" },
+  { title: "Github Certificate", path: "/Certificate/NewCerficicates/GithubCertificate.pdf", category: "soft_dev" },
+  { title: "Improvment Your Listening Skils", path: "/Certificate/NewCerficicates/ImprovmentYourListeningSkils.pdf", category: "prof_skills" },
+  { title: "Introduction To Ai Governance", path: "/Certificate/NewCerficicates/IntroductionToAiGovernance.pdf", category: "ai_ml" },
+  { title: "Introduction To Artificial Intelligence", path: "/Certificate/NewCerficicates/IntroductionToArtificialIntelligence.pdf", category: "ai_ml" },
+  { title: "Introduction To Carrer Skils In Software", path: "/Certificate/NewCerficicates/IntroductionToCarrerSkilsInSoftware.pdf", category: "soft_dev" },
+  { title: "Introduction To Dart", path: "/Certificate/NewCerficicates/IntroductionToDart.pdf", category: "soft_dev" },
+  { title: "Involving Your Listening Skills", path: "/Certificate/NewCerficicates/InvolvingYourListeningSkills.pdf", category: "prof_skills" },
+  { title: "Lear Microsoft Copilot", path: "/Certificate/NewCerficicates/LearMicrosoftCopilot.pdf", category: "ai_ml" },
+  { title: "Learning C++", path: "/Certificate/NewCerficicates/LearningCPlusPlus.pdf", category: "embed_hw" },
+  { title: "Learning Jenkins", path: "/Certificate/NewCerficicates/LearningJenkins.pdf", category: "soft_dev" },
+  { title: "Microsoft Copilot For Security", path: "/Certificate/NewCerficicates/MicrosoftCopilotForSecurity.pdf", category: "cybersec" },
+  { title: "Navigathing Ambiguity", path: "/Certificate/NewCerficicates/NavigathingAmbiguity.pdf", category: "prof_skills" },
+  { title: "Practical Github", path: "/Certificate/NewCerficicates/PracticalGithub.pdf", category: "soft_dev" },
+  { title: "Practical Github Actions", path: "/Certificate/NewCerficicates/PracticalGithubActions.pdf", category: "soft_dev" },
+  { title: "Practical Github Copilot", path: "/Certificate/NewCerficicates/PracticalGithubCopilot.pdf", category: "ai_ml" },
+  { title: "Practical Github Management And Projects", path: "/Certificate/NewCerficicates/PracticalGithubManagementAndProjects.pdf", category: "soft_dev" },
+  { title: "Problem Solving Tehnique", path: "/Certificate/NewCerficicates/ProblemSolvingTehnique.pdf", category: "prof_skills" },
+  { title: "Rise And Shine", path: "/Certificate/NewCerficicates/RiseAndShine.pdf", category: "prof_skills" },
+  { title: "Software Application Fundations", path: "/Certificate/NewCerficicates/SoftwareApplicationFundations.pdf", category: "soft_dev" },
+  { title: "Streamlining Your Work With Microsoft Copilot", path: "/Certificate/NewCerficicates/StreamliningYourWorkWithMicrosoftCopilot.pdf", category: "ai_ml" },
+  { title: "The Cybersecurity Threat", path: "/Certificate/NewCerficicates/TheCybersecurityThreat.pdf", category: "cybersec" },
+  { title: "The Master Key to Overcome Procastination", path: "/Certificate/NewCerficicates/TheMasterKeytoOvercomeProcastination.pdf", category: "prof_skills" },
+  { title: "Training NN In C++", path: "/Certificate/NewCerficicates/TrainingNNInCPlusPlus.pdf", category: "ai_ml" },
+  { title: "Training Your Mind And Focus", path: "/Certificate/NewCerficicates/TrainingYourMindAndFocus.pdf", category: "prof_skills" },
+  { title: "What Is Generative AI", path: "/Certificate/NewCerficicates/WhatIsGenerativeAI.pdf", category: "ai_ml" }
 ];
