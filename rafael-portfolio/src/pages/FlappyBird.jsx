@@ -2,16 +2,16 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './FlappyBird.css';
 
-const BIRD_WIDTH = 50;
-const BIRD_HEIGHT = 35;
-const GAME_WIDTH = 500;
-const GAME_HEIGHT = 500;
-const GRAVITY = 6;
-const JUMP_HEIGHT = 100;
-const PIPE_WIDTH = 60;
-const PIPE_GAP = 200;
-const INITIAL_SPEED = 5;
-const SPEED_INCREASE = 0.5;
+const BIRD_WIDTH = 40;
+const BIRD_HEIGHT = 28;
+const GAME_WIDTH = 400;
+const GAME_HEIGHT = 400;
+const GRAVITY = 5;
+const JUMP_HEIGHT = 80;
+const PIPE_WIDTH = 48;
+const PIPE_GAP = 160;
+const INITIAL_SPEED = 4;
+const SPEED_INCREASE = 0.4;
 
 const FlappyBird = () => {
     const [gameState, setGameState] = useState('menu'); // 'menu', 'playing', 'over'
@@ -58,17 +58,22 @@ const FlappyBird = () => {
             handleJump();
         }
 
+        const handleTouch = (e) => {
+            e.preventDefault();
+            handleGameClick(e);
+        }
+
         const gameEl = gameContainerRef.current;
 
         window.addEventListener('keydown', handleKeyPress);
         gameEl.addEventListener('click', handleGameClick);
-        gameEl.addEventListener('touchstart', handleGameClick);
+        gameEl.addEventListener('touchstart', handleTouch);
 
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
             if (gameEl) {
                 gameEl.removeEventListener('click', handleGameClick);
-                gameEl.removeEventListener('touchstart', handleGameClick);
+                gameEl.removeEventListener('touchstart', handleTouch);
             }
         };
     }, [handleJump]);

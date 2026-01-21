@@ -1,19 +1,22 @@
 // src/pages/Contact.jsx
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check, Loader, AlertCircle } from 'lucide-react';
 import { personalInfo, labels } from '../data';
 
 const Contact = ({ lang }) => {
   const t = labels[lang].contact;
   const [copied, setCopied] = useState(false);
+  const form = useRef();
 
-  // State pentru formular
+  // State pentru formular si trimitere
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [submissionStatus, setSubmissionStatus] = useState({ status: 'idle', message: '' }); // idle, sending, success, error
 
   // Functie pentru copiere email
   const copyToClipboard = () => {
@@ -27,11 +30,27 @@ const Contact = ({ lang }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Functie "Fake Submit" - deschide clientul de mail
+  // Functie de trimitere email cu EmailJS
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent("Name: " + formData.name + "\nEmail: " + formData.email + "\n\n" + formData.message)}`;
-    window.location.href = mailtoLink;
+    setSubmissionStatus({ status: 'sending', message: '' });
+
+    // --- IMPORTANT ---
+    // Inlocuieste cu datele tale de la EmailJS
+    const serviceID = 'YOUR_SERVICE_ID';
+    const templateID = 'YOUR_TEMPLATE_ID';
+    const publicKey = 'YOUR_PUBLIC_KEY';
+    // ---
+
+    emailjs.send(serviceID, templateID, formData, publicKey)
+      .then((result) => {
+          console.log(result.text);
+          setSubmissionStatus({ status: 'success', message: lang === 'en' ? 'Message sent successfully!' : 'Mesaj trimis cu succes!' });
+          setFormData({ name: '', email: '', subject: '', message: '' }); // Reseteaza formularul
+      }, (error) => {
+          console.log(error.text);
+          setSubmissionStatus({ status: 'error', message: lang === 'en' ? 'Failed to send message. Please try again.' : 'Eroare la trimitere. Vă rugăm să încercați din nou.' });
+      });
   };
 
   return (
@@ -42,7 +61,8 @@ const Contact = ({ lang }) => {
         
         {/* COLOANA STANGA: INFO */}
         <div className="contact-info-card">
-          <h3 style={{marginBottom: '20px', color: 'var(--primary-color)'}}>
+           {/* ... (codul pentru informatii ramane neschimbat) ... */}
+           <h3 style={{marginBottom: '20px', color: 'var(--primary-color)'}}>
             {lang === 'en' ? "Let's work together!" : "Hai să colaborăm!"}
           </h3>
           <p style={{color: 'var(--secondary-text)', marginBottom: '30px'}}>
@@ -92,7 +112,7 @@ const Contact = ({ lang }) => {
         </div>
 
         {/* COLOANA DREAPTA: FORMULAR */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form ref={form} className="contact-form" onSubmit={handleSubmit}>
           <h3>{t.hello}</h3>
           
           <div className="form-group">
@@ -143,10 +163,21 @@ const Contact = ({ lang }) => {
             ></textarea>
           </div>
 
-          <button type="submit" className="submit-btn">
-            <Send size={18} />
-            {labels[lang].buttons.sendMessage}
+          <button type="submit" className="submit-btn" disabled={submissionStatus.status === 'sending'}>
+            {submissionStatus.status === 'sending' ? (
+              <><Loader size={18} className="spin" /> {lang === 'en' ? 'Sending...' : 'Se trimite...'}</>
+            ) : (
+              <><Send size={18} /> {labels[lang].buttons.sendMessage}</>
+            )}
           </button>
+
+          {/* Mesaj de status */}
+          {submissionStatus.status === 'success' && (
+            <p className="status-msg success"><Check size={16} /> {submissionStatus.message}</p>
+          )}
+          {submissionStatus.status === 'error' && (
+            <p className="status-msg error"><AlertCircle size={16} /> {submissionStatus.message}</p>
+          )}
         </form>
 
       </div>

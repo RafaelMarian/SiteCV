@@ -9,8 +9,8 @@
 
 .bird {
     position: absolute;
-    width: 45px; /* Adjust size to fit a better bird shape */
-    height: 35px;
+    width: 40px; /* Adjust size to fit a better bird shape */
+    height: 28px;
     background-color: #ffd700; /* Flappy Bird yellow */
     border-radius: 50%;
     border: 2px solid #000;
@@ -22,13 +22,13 @@
 .bird::before {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 15px;
+    width: 20px;
+    height: 12px;
     background-color: #FFA500; /* Orange for wing */
     border-radius: 50% 0 50% 0; /* Creates a simple wing shape */
     border: 1px solid #000;
-    left: -5px; /* Position relative to the bird body */
-    top: 10px;
+    left: -4px; /* Position relative to the bird body */
+    top: 8px;
     transform: rotate(-20deg); /* Angle the wing slightly */
     z-index: 9; /* Ensure wing is behind the body if needed, or adjust as desired */
 }
@@ -37,12 +37,12 @@
 .bird::after {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: #000;
     border-radius: 50%;
-    left: 30px;
-    top: 8px;
+    left: 24px;
+    top: 6px;
     z-index: 12;
 }
 

@@ -1,7 +1,7 @@
 // src/App.jsx - ACTUALIZARE NAVBAR
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Globe, Menu, X, Code2 } from 'lucide-react'; // Importam Menu, X si Code2
 import './App.css';
 import { labels } from './data';

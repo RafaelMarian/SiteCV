@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    tools {
+        // This name must match a configured NodeJS installation in Jenkins Global Tool Configuration
+        nodejs 'NodeJS-20' 
+    }
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Lint') {
+            steps {
+                bat 'npm run lint'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+    }
+}
