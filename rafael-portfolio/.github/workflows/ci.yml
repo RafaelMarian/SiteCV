@@ -10,16 +10,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # Aici setăm folderul de lucru pentru toți pașii
+    defaults:
+      run:
+        working-directory: ./rafael-portfolio
+
     strategy:
       matrix:
         node-version: [20.x]
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: rafael-portfolio/package-lock.json
+        
     - run: npm install
-    - run: npm run lint
+    - run: npm run lint # Asigură-te că ai scriptul "lint" în package.json, altfel șterge linia asta
     - run: npm run build
