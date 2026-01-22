@@ -62,14 +62,12 @@ const FlappyBird = () => {
         if (!gameEl) return;
 
         window.addEventListener('keydown', handleKeyPress);
-        gameEl.addEventListener('mousedown', handleInteraction);
-        gameEl.addEventListener('touchstart', handleInteraction);
+        gameEl.addEventListener('pointerdown', handleInteraction);
 
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
             if (gameEl) {
-                gameEl.removeEventListener('mousedown', handleInteraction);
-                gameEl.removeEventListener('touchstart', handleInteraction);
+                gameEl.removeEventListener('pointerdown', handleInteraction);
             }
         };
     }, [handleJump]);

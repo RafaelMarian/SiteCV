@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # Aceasta setare spune workflow-ului sa ruleze comenzile in folderul proiectului
+    defaults:
+      run:
+        working-directory: ./rafael-portfolio
+
     strategy:
       matrix:
         node-version: [20.x]
@@ -22,7 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: package-lock.json
+        # Trebuie specificat unde este package-lock.json pentru cache
+        cache-dependency-path: rafael-portfolio/package-lock.json
         
     - run: npm install
     - run: npm run lint
