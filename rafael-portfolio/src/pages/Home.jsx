@@ -5,7 +5,7 @@ import {
   ArrowRight, Download, Cpu, Globe, 
   Zap, Briefcase, BookOpen, Layers 
 } from 'lucide-react';
-import { personalInfo, labels } from '../data';
+import { personalInfo } from '../data';
 
 const Home = ({ lang }) => {
 
