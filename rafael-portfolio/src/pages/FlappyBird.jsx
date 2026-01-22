@@ -80,6 +80,7 @@ const FlappyBird = () => {
                 setBirdRotation(rotation => Math.min(rotation + GRAVITY / 2, 90));
             }, 24);
         } else if (birdPosition >= GAME_HEIGHT - BIRD_HEIGHT) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setGameState('over');
         }
         return () => {
@@ -128,6 +129,7 @@ const FlappyBird = () => {
             const collidesWithBottom = birdBottom > bottomPipeTop;
 
             if (collidesWithTop || collidesWithBottom) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setGameState('over');
             }
         }

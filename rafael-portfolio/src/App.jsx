@@ -28,10 +28,13 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Inchidem meniul mobil cand schimbam pagina
+  // Închidem meniul mobil la schimbarea rutei
   useEffect(() => {
-    setMobileMenuOpen(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMobileMenuOpen(false); 
   }, [location]);
+
+  // The mobile menu is now closed by onClick events on the individual links.
 
   const isActive = (path) => location.pathname === path ? 'active' : '';
 

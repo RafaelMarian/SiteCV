@@ -32,7 +32,7 @@ const Education = ({ lang }) => {
       <h2 className="section-title">{labels[lang].titles.edu}</h2>
 
       <div className="education-timeline">
-        {education.map((edu, index) => {
+        {education.map((edu) => {
           const isExpanded = expandedId === edu.id;
           
           let Icon = School;
@@ -131,8 +131,8 @@ const Education = ({ lang }) => {
       </div>
 
       <div className="certificates-grid">
-        {filteredCertificates.map((cert, index) => (
-          <a key={index} href={cert.path} target="_blank" rel="noopener noreferrer" className="certificate-link">
+        {filteredCertificates.map((cert) => (
+          <a key={cert.path} href={cert.path} target="_blank" rel="noopener noreferrer" className="certificate-link">
             <FileText size={18} />
             <span>{cert.title}</span>
           </a>

@@ -8,7 +8,6 @@ import {
 import { personalInfo, labels } from '../data';
 
 const Home = ({ lang }) => {
-  const t = labels[lang];
 
   // Texte specifice pentru Home (le definim aici pentru simplitate)
   const content = {
