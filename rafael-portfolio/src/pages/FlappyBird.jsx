@@ -53,27 +53,23 @@ const FlappyBird = () => {
                 handleJump();
             }
         };
-        const handleGameClick = (e) => {
-            e.stopPropagation();
-            handleJump();
-        }
-
-        const handleTouch = (e) => {
+        const handleInteraction = (e) => {
             e.preventDefault();
-            handleGameClick(e);
-        }
+            handleJump();
+        };
 
         const gameEl = gameContainerRef.current;
+        if (!gameEl) return;
 
         window.addEventListener('keydown', handleKeyPress);
-        gameEl.addEventListener('click', handleGameClick);
-        gameEl.addEventListener('touchstart', handleTouch);
+        gameEl.addEventListener('mousedown', handleInteraction);
+        gameEl.addEventListener('touchstart', handleInteraction);
 
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
             if (gameEl) {
-                gameEl.removeEventListener('click', handleGameClick);
-                gameEl.removeEventListener('touchstart', handleTouch);
+                gameEl.removeEventListener('mousedown', handleInteraction);
+                gameEl.removeEventListener('touchstart', handleInteraction);
             }
         };
     }, [handleJump]);
