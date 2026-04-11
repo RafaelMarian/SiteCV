@@ -1,0 +1,123 @@
+/* Shared shell for canvas / DOM mini-games in the monitor */
+.mini-game-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a2e;
+  touch-action: none;
+}
+
+.mini-game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+.mini-game-score {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.25rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  z-index: 10;
+  font-family: 'Press Start 2P', cursive;
+  pointer-events: none;
+  text-align: center;
+  max-width: 95%;
+  line-height: 1.4;
+}
+
+.mini-game-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.45rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px #000;
+  z-index: 10;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  max-width: 96%;
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+.mini-game-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.82);
+  padding: 20px 18px;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 92%;
+}
+
+.mini-game-overlay h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.mini-game-overlay p {
+  font-size: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  color: #e2e8f0;
+}
+
+.mini-game-overlay button {
+  margin-top: 6px;
+  padding: 12px 20px;
+  font-size: 0.55rem;
+  cursor: pointer;
+  background: #f4d03f;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  transition: transform 0.15s ease;
+}
+
+.mini-game-overlay button:hover {
+  transform: scale(1.05);
+}
+
+.mini-game-grid {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mini-game-cell {
+  border: 2px solid #334155;
+  border-radius: 6px;
+  background: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  user-select: none;
+}
+
+.mini-game-cell:active {
+  transform: scale(0.96);
+}

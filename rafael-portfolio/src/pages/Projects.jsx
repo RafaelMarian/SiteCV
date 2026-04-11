@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ExternalLink, Github, Layers, Image as ImageIcon, ZoomIn, ChevronDown } from 'lucide-react';
 import { projects, labels } from '../data';
+import AppLogoStack from '../components/AppLogoStack';
 
 const Projects = ({ lang }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -45,8 +46,9 @@ const Projects = ({ lang }) => {
   };
 
   return (
-    <div>
+    <div className="projects-page">
       <h2 className="section-title">{labels[lang].titles.proj}</h2>
+      <AppLogoStack lang={lang} labels={labels} />
 
       {/* --- TABURI DE FILTRARE --- */}
       <div className="tabs-container">

@@ -1,0 +1,364 @@
+/* Fitness hobby — modern coach / personal training landing */
+
+.fitness-coach {
+  --fc-accent: #ef4444;
+  --fc-accent-hover: #f87171;
+  --fc-accent-soft: rgba(239, 68, 68, 0.14);
+  --fc-ink: #0a0a0b;
+  --fc-muted: rgba(255, 255, 255, 0.72);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.fitness-hero {
+  position: relative;
+  min-height: min(88vh, 820px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.fitness-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 11, 0.45) 0%,
+    rgba(10, 10, 11, 0.75) 45%,
+    rgba(10, 10, 11, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.fitness-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.fitness-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fc-accent);
+  margin-bottom: 0.75rem;
+}
+
+.fitness-hero h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.1rem, 5vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.fitness-hero-lead {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--fc-muted);
+  max-width: 36rem;
+}
+
+.fitness-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+.fc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.fc-btn-primary {
+  background: var(--fc-accent);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(239, 68, 68, 0.35);
+}
+
+.fc-btn-primary:hover {
+  background: var(--fc-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.4);
+}
+
+.fc-btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.fc-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.fitness-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 4vw, 3rem);
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fitness-stat {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.fitness-stat-value {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--fc-accent);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.fitness-stat-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.fc-section {
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fc-section-head {
+  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.fc-section-head h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+
+.fc-section-head p {
+  margin: 0;
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+  max-width: 32rem;
+  line-height: 1.55;
+}
+
+.fc-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.fc-principle-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem 1.35rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-principle-card:hover {
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.fc-principle-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--fc-accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fc-accent);
+  margin-bottom: 1rem;
+}
+
+.fc-principle-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.fc-principle-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  line-height: 1.5;
+}
+
+.fc-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.fc-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--fc-accent), rgba(239, 68, 68, 0.2));
+  border-radius: 2px;
+}
+
+.fc-timeline li {
+  position: relative;
+  padding-left: 3.25rem;
+  padding-bottom: 1.75rem;
+}
+
+.fc-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.fc-timeline-marker {
+  position: absolute;
+  left: 6px;
+  top: 0.35rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--fc-accent);
+  border: 3px solid var(--bg-color);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35);
+}
+
+.fc-timeline-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem;
+}
+
+.fc-timeline-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.fc-timeline-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  line-height: 1.55;
+}
+
+.fc-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.fc-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.25s ease;
+}
+
+.fc-gallery img:hover {
+  transform: scale(1.02);
+}
+
+.fitness-cta-band {
+  margin: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3rem) clamp(2.5rem, 5vw, 3.5rem);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1a1a1e 0%, #2d1518 50%, #1a1a1e 100%);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  text-align: center;
+  color: #fff;
+}
+
+.fitness-cta-band h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 800;
+}
+
+.fitness-cta-band p {
+  margin: 0 0 1.25rem;
+  color: var(--fc-muted);
+  font-size: 0.95rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+.fitness-cta-band .fitness-hero-ctas {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .fc-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .fitness-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fc-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .fitness-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .fc-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-timeline::before {
+    left: 11px;
+  }
+
+  .fc-timeline-marker {
+    left: 2px;
+  }
+
+  .fc-timeline li {
+    padding-left: 2.75rem;
+  }
+}

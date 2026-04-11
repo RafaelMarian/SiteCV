@@ -1032,6 +1032,13 @@ body {
 
 .social-btn.github { background: #333; }
 .social-btn.linkedin { background: #0077b5; }
+.social-btn.facebook { background: #1877f2; }
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.social-btn.producthunt {
+  background: #da552f;
+}
 
 /* Formular Dreapta */
 .contact-form {
@@ -1160,10 +1167,184 @@ body {
   max-width: 90%;
 }
 
+/* --- MOBILE APP LOGO STACK (home + projects) --- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app-logo-stack-section {
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.projects-page .app-logo-stack-section {
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+.app-logo-stack-header {
+  margin-bottom: 18px;
+}
+
+.app-logo-stack-title {
+  font-size: 1.35rem;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.app-logo-stack-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  margin: 0 auto;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.app-logo-stack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 16px 8px 20px;
+  min-height: 88px;
+  overflow: visible;
+}
+
+.app-logo-stack-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  margin-left: -30px;
+  transition:
+    margin 0.38s cubic-bezier(0.34, 1.15, 0.64, 1),
+    transform 0.38s cubic-bezier(0.34, 1.15, 0.64, 1),
+    box-shadow 0.35s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  border: 3px solid var(--bg-color);
+  background: var(--card-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo-stack-item:first-child {
+  margin-left: 0;
+}
+
+.app-logo-stack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.app-logo-stack-item--link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-logo-stack-item--link:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+}
+
+.app-logo-stack-item--link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.app-logo-stack-item--soon {
+  cursor: default;
+  opacity: 0.9;
+  filter: saturate(0.88);
+}
+
+.app-logo-stack:hover .app-logo-stack-item,
+.app-logo-stack:focus-within .app-logo-stack-item {
+  margin-left: 12px;
+}
+
+.app-logo-stack:hover .app-logo-stack-item:first-child,
+.app-logo-stack:focus-within .app-logo-stack-item:first-child {
+  margin-left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-logo-stack-item {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-logo-stack-item {
+    width: 48px;
+    height: 48px;
+    margin-left: -22px;
+    border-radius: 12px;
+    border-width: 2px;
+  }
+
+  .app-logo-stack:hover .app-logo-stack-item,
+  .app-logo-stack:focus-within .app-logo-stack-item {
+    margin-left: 6px;
+  }
+}
+
 .hero-actions {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+}
+
+.hero-social {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.hero-social-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+  letter-spacing: 0.02em;
+}
+
+.hero-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-social .social-btn {
+  text-decoration: none;
+}
+
+.social-btn.tiktok,
+.social-btn.x-com {
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.social-btn.youtube {
+  background: #ff0000;
 }
 
 /* Butoane Mari */
@@ -1994,11 +2175,17 @@ body {
   background-color: var(--bg-color);
 }
 
+.hobby-detail-page.hobby-detail-scroll {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
 .book-container {
   width: 90%;
   height: 90%;
   max-width: 1000px;
-}
   max-height: 700px;
 }
 
@@ -2152,4 +2339,178 @@ body {
 .back-link-book:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* --- TECH STACK PAGE --- */
+.tech-stack-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 0 64px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.tech-stack-back {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  text-decoration: none;
+  margin-bottom: 28px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.tech-stack-back:hover {
+  color: var(--accent-color);
+}
+
+.tech-stack-hero {
+  margin-bottom: 40px;
+}
+
+.tech-stack-avatar-wrap {
+  margin-bottom: 16px;
+}
+
+.tech-stack-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.tech-stack-h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.tech-stack-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+.tech-stack-section {
+  margin-bottom: 40px;
+}
+
+.tech-stack-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 22px 0;
+  letter-spacing: -0.02em;
+}
+
+.tech-stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-stack-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tech-stack-row:first-child {
+  padding-top: 4px;
+}
+
+.tech-stack-row:last-child {
+  border-bottom: none;
+}
+
+.tech-stack-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+
+.tech-stack-icon-fallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid var(--border-color);
+}
+
+.tech-stack-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tech-stack-name {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.tech-stack-name:hover {
+  text-decoration: underline;
+}
+
+[data-theme='dark'] .tech-stack-name {
+  color: #60a5fa;
+}
+
+.tech-stack-desc {
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--secondary-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.tech-stack-desc:last-child {
+  margin-bottom: 0;
+}
+
+.tech-stack-arrow {
+  flex-shrink: 0;
+  color: var(--secondary-text);
+  opacity: 0.65;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-top: 1px;
+}
+
+@media (max-width: 480px) {
+  .tech-stack-row {
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .tech-stack-icon,
+  .tech-stack-icon-fallback {
+    width: 36px;
+    height: 36px;
+  }
 }

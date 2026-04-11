@@ -11,7 +11,8 @@ import Projects from './pages/Projects';
 import Education from './pages/Education';
 import Contact from './pages/Contact';
 import HobbyDetail from './pages/HobbyDetail';
-import Hobbies from './pages/Hobbies'; // <--- IMPORT NOU
+import Hobbies from './pages/Hobbies';
+import TechStack from './pages/TechStack';
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
   const location = useLocation();
@@ -55,6 +56,7 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
           <Link to="/" className={`nav-link ${isActive('/')}`}>{t.home}</Link>
           <Link to="/experience" className={`nav-link ${isActive('/experience')}`}>{t.exp}</Link>
           <Link to="/projects" className={`nav-link ${isActive('/projects')}`}>{t.proj}</Link>
+          <Link to="/tech-stack" className={`nav-link ${isActive('/tech-stack')}`}>{t.stack}</Link>
           <Link to="/education" className={`nav-link ${isActive('/education')}`}>{t.edu}</Link>
           <Link to="/hobbies" className={`nav-link ${isActive('/hobbies')}`}>{t.hobbies}</Link>
           <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>{t.contact}</Link>
@@ -86,6 +88,7 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
         <Link to="/" className={`mobile-link ${isActive('/')}`}>{t.home}</Link>
         <Link to="/experience" className={`mobile-link ${isActive('/experience')}`}>{t.exp}</Link>
         <Link to="/projects" className={`mobile-link ${isActive('/projects')}`}>{t.proj}</Link>
+        <Link to="/tech-stack" className={`mobile-link ${isActive('/tech-stack')}`}>{t.stack}</Link>
         <Link to="/education" className={`mobile-link ${isActive('/education')}`}>{t.edu}</Link>
         <Link to="/hobbies" className={`mobile-link ${isActive('/hobbies')}`}>{t.hobbies}</Link>
         <Link to="/contact" className={`mobile-link ${isActive('/contact')}`}>{t.contact}</Link>
@@ -119,6 +122,7 @@ function App() {
               <Route path="/" element={<Home lang={lang} />} />
               <Route path="/experience" element={<Experience lang={lang} />} />
               <Route path="/projects" element={<Projects lang={lang} />} />
+              <Route path="/tech-stack" element={<TechStack lang={lang} />} />
               <Route path="/education" element={<Education lang={lang} />} />
               <Route path="/hobbies" element={<Hobbies lang={lang} />} />
               <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />

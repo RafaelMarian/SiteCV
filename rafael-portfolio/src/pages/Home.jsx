@@ -1,11 +1,29 @@
 // src/pages/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, Download, Cpu, Globe, 
-  Zap, Briefcase, BookOpen, Layers 
+import {
+  ArrowRight, Download, Cpu, Globe,
+  Zap, Briefcase, BookOpen, Layers, Youtube, Linkedin, Github, X as XLogo, Facebook, Instagram,
 } from 'lucide-react';
-import { personalInfo } from '../data';
+import { personalInfo, labels } from '../data';
+import AppLogoStack from '../components/AppLogoStack';
+
+function TikTokIcon({ size = 22 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
+
+/** Product Hunt mark (geometric “PH”, same path as Simple Icons). */
+function ProductHuntIcon({ size = 22 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M13.6048 10.5894h3.6518l1.7049 4.9053h-3.6518l-1.7049-4.9053zm-6.4405 0h3.6518l1.7049 4.9053H8.8692l-1.7049-4.9053zm11.361-4.9053H13.3l-1.4372 4.15h5.4848l1.4372-4.15zm-7.6556 0H5.6444L4.2072 9.834h5.4848l1.4372-4.15z" />
+    </svg>
+  );
+}
 
 const Home = ({ lang }) => {
 
@@ -17,6 +35,7 @@ const Home = ({ lang }) => {
       viewProjects: "View Projects",
       contactMe: "Contact Me",
       downloadCv: "Download CV",
+      followMe: "Follow me",
       sections: {
         exp: { title: "Work Experience", desc: "My professional journey in the Automotive Industry and beyond." },
         proj: { title: "Projects Showcase", desc: "A collection of my work: Embedded, FPGA, and Web Apps." },
@@ -34,6 +53,7 @@ const Home = ({ lang }) => {
       viewProjects: "Vezi Proiecte",
       contactMe: "Contact",
       downloadCv: "Descarcă CV",
+      followMe: "Urmărește-mă",
       sections: {
         exp: { title: "Experiență", desc: "Parcursul meu profesional în industria Auto și nu numai." },
         proj: { title: "Portofoliu Proiecte", desc: "O colecție a lucrărilor mele: Embedded, FPGA și Aplicații Web." },
@@ -68,9 +88,87 @@ const Home = ({ lang }) => {
               {txt.contactMe}
             </Link>
             {/* Buton Download CV - Poti pune link-ul catre PDF-ul tau in href */}
-            <a href="/cv-rafael.pdf" target="_blank" className="btn-outline-lg">
+            <a href="/cv-rafael.pdf" target="_blank" rel="noreferrer" className="btn-outline-lg">
               <Download size={20} /> CV
             </a>
+          </div>
+
+          <div className="hero-social" role="navigation" aria-label={txt.followMe}>
+            <span className="hero-social-label">{txt.followMe}</span>
+            <div className="hero-social-links">
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn github"
+                aria-label="GitHub"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href={personalInfo.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn x-com"
+                aria-label="X"
+              >
+                <XLogo size={22} strokeWidth={2.25} />
+              </a>
+              <a
+                href={personalInfo.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn tiktok"
+                aria-label="TikTok"
+              >
+                <TikTokIcon size={22} />
+              </a>
+              <a
+                href={personalInfo.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn youtube"
+                aria-label="YouTube"
+              >
+                <Youtube size={24} />
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn linkedin"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href={personalInfo.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn facebook"
+                aria-label="Facebook"
+              >
+                <Facebook size={24} />
+              </a>
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn instagram"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
+              </a>
+              <a
+                href={personalInfo.producthunt}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn producthunt"
+                aria-label="Product Hunt"
+              >
+                <ProductHuntIcon size={20} />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -91,6 +189,8 @@ const Home = ({ lang }) => {
           </div>
         </div>
       </section>
+
+      <AppLogoStack lang={lang} labels={labels} />
 
       {/* --- 2. SKILLS OVERVIEW (3 Cards) --- */}
       <section className="skills-overview">

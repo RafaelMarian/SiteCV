@@ -104,8 +104,7 @@ const Contact = ({ lang }) => {
             <a href={personalInfo.github} target="_blank" rel="noreferrer" className="social-btn github">
               <Github size={24} />
             </a>
-            {/* Daca nu ai LinkedIn, poti sterge linia de mai jos sau o lasi ca placeholder */}
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-btn linkedin">
+            <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="social-btn linkedin">
               <Linkedin size={24} />
             </a>
           </div>

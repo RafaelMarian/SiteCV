@@ -1,6 +1,6 @@
 export const labels = {
   en: {
-    nav: { home: "Home", exp: "Experience", proj: "Projects", edu: "Education", hobbies: "Hobbies", contact: "Contact" },
+    nav: { home: "Home", exp: "Experience", proj: "Projects", stack: "Tech stack", edu: "Education", hobbies: "Hobbies", contact: "Contact" },
     titles: { 
       skills: "Technical Skills", 
       exp: "Work Experience", 
@@ -8,15 +8,21 @@ export const labels = {
       edu: "Education", 
       hobbies: "My Passions & Hobbies",
       contact: "Get in Touch",
-      certifications: "Certifications"
+      certifications: "Certifications",
+      stack: "Tech stack"
     },
     buttons: { viewGithub: "View on GitHub", grade: "Grade", readMore: "Read Summary", readLess: "Hide Summary", sendMessage: "Send Message", funFact: "See Fun Fact", viewCurriculum: "View Curriculum & Courses", hideCurriculum: "Hide Curriculum" },
     filters: { all: "General (All)", embSw: "Embedded Software", web: "Web Sites & Apps", hw: "Embedded Hardware", soft: "General Software" },
     certFilters: { all: "All", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Cybersecurity", prof_skills: "Professional Skills" },
-    contact: { name: "Your Name", email: "Your Email", subject: "Subject", message: "Message", copy: "Copied!", hello: "Say Hello!" }
+    contact: { name: "Your Name", email: "Your Email", subject: "Subject", message: "Message", copy: "Copied!", hello: "Say Hello!" },
+    appStack: {
+      title: "Mobile apps (Android & iOS)",
+      subtitle: "Hover the stack to spread the icons — click a logo to open the live landing page.",
+      soon: "In development — no public link yet"
+    }
   },
   ro: {
-    nav: { home: "Acasă", exp: "Experiență", proj: "Proiecte", edu: "Studii", hobbies: "Hobby", contact: "Contact" },
+    nav: { home: "Acasă", exp: "Experiență", proj: "Proiecte", stack: "Stack tehnologic", edu: "Studii", hobbies: "Hobby", contact: "Contact" },
     titles: { 
       skills: "Abilități Tehnice", 
       exp: "Experiență Profesională", 
@@ -24,14 +30,32 @@ export const labels = {
       edu: "Educație", 
       hobbies: "Pasiuni & Timp Liber",
       contact: "Intră în legătură",
-      certifications: "Certificări"
+      certifications: "Certificări",
+      stack: "Stack tehnologic"
     },
     buttons: { viewGithub: "Vezi pe GitHub", grade: "Notă", readMore: "Vezi Descrierea", readLess: "Ascunde Descrierea", sendMessage: "Trimite Mesaj", funFact: "Curiozitate", viewCurriculum: "Vezi Curriculum & Cursuri", hideCurriculum: "Ascunde Curriculum" },
     filters: { all: "General (Toate)", embSw: "Embedded Software", web: "Site-uri Web & App", hw: "Embedded Hardware", soft: "Software Simplu" },
     certFilters: { all: "Toate", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Securitate Cibernetică", prof_skills: "Abilități Profesionale" },
-    contact: { name: "Numele Tău", email: "Email-ul Tău", subject: "Subiect", message: "Mesajul Tău", copy: "Copiat!", hello: "Salut!" }
+    contact: { name: "Numele Tău", email: "Email-ul Tău", subject: "Subiect", message: "Mesajul Tău", copy: "Copiat!", hello: "Salut!" },
+    appStack: {
+      title: "Aplicații mobile (Android & iOS)",
+      subtitle: "Treci cu mouse-ul peste stivă pentru a le despărți — apasă pe un logo pentru pagina live.",
+      soon: "În dezvoltare — fără link public încă"
+    }
   }
 };
+
+/** Mobile apps: logos in /public/LogoAplicatii — url null = în dezvoltare */
+export const mobileApps = [
+  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: 'https://bibledailyprayer.netlify.app/en' },
+  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: 'https://focusnet.netlify.app/' },
+  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: 'https://offlineaccountant.netlify.app/' },
+  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: 'https://budgetappmoneytrack.netlify.app/' },
+  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: 'https://nrstrength.netlify.app/' },
+  { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: null },
+  { id: 'plant', name: 'Plant care', logo: '/LogoAplicatii/LogoPlant.png', url: null },
+  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: null }
+];
 
 export const personalInfo = {
   name: "Vanca Rafael Marian",
@@ -41,7 +65,13 @@ export const personalInfo = {
   phone: "+40 742 734 989",
   location: "Cluj-Napoca, Romania", 
   github: "https://github.com/RafaelMarian",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/rafael-vanca-958399209/",
+  tiktok: "https://www.tiktok.com/@vantech22",
+  youtube: "https://www.youtube.com/@rafaelmarianvanca",
+  x: "https://x.com/VancaMarian",
+  facebook: "https://www.facebook.com/vancarafael.vancarafael/",
+  instagram: "https://www.instagram.com/rafael.vanca/",
+  producthunt: "https://www.producthunt.com/@rafael_marian_vanca",
   about: {
     en: "Embedded Software Engineer in the Advance Innovation Team, working to develop products that will innovate the Automotive Industry. Passionate about new technologies, from FPGA and Control Logic to Machine Learning integration in embedded systems.",
     ro: "Inginer Software Embedded în echipa de Inovație Avansată, lucrând la dezvoltarea produselor care vor inova industria auto. Pasionat de noile tehnologii, de la FPGA și logică de control până la integrarea Machine Learning în sisteme embedded."
@@ -578,7 +608,7 @@ export const hobbies = [
     title: { en: "Fitness & Bodybuilding", ro: "Fitness & Culturism" },
     icon: "Dumbbell",
     color: "#ef4444",
-    layout: "sports-book",
+    layout: "fitness-coach",
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
     summary: {
       en: "A lifelong passion for physical and mental discipline through strength training.",
@@ -618,7 +648,7 @@ export const hobbies = [
     title: { en: "Hiking & Nature", ro: "Drumeții & Natură" },
     icon: "Mountain",
     color: "#22c55e",
-    layout: "book",
+    layout: "hiking-nature",
     image: "/images/hiking/cover.jpg",
     summary: {
       en: "Exploring the Carpathian Mountains to recharge and reconnect with nature.",
@@ -644,7 +674,6 @@ export const hobbies = [
       "/images/hiking/image-7.jpg",
       "/images/hiking/image-8.jpg",
       "/images/hiking/image-9.jpg",
-      "/images/hiking/image-10.jpg",
       "/images/hiking/image-11.jpg"
     ]
   },
