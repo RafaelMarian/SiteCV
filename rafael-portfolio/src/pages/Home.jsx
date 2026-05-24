@@ -7,6 +7,8 @@ import {
 } from 'lucide-react';
 import { personalInfo, labels } from '../data';
 import AppLogoStack from '../components/AppLogoStack';
+import ProfilePhoto from '../components/ProfilePhoto';
+import AndroidIcon from '../components/AndroidIcon';
 
 function TikTokIcon({ size = 22 }) {
   return (
@@ -168,6 +170,15 @@ const Home = ({ lang }) => {
               >
                 <ProductHuntIcon size={20} />
               </a>
+              <a
+                href={personalInfo.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn playstore"
+                aria-label="Google Play"
+              >
+                <AndroidIcon size={24} />
+              </a>
             </div>
           </div>
         </div>
@@ -177,16 +188,14 @@ const Home = ({ lang }) => {
           <div className="image-offset-bg"></div>
           
           {/* Rama principala cu imaginea */}
-          <div className="profile-frame">
-            <img 
-              // Asigura-te ca ai poza ta redenumita 'profile.jpg' in folderul public/images/
-              src="/images/profile.jpg" 
-              // Placeholder in caz ca nu ai pus poza inca
-              onError={(e) => {e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80";}} 
-              alt="Vanca Rafael Marian" 
-              className="profile-img" 
-            />
-          </div>
+          <ProfilePhoto
+            src="/images/profile.jpg?v=20260524"
+            alt="Vanca Rafael Marian"
+            onError={(e) => {
+              e.target.src =
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';
+            }}
+          />
         </div>
       </section>
 

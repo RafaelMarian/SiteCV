@@ -12,13 +12,14 @@ export const labels = {
       stack: "Tech stack"
     },
     buttons: { viewGithub: "View on GitHub", grade: "Grade", readMore: "Read Summary", readLess: "Hide Summary", sendMessage: "Send Message", funFact: "See Fun Fact", viewCurriculum: "View Curriculum & Courses", hideCurriculum: "Hide Curriculum" },
-    filters: { all: "General (All)", embSw: "Embedded Software", web: "Web Sites & Apps", hw: "Embedded Hardware", soft: "General Software" },
+    filters: { all: "General (All)", embSw: "Embedded Software", web: "Web Sites & Apps", mobile: "Mobile Apps", hw: "Embedded Hardware", soft: "General Software" },
     certFilters: { all: "All", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Cybersecurity", prof_skills: "Professional Skills" },
     contact: { name: "Your Name", email: "Your Email", subject: "Subject", message: "Message", copy: "Copied!", hello: "Say Hello!" },
     appStack: {
       title: "Mobile apps (Android & iOS)",
       subtitle: "Hover the stack to spread the icons — click a logo to open the live landing page.",
-      soon: "In development — no public link yet"
+      soon: "In development — no public link yet",
+      playStore: "View on Google Play"
     }
   },
   ro: {
@@ -34,27 +35,44 @@ export const labels = {
       stack: "Stack tehnologic"
     },
     buttons: { viewGithub: "Vezi pe GitHub", grade: "Notă", readMore: "Vezi Descrierea", readLess: "Ascunde Descrierea", sendMessage: "Trimite Mesaj", funFact: "Curiozitate", viewCurriculum: "Vezi Curriculum & Cursuri", hideCurriculum: "Ascunde Curriculum" },
-    filters: { all: "General (Toate)", embSw: "Embedded Software", web: "Site-uri Web & App", hw: "Embedded Hardware", soft: "Software Simplu" },
+    filters: { all: "General (Toate)", embSw: "Embedded Software", web: "Site-uri Web & App", mobile: "Aplicații Mobile", hw: "Embedded Hardware", soft: "Software Simplu" },
     certFilters: { all: "Toate", embed_hw: "Embedded & HW", soft_dev: "Software & DevOps", ai_ml: "AI/ML", cybersec: "Securitate Cibernetică", prof_skills: "Abilități Profesionale" },
     contact: { name: "Numele Tău", email: "Email-ul Tău", subject: "Subiect", message: "Mesajul Tău", copy: "Copiat!", hello: "Salut!" },
     appStack: {
       title: "Aplicații mobile (Android & iOS)",
       subtitle: "Treci cu mouse-ul peste stivă pentru a le despărți — apasă pe un logo pentru pagina live.",
-      soon: "În dezvoltare — fără link public încă"
+      soon: "În dezvoltare — fără link public încă",
+      playStore: "Vezi pe Google Play"
     }
   }
 };
 
-/** Mobile apps: logos in /public/LogoAplicatii — url null = în dezvoltare */
+/** Google Play — aplicații publicate */
+export const playStoreLinks = {
+  bible: 'https://play.google.com/store/apps/details?id=com.bibleprayer.bible_prayer',
+  focusnet: 'https://play.google.com/store/apps/details?id=com.rafaelmarian.focusnet',
+  budget: 'https://play.google.com/store/apps/details?id=com.aplicatiiidentifier.budgetapp',
+  accounting: 'https://play.google.com/store/apps/details?id=com.accountingapp.accounting_app',
+  fitness: 'https://play.google.com/store/apps/details?id=com.nrstrength.app',
+};
+
+/** Mobile apps: logos in /public/LogoAplicatii — url = site, playStore = Google Play */
 export const mobileApps = [
-  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: 'https://bibledailyprayer.netlify.app/en' },
-  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: 'https://focusnet.netlify.app/' },
-  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: 'https://offlineaccountant.netlify.app/' },
-  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: 'https://budgetappmoneytrack.netlify.app/' },
-  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: 'https://nrstrength.netlify.app/' },
+  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: 'https://bibledailyprayer.netlify.app/en', playStore: playStoreLinks.bible },
+  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: 'https://focusnet.netlify.app/', playStore: playStoreLinks.focusnet },
+  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: 'https://offlineaccountant.netlify.app/', playStore: playStoreLinks.accounting },
+  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: 'https://budgetappmoneytrack.netlify.app/', playStore: playStoreLinks.budget },
+  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: 'https://nrstrength.netlify.app/', playStore: playStoreLinks.fitness },
   { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: null },
   { id: 'plant', name: 'Plant care', logo: '/LogoAplicatii/LogoPlant.png', url: null },
-  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: null }
+  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: 'https://timemeansmoney.netlify.app/' },
+  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: null },
+  { id: 'soundmeter', name: 'Sound Measure', logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png', url: null },
+  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: null },
+  { id: 'metaldetector', name: 'Metal Detector', logo: '/LogoAplicatii/LogoMetalDetector.png', url: null },
+  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: null },
+  { id: 'batterycharge', name: 'Battery Charging Speed', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.png', url: null },
+  { id: 'barometer', name: 'Barometer', logo: '/LogoAplicatii/LogoBarometer.png', url: null }
 ];
 
 export const personalInfo = {
@@ -72,6 +90,7 @@ export const personalInfo = {
   facebook: "https://www.facebook.com/vancarafael.vancarafael/",
   instagram: "https://www.instagram.com/rafael.vanca/",
   producthunt: "https://www.producthunt.com/@rafael_marian_vanca",
+  playStore: "https://play.google.com/store/apps/developer?id=NRStrength",
   about: {
     en: "Embedded Software Engineer in the Advance Innovation Team, working to develop products that will innovate the Automotive Industry. Passionate about new technologies, from FPGA and Control Logic to Machine Learning integration in embedded systems.",
     ro: "Inginer Software Embedded în echipa de Inovație Avansată, lucrând la dezvoltarea produselor care vor inova industria auto. Pasionat de noile tehnologii, de la FPGA și logică de control până la integrarea Machine Learning în sisteme embedded."
@@ -87,9 +106,33 @@ export const skills = [
 
 export const experience = [
   {
+    company: "Hanna Instruments",
+    role: "Embedded Software Engineer",
+    period: "02.2026 - Present",
+    techStack: ["C", "C++", "PIC", "Renesas", "I2C", "SPI", "UART", "Firmware", "Test Stands"],
+    summary: {
+      en: "Firmware and system engineering for precision analytical instrumentation on PIC and Renesas microcontrollers.",
+      ro: "Dezvoltare firmware și inginerie de sistem pentru instrumentație analitică de precizie pe microcontrolere PIC și Renesas."
+    },
+    details: {
+      en: [
+        "Engineered and maintained robust firmware in C/C++ for PIC and Renesas microcontrollers, ensuring high reliability for precision analytical instrumentation.",
+        "Interfaced directly with hardware registers and peripherals (I2C, SPI, UART) to optimize memory management, power consumption, and processing speed.",
+        "Acted as the primary technical escalation point for a 40-person production unit, resolving critical hardware and software issues across 12 distinct product lines.",
+        "Engineered integrated hardware-software test stands enabling manufacturing staff to mount PCBs, flash microcontroller firmware, and run functional diagnostics."
+      ],
+      ro: [
+        "Proiectare și mentenanță firmware robust în C/C++ pentru microcontrolere PIC și Renesas, asigurând fiabilitate ridicată pentru instrumentație analitică de precizie.",
+        "Interfațare directă cu registre hardware și periferice (I2C, SPI, UART) pentru optimizarea memoriei, consumului de energie și vitezei de procesare.",
+        "Punct principal de escaladare tehnică pentru o unitate de producție de 40 de persoane, rezolvând probleme critice hardware și software pe 12 linii de produse distincte.",
+        "Proiectare standuri integrate hardware-software care permit personalului de producție montarea PCB-urilor, flash-ul firmware-ului și rularea diagnosticelor funcționale."
+      ]
+    }
+  },
+  {
     company: "Schaeffler",
     role: "Embedded Software Engineer - Advance Innovation",
-    period: "03.2024 - Present",
+    period: "03.2024 - 02.2026",
     techStack: ["Matlab", "Simulink", "Reinforcement Learning", "AWS", "Jenkins", "SpeedGoat", "MicroAutoBox"],
     summary: {
       en: "Developing innovative automotive products using advanced control logic and AI.",
@@ -307,12 +350,13 @@ export const projects = [
   // --- FLUTTER APP ---
   {
     id: "flutter-fitness",
-    categoryFilter: ["web", "software"],
-    title: "NRStrength - Fitness Tracker",
-    category: "Mobile & Web App",
-    tech: "Flutter, Dart, Netlify",
+    categoryFilter: ["mobile", "software"],
+    title: "NRStrength — Fitness Tracker",
+    category: "Mobile App",
+    tech: "Flutter, Dart, Android",
     image: "/images/flutter/cover.png", 
     gallery: ["/images/flutter/img1.png", "/images/flutter/img2.png", "/images/flutter/img3.png", "/images/flutter/img4.png", "/images/flutter/img5.png", "/images/flutter/img6.png"],
+    playStore: playStoreLinks.fitness,
     link: "https://nrstrength.netlify.app/",
     github: "https://github.com/RafaelMarian",
     desc: {
@@ -532,8 +576,8 @@ export const projects = [
   // --- NRSTRENGTH WEBSITE ---
   {
     id: "nrstrength-website",
-    categoryFilter: ["web", "software"],
-    title: "NRStrength Website",
+    categoryFilter: "web",
+    title: "NRStrength — Website",
     category: "Web Development",
     tech: "React, CSS3",
     image: "/images/nrstrength-web/cover.png",
@@ -599,6 +643,482 @@ export const projects = [
     details: {
       en: ["React Components", "Responsive Design", "UI/UX Improvement"],
       ro: ["Componente React", "Design Responsiv", "Îmbunătățire UI/UX"]
+    }
+  },
+
+  // --- APP LANDING PAGES (websites) ---
+  {
+    id: "bible-daily-prayer-web",
+    categoryFilter: "web",
+    title: "Bible: Daily Prayer — Website",
+    category: "Web Development",
+    tech: "React, Netlify",
+    image: "/images/BibleDailyPrayerSite/cover.png",
+    gallery: [
+      "/images/BibleDailyPrayerSite/img1.png",
+      "/images/BibleDailyPrayerSite/img2.png",
+      "/images/BibleDailyPrayerSite/img3.png",
+      "/images/BibleDailyPrayerSite/img4.png",
+      "/images/BibleDailyPrayerSite/img5.png",
+      "/images/BibleDailyPrayerSite/img6.png"
+    ],
+    link: "https://bibledailyprayer.netlify.app/en",
+    desc: {
+      en: "Landing page for a Scripture and Orthodox devotion app with daily prayer content.",
+      ro: "Landing page pentru o aplicație de Scriptură și devoțiune ortodoxă, cu conținut zilnic de rugăciune."
+    },
+    extendedSummary: {
+      en: "A responsive presentation site for Bible: Daily Prayer. It introduces the app, highlights core features, and guides visitors to the live experience on web and mobile.",
+      ro: "Un site de prezentare responsiv pentru Bible: Daily Prayer. Prezintă aplicația, evidențiază funcționalitățile principale și direcționează vizitatorii către experiența live pe web și mobil."
+    },
+    details: {
+      en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Multilingual support (EN)."],
+      ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Suport multilingv (EN)."]
+    }
+  },
+  {
+    id: "time-means-money-web",
+    categoryFilter: "web",
+    title: "Time Means Money — Website",
+    category: "Web Development",
+    tech: "React, Netlify",
+    image: "/images/TimeMeansMoneySite/cover.png",
+    gallery: [
+      "/images/TimeMeansMoneySite/img1.png",
+      "/images/TimeMeansMoneySite/img2.png",
+      "/images/TimeMeansMoneySite/img3.png",
+      "/images/TimeMeansMoneySite/img4.png",
+      "/images/TimeMeansMoneySite/img5.png",
+      "/images/TimeMeansMoneySite/img6.png"
+    ],
+    link: "https://timemeansmoney.netlify.app/",
+    desc: {
+      en: "Landing page for a productivity app that connects time tracking with financial awareness.",
+      ro: "Landing page pentru o aplicație de productivitate care leagă urmărirea timpului de conștientizarea financiară."
+    },
+    extendedSummary: {
+      en: "A clean, conversion-focused website for the Time Means Money app. It presents the product value proposition and links users to the live web experience.",
+      ro: "Un site curat, orientat spre conversie, pentru aplicația Time Means Money. Prezintă propunerea de valoare și direcționează utilizatorii către experiența web live."
+    },
+    details: {
+      en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Product-focused UI/UX."],
+      ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "UI/UX orientat pe produs."]
+    }
+  },
+  {
+    id: "budget-app-web",
+    categoryFilter: "web",
+    title: "Budget Planner — MoneyTrack — Website",
+    category: "Web Development",
+    tech: "React, Netlify",
+    image: "/images/BudgetPlannerSite/cover.png",
+    gallery: [
+      "/images/BudgetPlannerSite/img1.png",
+      "/images/BudgetPlannerSite/img2.png",
+      "/images/BudgetPlannerSite/img3.png",
+      "/images/BudgetPlannerSite/img4.png",
+      "/images/BudgetPlannerSite/img5.png",
+      "/images/BudgetPlannerSite/img6.png"
+    ],
+    link: "https://budgetappmoneytrack.netlify.app/",
+    desc: {
+      en: "Landing page for a personal budget and expense tracking application.",
+      ro: "Landing page pentru o aplicație de buget personal și urmărire a cheltuielilor."
+    },
+    extendedSummary: {
+      en: "A promotional website for the Budget Planner app. It showcases budgeting features, expense tracking, and download paths for users who want to manage their finances.",
+      ro: "Un site promoțional pentru aplicația Budget Planner. Prezintă funcții de bugetare, urmărirea cheltuielilor și căile de acces pentru utilizatorii care își gestionează finanțele."
+    },
+    details: {
+      en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Finance-focused presentation."],
+      ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Prezentare axată pe finanțe personale."]
+    }
+  },
+  {
+    id: "offlinebooks-web",
+    categoryFilter: "web",
+    title: "OfflineBooks — Website",
+    category: "Web Development",
+    tech: "React, Netlify",
+    image: "/images/OfflineBooksSite/cover.png",
+    gallery: [
+      "/images/OfflineBooksSite/img1.png",
+      "/images/OfflineBooksSite/img2.png",
+      "/images/OfflineBooksSite/img3.png",
+      "/images/OfflineBooksSite/img4.png",
+      "/images/OfflineBooksSite/img5.png",
+      "/images/OfflineBooksSite/img6.png"
+    ],
+    link: "https://offlineaccountant.netlify.app/",
+    desc: {
+      en: "Landing page for an offline accounting and invoicing app for small businesses.",
+      ro: "Landing page pentru o aplicație de contabilitate și facturare offline, pentru mici afaceri."
+    },
+    extendedSummary: {
+      en: "A presentation website for OfflineBooks — simple accounting and invoicing that works without an internet connection. Highlights offline-first workflows and core business features.",
+      ro: "Un site de prezentare pentru OfflineBooks — contabilitate și facturare simplă, funcțională fără conexiune la internet. Evidențiază fluxurile offline-first și funcționalitățile esențiale pentru afaceri."
+    },
+    details: {
+      en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Offline-first product messaging."],
+      ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Mesajare produs offline-first."]
+    }
+  },
+  {
+    id: "focus-net-web",
+    categoryFilter: "web",
+    title: "Focus Net — Website",
+    category: "Web Development",
+    tech: "React, Netlify",
+    image: "/images/FocusNetSite/cover.png",
+    gallery: [
+      "/images/FocusNetSite/img1.png",
+      "/images/FocusNetSite/img2.png",
+      "/images/FocusNetSite/img3.png",
+      "/images/FocusNetSite/img4.png",
+      "/images/FocusNetSite/img5.png",
+      "/images/FocusNetSite/img6.png"
+    ],
+    link: "https://focusnet.netlify.app/",
+    desc: {
+      en: "Landing page for a productivity and deep-focus timer application.",
+      ro: "Landing page pentru o aplicație de productivitate și timer pentru focus profund."
+    },
+    extendedSummary: {
+      en: "A modern landing page for Focus Net — a productivity tool built around timed focus sessions. The site presents features, benefits, and links to the live app experience.",
+      ro: "Un landing page modern pentru Focus Net — un instrument de productivitate construit în jurul sesiunilor de focus cronometrate. Site-ul prezintă funcții, beneficii și link către experiența live."
+    },
+    details: {
+      en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Productivity-focused UI/UX."],
+      ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "UI/UX orientat pe productivitate."]
+    }
+  },
+
+  // --- MOBILE APPS (Android) ---
+  {
+    id: "bible-daily-prayer-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Bible: Daily Prayer",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoBibble.png",
+    gallery: ["/LogoAplicatii/LogoBibble.png"],
+    playStore: playStoreLinks.bible,
+    link: "https://bibledailyprayer.netlify.app/en",
+    desc: {
+      en: "Android app for daily Scripture reading, prayer, and Orthodox devotion.",
+      ro: "Aplicație Android pentru lectură zilnică din Scriptură, rugăciune și devoțiune ortodoxă."
+    },
+    extendedSummary: {
+      en: "Bible: Daily Prayer delivers structured spiritual content on mobile — daily verses, prayer guides, and a calm reading experience designed for consistent use.",
+      ro: "Bible: Daily Prayer oferă conținut spiritual structurat pe mobil — versete zilnice, ghiduri de rugăciune și o experiență de lectură calmă, concepută pentru utilizare constantă."
+    },
+    details: {
+      en: ["Daily Scripture & prayer content.", "Orthodox devotion focus.", "Offline-friendly reading.", "Published on Google Play."],
+      ro: ["Conținut zilnic Scriptură și rugăciune.", "Focus devoțiune ortodoxă.", "Lectură funcțională offline.", "Publicat pe Google Play."]
+    }
+  },
+  {
+    id: "focus-net-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Focus Net",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoFocusNet.png",
+    gallery: ["/LogoAplicatii/LogoFocusNet.png"],
+    playStore: playStoreLinks.focusnet,
+    link: "https://focusnet.netlify.app/",
+    desc: {
+      en: "Productivity app with focus timers and deep-work sessions.",
+      ro: "Aplicație de productivitate cu timer-e de focus și sesiuni de lucru profund."
+    },
+    extendedSummary: {
+      en: "Focus Net helps users stay on task with customizable focus intervals, session tracking, and a distraction-free timer built for deep work.",
+      ro: "Focus Net ajută utilizatorii să rămână concentrați cu intervale de focus personalizabile, urmărirea sesiunilor și un timer fără distrageri, construit pentru lucru profund."
+    },
+    details: {
+      en: ["Pomodoro-style focus timers.", "Session history & stats.", "Minimal distraction-free UI.", "Published on Google Play."],
+      ro: ["Timer-e focus tip Pomodoro.", "Istoric și statistici sesiuni.", "UI minimal, fără distrageri.", "Publicat pe Google Play."]
+    }
+  },
+  {
+    id: "budget-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Budget Planner — MoneyTrack",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoBudget.png",
+    gallery: ["/LogoAplicatii/LogoBudget.png"],
+    playStore: playStoreLinks.budget,
+    link: "https://budgetappmoneytrack.netlify.app/",
+    desc: {
+      en: "Personal finance app for budgeting, expenses, and money tracking.",
+      ro: "Aplicație de finanțe personale pentru buget, cheltuieli și urmărirea banilor."
+    },
+    extendedSummary: {
+      en: "MoneyTrack lets users set budgets, log expenses, and visualize spending habits so they can manage personal finances with clarity.",
+      ro: "MoneyTrack permite setarea bugetelor, înregistrarea cheltuielilor și vizualizarea obiceiurilor de consum, pentru o gestionare clară a finanțelor personale."
+    },
+    details: {
+      en: ["Budget & expense tracking.", "Spending categories.", "Financial overview dashboards.", "Published on Google Play."],
+      ro: ["Urmărire buget și cheltuieli.", "Categorii de cheltuieli.", "Dashboard-uri financiare.", "Publicat pe Google Play."]
+    }
+  },
+  {
+    id: "offlinebooks-app",
+    categoryFilter: ["mobile", "software"],
+    title: "OfflineBooks",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/images/AccountingApp/img1.png",
+    gallery: [
+      "/images/AccountingApp/img1.png",
+      "/images/AccountingApp/img2.png",
+      "/images/AccountingApp/img3.png",
+      "/images/AccountingApp/img4.png",
+      "/images/AccountingApp/img5.png"
+    ],
+    playStore: playStoreLinks.accounting,
+    link: "https://offlineaccountant.netlify.app/",
+    desc: {
+      en: "Offline accounting and invoicing app for freelancers and small businesses.",
+      ro: "Aplicație de contabilitate și facturare offline pentru freelanceri și mici afaceri."
+    },
+    extendedSummary: {
+      en: "OfflineBooks keeps invoices, clients, and basic accounting on-device — no internet required. Built for simple, reliable business bookkeeping on Android.",
+      ro: "OfflineBooks păstrează facturi, clienți și contabilitate de bază pe dispozitiv — fără internet. Construită pentru evidență simplă și fiabilă pe Android."
+    },
+    details: {
+      en: ["Invoicing & client management.", "Offline-first architecture.", "Simple accounting workflows.", "Published on Google Play."],
+      ro: ["Facturare și gestiune clienți.", "Arhitectură offline-first.", "Fluxuri contabilitate simple.", "Publicat pe Google Play."]
+    }
+  },
+  {
+    id: "time-means-money-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Time Means Money",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoTimeMoney.png",
+    gallery: ["/LogoAplicatii/LogoTimeMoney.png"],
+    link: "https://timemeansmoney.netlify.app/",
+    desc: {
+      en: "Mobile app connecting time tracking with financial value and productivity insights.",
+      ro: "Aplicație mobilă care leagă urmărirea timpului de valoarea financiară și insight-uri de productivitate."
+    },
+    extendedSummary: {
+      en: "Time Means Money helps users understand how they spend their hours and what that time is worth — bridging productivity habits with financial awareness.",
+      ro: "Time Means Money ajută utilizatorii să înțeleagă cum își petrec orele și ce valoare are acel timp — legând obiceiurile de productivitate de conștientizarea financiară."
+    },
+    details: {
+      en: ["Time tracking sessions.", "Financial value mapping.", "Productivity insights.", "Flutter Android build."],
+      ro: ["Sesiuni de time tracking.", "Mapare valoare financiară.", "Insight-uri productivitate.", "Build Flutter Android."]
+    }
+  },
+  {
+    id: "photoboom-app",
+    categoryFilter: ["mobile", "software"],
+    title: "PhotoBoom",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoPhotoBoom.png",
+    gallery: ["/LogoAplicatii/LogoPhotoBoom.png"],
+    desc: {
+      en: "Mobile app for quick photo capture, editing, and sharing workflows.",
+      ro: "Aplicație mobilă pentru captură rapidă, editare și partajare foto."
+    },
+    extendedSummary: {
+      en: "PhotoBoom is an Android utility focused on a fast, simple photo workflow — from capture to light edits and export, designed for everyday use.",
+      ro: "PhotoBoom este o utilitate Android axată pe un flux foto rapid și simplu — de la captură la editări ușoare și export, concepută pentru utilizare zilnică."
+    },
+    details: {
+      en: ["Flutter cross-platform UI.", "Android release.", "Camera & gallery integration.", "Lightweight editing flow."],
+      ro: ["UI cross-platform Flutter.", "Release Android.", "Integrare cameră și galerie.", "Flux de editare ușor."]
+    }
+  },
+  {
+    id: "plant-care-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Plant Care",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoPlant.png",
+    gallery: ["/LogoAplicatii/LogoPlant.png"],
+    desc: {
+      en: "Plant care reminders and tracking for watering and maintenance schedules.",
+      ro: "Reminder-e și urmărire pentru îngrijirea plantelor — udare și mentenanță."
+    },
+    extendedSummary: {
+      en: "Helps users keep houseplants healthy with scheduled reminders, care notes, and a clear overview of each plant's needs.",
+      ro: "Ajută utilizatorii să își mențină plantele sănătoase prin reminder-e programate, note de îngrijire și o imagine clară a nevoilor fiecărei plante."
+    },
+    details: {
+      en: ["Care schedules & reminders.", "Per-plant profiles.", "Offline-friendly data.", "Simple, focused UX."],
+      ro: ["Programe și reminder-e de îngrijire.", "Profil per plantă.", "Date funcționale offline.", "UX simplu și focusat."]
+    }
+  },
+  {
+    id: "stockflow-app",
+    categoryFilter: ["mobile", "software"],
+    title: "StockFlow",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoStockFlow.png",
+    gallery: ["/LogoAplicatii/LogoStockFlow.png"],
+    desc: {
+      en: "Inventory and stock management app for small businesses and personal use.",
+      ro: "Aplicație de gestiune stocuri și inventar pentru mici afaceri și uz personal."
+    },
+    extendedSummary: {
+      en: "StockFlow streamlines tracking products, quantities, and movements so users always know what is in stock and what needs restocking.",
+      ro: "StockFlow simplifică urmărirea produselor, cantităților și mișcărilor, astfel încât utilizatorii știu mereu ce este în stoc și ce trebuie reaprovizionat."
+    },
+    details: {
+      en: ["Product & quantity tracking.", "Stock in/out flows.", "Clear dashboards.", "Offline-first design."],
+      ro: ["Urmărire produse și cantități.", "Fluxuri intrări/ieșiri stoc.", "Dashboard-uri clare.", "Design offline-first."]
+    }
+  },
+  {
+    id: "sound-measure-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Sound Measure",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/images/SoundMeasureApp/img1.png",
+    gallery: [
+      "/images/SoundMeasureApp/img1.png",
+      "/images/SoundMeasureApp/img2.png",
+      "/images/SoundMeasureApp/img3.png",
+      "/images/SoundMeasureApp/img4.png",
+      "/images/SoundMeasureApp/img5.png"
+    ],
+    desc: {
+      en: "Decibel meter app for measuring ambient sound levels in real time.",
+      ro: "Aplicație sonometru pentru măsurarea nivelului sonor ambiental în timp real."
+    },
+    extendedSummary: {
+      en: "Uses the device microphone to display live dB readings, helping users check noise levels at home, work, or on the go.",
+      ro: "Folosește microfonul dispozitivului pentru afișarea valorilor dB live, ajutând utilizatorii să verifice nivelul de zgomot acasă, la birou sau în deplasare."
+    },
+    details: {
+      en: ["Real-time dB monitoring.", "Microphone-based sensing.", "Readable gauges & history.", "Lightweight Android app."],
+      ro: ["Monitorizare dB în timp real.", "Senzor bazat pe microfon.", "Grafice și istoric lizibil.", "Aplicație Android ușoară."]
+    }
+  },
+  {
+    id: "plant-monitor-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Plant Care Monitor",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoPlantCareMonitorLight.png",
+    gallery: ["/LogoAplicatii/LogoPlantCareMonitorLight.png"],
+    desc: {
+      en: "Monitors light conditions for indoor plants using the device sensors.",
+      ro: "Monitorizează condițiile de lumină pentru plantele de interior folosind senzorii dispozitivului."
+    },
+    extendedSummary: {
+      en: "Helps users place plants in optimal light by tracking brightness levels and giving simple guidance for healthier growth.",
+      ro: "Ajută utilizatorii să poziționeze plantele în lumină optimă prin urmărirea nivelului de luminozitate și recomandări simple pentru o creștere mai sănătoasă."
+    },
+    details: {
+      en: ["Ambient light monitoring.", "Plant placement tips.", "Sensor-driven readings.", "Minimal, practical UI."],
+      ro: ["Monitorizare lumină ambientală.", "Sfaturi de poziționare.", "Citiri bazate pe senzori.", "UI minimal și practic."]
+    }
+  },
+  {
+    id: "metal-detector-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Metal Detector",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoMetalDetector.png",
+    gallery: ["/LogoAplicatii/LogoMetalDetector.png"],
+    desc: {
+      en: "Turns the phone into a simple metal detector using magnetometer readings.",
+      ro: "Transformă telefonul într-un detector de metale simplu folosind magnetometrul."
+    },
+    extendedSummary: {
+      en: "Detects magnetic field changes to help locate metal objects nearby — useful as a quick utility tool on Android devices.",
+      ro: "Detectează variațiile câmpului magnetic pentru a localiza obiecte metalice din apropiere — util ca instrument rapid pe dispozitive Android."
+    },
+    details: {
+      en: ["Magnetometer-based detection.", "Live signal visualization.", "Sensitivity feedback.", "Portable utility app."],
+      ro: ["Detecție bazată pe magnetometru.", "Vizualizare semnal live.", "Feedback de sensibilitate.", "Aplicație utilitară portabilă."]
+    }
+  },
+  {
+    id: "client-crm-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Client Base CRM",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/images/CRMAPP/img1.png",
+    gallery: [
+      "/images/CRMAPP/img1.png",
+      "/images/CRMAPP/img2.png",
+      "/images/CRMAPP/img3.png",
+      "/images/CRMAPP/img4.png",
+      "/images/CRMAPP/img5.png"
+    ],
+    desc: {
+      en: "Offline CRM for managing clients, notes, and follow-ups without an internet connection.",
+      ro: "CRM offline pentru gestionarea clienților, notelor și follow-up-urilor fără internet."
+    },
+    extendedSummary: {
+      en: "Client Base CRM keeps customer data on-device so freelancers and small teams can manage relationships reliably, even offline.",
+      ro: "Client Base CRM păstrează datele clienților pe dispozitiv, astfel încât freelancerii și echipele mici pot gestiona relațiile în mod fiabil, chiar și offline."
+    },
+    details: {
+      en: ["Client profiles & notes.", "Offline-first storage.", "Follow-up tracking.", "Simple CRM workflows."],
+      ro: ["Profiluri clienți și note.", "Stocare offline-first.", "Urmărire follow-up.", "Fluxuri CRM simple."]
+    }
+  },
+  {
+    id: "battery-charge-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Battery Charging Speed",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/LogoAplicatii/LogoBatteryChargingSpeed.png",
+    gallery: ["/LogoAplicatii/LogoBatteryChargingSpeed.png"],
+    desc: {
+      en: "Measures and displays battery charging speed and charging session details.",
+      ro: "Măsoară și afișează viteza de încărcare a bateriei și detaliile sesiunilor de încărcare."
+    },
+    extendedSummary: {
+      en: "Helps users understand how fast their device is charging, compare cables and adapters, and spot unusually slow charging sessions.",
+      ro: "Ajută utilizatorii să înțeleagă cât de repede se încarcă dispozitivul, să compare cabluri și adaptoare și să identifice sesiuni de încărcare neobișnuit de lente."
+    },
+    details: {
+      en: ["Charging rate monitoring.", "Session history.", "Hardware comparison use cases.", "Android system integration."],
+      ro: ["Monitorizare rată încărcare.", "Istoric sesiuni.", "Comparare cabluri/adaptoare.", "Integrare sistem Android."]
+    }
+  },
+  {
+    id: "barometer-app",
+    categoryFilter: ["mobile", "software"],
+    title: "Barometer",
+    category: "Mobile App",
+    tech: "Flutter, Android",
+    image: "/images/BarometerApp/img1.png",
+    gallery: [
+      "/images/BarometerApp/img1.png",
+      "/images/BarometerApp/img2.png",
+      "/images/BarometerApp/img3.png",
+      "/images/BarometerApp/img4.png",
+      "/images/BarometerApp/img5.png"
+    ],
+    desc: {
+      en: "Barometric pressure app for weather trends and altitude-related readings.",
+      ro: "Aplicație de presiune barometrică pentru tendințe meteo și citiri legate de altitudine."
+    },
+    extendedSummary: {
+      en: "Uses device pressure sensors to show atmospheric pressure changes — useful for weather awareness and outdoor activity planning.",
+      ro: "Folosește senzorii de presiune ai dispozitivului pentru a afișa variațiile de presiune atmosferică — util pentru conștientizare meteo și planificarea activităților outdoor."
+    },
+    details: {
+      en: ["Pressure sensor readings.", "Trend visualization.", "Weather awareness utility.", "Lightweight Android build."],
+      ro: ["Citiri senzor presiune.", "Vizualizare tendințe.", "Utilitar conștientizare meteo.", "Build Android ușor."]
     }
   }
 ];

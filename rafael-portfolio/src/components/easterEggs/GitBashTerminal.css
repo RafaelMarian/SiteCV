@@ -1,0 +1,275 @@
+.git-bash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.git-bash-window {
+  width: min(720px, 100%);
+  max-height: min(480px, 85vh);
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid #3a3a3a;
+  font-family: Consolas, 'Courier New', monospace;
+}
+
+.git-bash-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: linear-gradient(180deg, #4d4d4d 0%, #2d2d2d 100%);
+  color: #e8e8e8;
+  font-size: 12px;
+  user-select: none;
+}
+
+.git-bash-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.git-bash-close {
+  border: none;
+  background: transparent;
+  color: #e8e8e8;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  font-family: inherit;
+}
+
+.git-bash-close:hover {
+  color: #fff;
+}
+
+.git-bash-body {
+  background: #0c0c0c;
+  color: #cccccc;
+  padding: 10px 12px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.git-bash-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  margin-bottom: 2px;
+  word-break: break-word;
+}
+
+.git-bash-system {
+  color: #888;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.git-bash-output {
+  color: #c0c0c0;
+  padding-left: 0;
+  width: 100%;
+}
+
+.git-prompt-user {
+  color: #7ecb7e;
+  font-weight: 600;
+}
+
+.git-prompt-mingw {
+  color: #d6a6ff;
+}
+
+.git-prompt-path {
+  color: #e8e87a;
+}
+
+.git-prompt-dollar {
+  color: #cccccc;
+  margin: 0 6px 0 2px;
+}
+
+.git-bash-input-echo {
+  color: #f0f0f0;
+}
+
+.git-bash-form {
+  margin-top: 4px;
+}
+
+.git-bash-input {
+  flex: 1;
+  min-width: 120px;
+  border: none;
+  background: transparent;
+  color: #f0f0f0;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.firmware-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid var(--accent-color, #3b82f6);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 0.95rem;
+  animation: firmware-toast-in 2.8s ease forwards;
+}
+
+.firmware-toast-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: firmware-blink 0.6s ease 3;
+}
+
+@keyframes firmware-toast-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  12% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+@keyframes firmware-blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.logo-icon--boot {
+  animation: logo-firmware-boot 0.55s ease;
+}
+
+@keyframes logo-firmware-boot {
+  0%,
+  100% {
+    filter: none;
+  }
+  50% {
+    filter: drop-shadow(0 0 6px var(--accent-color, #3b82f6));
+    transform: scale(1.08);
+  }
+}
+
+.konami-toast {
+  position: fixed;
+  top: 88px;
+  right: 20px;
+  z-index: 9998;
+  padding: 10px 16px;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+  animation: konami-pop 3s ease forwards;
+}
+
+@keyframes konami-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.op-amp-icon {
+  color: var(--secondary-text);
+  opacity: 0.75;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.curriculum-btn:hover .op-amp-icon {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.op-amp-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.nav-logo-chip-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav-logo-chip-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.nav-logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav-logo-text-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-logo-text-link:hover {
+  color: #ffffff;
+}

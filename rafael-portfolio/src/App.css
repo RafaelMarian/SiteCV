@@ -1,5 +1,6 @@
 /* src/App.css */
 :root {
+  --font-family: 'Times New Roman', Times, serif;
   --bg-color: #f8fafc;
   --text-color: #333;
   --card-bg: #ffffff;
@@ -22,6 +23,7 @@
 }
 
 body {
+  font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
@@ -72,23 +74,30 @@ body {
 }
 
 /* LOGO - Text Alb */
-.nav-logo {
+.nav-logo-brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  color: #ffffff; /* Alb */
-  font-weight: 700;
-  font-size: 1.2rem;
+  color: #ffffff;
   transition: transform 0.2s;
 }
 
-.nav-logo:hover {
-  transform: scale(1.05);
+.nav-logo-brand:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  flex-shrink: 0;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover .logo-icon {
+  transform: scale(1.06);
 }
 
 .logo-text {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--font-family);
   letter-spacing: -0.5px;
 }
 
@@ -761,6 +770,7 @@ body {
 .category-badge.embedded-sw { background-color: #2563eb; }
 .category-badge.hardware { background-color: #ef4444; }
 .category-badge.software { background-color: #10b981; }
+.category-badge.mobile { background-color: #3ddc84; color: #0d3318; }
 
 /* --- EDUCATION STYLES --- */
 
@@ -1209,6 +1219,32 @@ body {
   line-height: 1.5;
 }
 
+.app-play-store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: #3ddc84;
+  color: #0d3318;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(61, 220, 132, 0.35);
+}
+
+.app-play-store-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(61, 220, 132, 0.45);
+}
+
+.app-play-store-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
 .app-logo-stack {
   display: flex;
   flex-direction: row;
@@ -1347,6 +1383,11 @@ body {
   background: #ff0000;
 }
 
+.social-btn.playstore {
+  background: #3ddc84;
+  color: #0d3318;
+}
+
 /* Butoane Mari */
 .btn-primary-lg, .btn-secondary-lg, .btn-outline-lg {
   padding: 12px 24px;
@@ -1445,6 +1486,83 @@ body {
 .hero-image-container:hover .image-offset-bg {
   /* Fundalul se misca putin in directia opusa pentru efect de paralaxa */
   transform: translateY(5px) translateX(5px);
+}
+
+/* Osciloscop — dublu-click pe poza de profil */
+.profile-frame--scope {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(34, 197, 94, 0.35);
+}
+
+.profile-frame--scope::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    transparent 35%,
+    transparent 55%,
+    rgba(0, 20, 0, 0.5) 100%
+  );
+}
+
+.profile-scope-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  z-index: 4;
+  pointer-events: none;
+  color: #4ade80;
+  filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.8));
+}
+
+.profile-scope-path {
+  stroke-dasharray: 12 8;
+  animation: scope-trace 1.2s linear infinite;
+}
+
+.profile-scope-path--dim {
+  animation-duration: 1.8s;
+  animation-direction: reverse;
+}
+
+@keyframes scope-trace {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.profile-scope-hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 10px;
+  color: #86efac;
+  text-shadow: 0 0 6px rgba(74, 222, 128, 0.9);
+  pointer-events: none;
+  letter-spacing: 0.04em;
+}
+
+.btn-playstore {
+  background: #3ddc84 !important;
+  color: #0d3318 !important;
+  border-color: #3ddc84 !important;
+}
+
+.btn-playstore:hover {
+  filter: brightness(1.05);
 }
 
 /* RESPONSIVE */

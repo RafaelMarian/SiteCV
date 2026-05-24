@@ -16,9 +16,16 @@ const Projects = ({ lang }) => {
     { id: 'all', label: labels[lang].filters.all },
     { id: 'embedded-sw', label: labels[lang].filters.embSw },
     { id: 'web', label: labels[lang].filters.web },
+    { id: 'mobile', label: labels[lang].filters.mobile },
     { id: 'hardware', label: labels[lang].filters.hw },
     { id: 'software', label: labels[lang].filters.soft },
   ];
+
+  const modalLabels = {
+    en: { playStore: 'Google Play', website: 'Website', live: 'Live / Info' },
+    ro: { playStore: 'Google Play', website: 'Site web', live: 'Live / Info' },
+  };
+  const ml = modalLabels[lang];
 
   // Logica de filtrare
   const filteredProjects = projects.filter(proj => {
@@ -67,6 +74,9 @@ const Projects = ({ lang }) => {
       <div className="projects-grid">
         {filteredProjects.map((proj) => {
           const isDescExpanded = expandedDescId === proj.id;
+          const filterKey = Array.isArray(proj.categoryFilter)
+            ? (proj.categoryFilter.includes('mobile') ? 'mobile' : proj.categoryFilter[0])
+            : proj.categoryFilter;
           return (
             <div 
               key={proj.id} 
@@ -76,7 +86,7 @@ const Projects = ({ lang }) => {
               <div className="project-image-container">
                 <img src={proj.image} alt={proj.title} className="project-image" />
                 {/* Badge pentru tip */}
-                <span className={`category-badge ${Array.isArray(proj.categoryFilter) ? proj.categoryFilter[0] : proj.categoryFilter}`}>
+                <span className={`category-badge ${filterKey}`}>
                   {proj.category}
                 </span>
               </div>
@@ -136,12 +146,22 @@ const Projects = ({ lang }) => {
                  {selectedProject.extendedSummary[lang]}
               </p>
               <div className="modal-actions">
-                {selectedProject.link && selectedProject.link !== '#' && (
-                  <a href={selectedProject.link} target="_blank" rel="noreferrer" className="btn-primary">
-                    <ExternalLink size={18} /> Live / Info
+                {selectedProject.playStore && (
+                  <a href={selectedProject.playStore} target="_blank" rel="noreferrer" className="btn-primary btn-playstore">
+                    <ExternalLink size={18} /> {ml.playStore}
                   </a>
                 )}
-                {selectedProject.github && (
+                {selectedProject.link && selectedProject.link !== '#' && (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={selectedProject.playStore ? 'btn-secondary' : 'btn-primary'}
+                  >
+                    <ExternalLink size={18} /> {selectedProject.playStore ? ml.website : ml.live}
+                  </a>
+                )}
+                {selectedProject.github && selectedProject.github !== '#' && (
                   <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn-secondary">
                     <Github size={18} /> Code
                   </a>

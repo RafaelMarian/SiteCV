@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Sun, Moon, Globe, Menu, X, Code2 } from 'lucide-react'; // Importam Menu, X si Code2
+import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
 import './App.css';
 import { labels } from './data';
+import EmbeddedLogo from './components/EmbeddedLogo';
+import EasterEggProvider, { useEasterEggs } from './components/easterEggs/EasterEggProvider';
 
 // Importam paginile
 import Home from './pages/Home';
@@ -15,6 +17,7 @@ import Hobbies from './pages/Hobbies';
 import TechStack from './pages/TechStack';
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
+  const { onLogoChipClick, logoBoot } = useEasterEggs();
   const location = useLocation();
   const t = labels[lang].nav;
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,12 +47,22 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
       <div className="nav-container">
         
         {/* 1. LOGO BRANDING */}
-        <Link to="/" className="nav-logo">
-          <Code2 size={28} className="logo-icon" />
-          <span className="logo-text">
-            Rafael<span style={{color: 'var(--accent-color)'}}>.dev</span>
-          </span>
-        </Link>
+        <div className="nav-logo-brand">
+          <button
+            type="button"
+            className="nav-logo-chip-btn"
+            onClick={onLogoChipClick}
+            aria-label={lang === 'ro' ? 'Logo microcip' : 'Microchip logo'}
+          >
+            <EmbeddedLogo
+              size={28}
+              className={`logo-icon ${logoBoot ? 'logo-icon--boot' : ''}`}
+            />
+          </button>
+          <Link to="/" className="nav-logo-text-link logo-text">
+            Rafael<span style={{ color: 'var(--accent-color)' }}>.eng</span>
+          </Link>
+        </div>
 
         {/* 2. DESKTOP LINKS */}
         <div className="nav-links desktop">
@@ -114,22 +127,24 @@ function App() {
   
     return (
       <Router>
-        <div className="App">
-          <Navbar lang={lang} setLang={setLang} theme={theme} toggleTheme={toggleTheme} />
-          
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home lang={lang} />} />
-              <Route path="/experience" element={<Experience lang={lang} />} />
-              <Route path="/projects" element={<Projects lang={lang} />} />
-              <Route path="/tech-stack" element={<TechStack lang={lang} />} />
-              <Route path="/education" element={<Education lang={lang} />} />
-              <Route path="/hobbies" element={<Hobbies lang={lang} />} />
-              <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
-              <Route path="/contact" element={<Contact lang={lang} />} />
-            </Routes>
+        <EasterEggProvider lang={lang}>
+          <div className="App">
+            <Navbar lang={lang} setLang={setLang} theme={theme} toggleTheme={toggleTheme} />
+
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Home lang={lang} />} />
+                <Route path="/experience" element={<Experience lang={lang} />} />
+                <Route path="/projects" element={<Projects lang={lang} />} />
+                <Route path="/tech-stack" element={<TechStack lang={lang} />} />
+                <Route path="/education" element={<Education lang={lang} />} />
+                <Route path="/hobbies" element={<Hobbies lang={lang} />} />
+                <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
+                <Route path="/contact" element={<Contact lang={lang} />} />
+              </Routes>
+            </div>
           </div>
-        </div>
+        </EasterEggProvider>
       </Router>
     );
   }

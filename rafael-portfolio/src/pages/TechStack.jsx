@@ -47,7 +47,7 @@ export default function TechStack({ lang }) {
       <div className="tech-stack-hero">
         <div className="tech-stack-avatar-wrap">
           <img
-            src="/images/profile.jpg"
+            src="/images/profile.jpg?v=20260524"
             alt=""
             className="tech-stack-avatar"
             width={72}

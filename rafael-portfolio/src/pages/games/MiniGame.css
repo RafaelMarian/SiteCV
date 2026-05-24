@@ -24,7 +24,7 @@
   color: #fff;
   text-shadow: 2px 2px 0 #000;
   z-index: 10;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   pointer-events: none;
   text-align: center;
   max-width: 95%;
@@ -40,7 +40,7 @@
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px #000;
   z-index: 10;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
   max-width: 96%;
   line-height: 1.5;
@@ -64,7 +64,7 @@
 }
 
 .mini-game-overlay h2 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.7rem;
   margin: 0 0 10px 0;
   line-height: 1.5;
@@ -72,7 +72,7 @@
 
 .mini-game-overlay p {
   font-size: 0.5rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 1.5;
   margin: 0 0 14px 0;
   color: #e2e8f0;
@@ -87,7 +87,7 @@
   color: #000;
   border: 2px solid #000;
   border-radius: 8px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   transition: transform 0.15s ease;
 }
 
@@ -113,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Times New Roman', Times, serif;
   color: #fff;
   user-select: none;
 }

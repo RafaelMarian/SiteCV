@@ -1,5 +1,6 @@
 import React from 'react';
-import { mobileApps } from '../data';
+import { mobileApps, personalInfo } from '../data';
+import AndroidIcon from './AndroidIcon';
 
 /**
  * Stacked app icons that fan out on hover/focus; live apps link externally.
@@ -12,6 +13,16 @@ export default function AppLogoStack({ lang, labels }) {
       <div className="app-logo-stack-header">
         <h3 className="app-logo-stack-title">{t.title}</h3>
         <p className="app-logo-stack-subtitle">{t.subtitle}</p>
+        <a
+          href={personalInfo.playStore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="app-play-store-link"
+          aria-label={`${t.playStore} (opens in new tab)`}
+        >
+          <AndroidIcon size={20} />
+          {t.playStore}
+        </a>
       </div>
       <div
         className="app-logo-stack"

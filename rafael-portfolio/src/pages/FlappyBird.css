@@ -74,7 +74,7 @@
     color: #fff;
     text-shadow: 2px 2px 4px #000;
     z-index: 10;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .start-screen, .game-over-screen {
@@ -93,7 +93,7 @@
 }
 
 .start-screen h1, .game-over-screen h2 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
     text-shadow: 3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
 }
@@ -113,7 +113,7 @@
     color: #000;
     border: 2px solid #000;
     border-radius: 10px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Times New Roman', Times, serif;
     transition: all 0.2s ease-in-out;
 }
 

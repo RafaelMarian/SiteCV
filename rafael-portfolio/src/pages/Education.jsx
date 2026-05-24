@@ -1,7 +1,8 @@
 // src/pages/Education.jsx
 import React, { useState, useMemo } from 'react';
 import { labels, education, certificates } from '../data';
-import { GraduationCap, Calendar, MapPin, BookOpen, ChevronDown, Award, School, FileText, Search } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, BookOpen, Award, School, FileText, Search } from 'lucide-react';
+import OpAmpIcon from '../components/OpAmpIcon';
 
 const Education = ({ lang }) => {
   const [expandedId, setExpandedId] = useState(null);
@@ -81,7 +82,10 @@ const Education = ({ lang }) => {
               >
                 <BookOpen size={16} />
                 {isExpanded ? labels[lang].buttons.hideCurriculum : labels[lang].buttons.viewCurriculum}
-                <ChevronDown className={`chevron ${isExpanded ? 'rotate' : ''}`} size={16}/>
+                <OpAmpIcon
+                  size={16}
+                  className={`chevron op-amp-icon ${isExpanded ? 'rotate' : ''}`}
+                />
               </button>
 
               <div className={`curriculum-container ${isExpanded ? 'open' : ''}`}>

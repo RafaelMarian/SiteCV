@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check, Loader, AlertCircle } from 'lucide-react';
 import { personalInfo, labels } from '../data';
+import AndroidIcon from '../components/AndroidIcon';
 
 const Contact = ({ lang }) => {
   const t = labels[lang].contact;
@@ -67,8 +68,8 @@ const Contact = ({ lang }) => {
           </h3>
           <p style={{color: 'var(--secondary-text)', marginBottom: '30px'}}>
             {lang === 'en' 
-              ? "I'm currently open to new opportunities in Embedded Systems, Automotive, and FPGA development."
-              : "Sunt deschis la noi oportunități în Sisteme Embedded, Automotive și dezvoltare FPGA."}
+              ? "If you have an interesting project in Embedded Systems, Automotive, FPGA, or mobile apps, feel free to reach out."
+              : "Dacă ai un proiect interesant în Embedded Systems, Automotive, FPGA sau aplicații mobile, scrie-mi cu încredere."}
           </p>
 
           <div className="info-item">
@@ -106,6 +107,9 @@ const Contact = ({ lang }) => {
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="social-btn linkedin">
               <Linkedin size={24} />
+            </a>
+            <a href={personalInfo.playStore} target="_blank" rel="noopener noreferrer" className="social-btn playstore" aria-label="Google Play">
+              <AndroidIcon size={24} />
             </a>
           </div>
         </div>
