@@ -44,12 +44,12 @@ export default function AppLogoStack({ lang, labels }) {
           );
 
           if (app.url) {
+            const external = app.url.startsWith('http');
             return (
               <a
                 key={app.id}
                 href={app.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="app-logo-stack-item app-logo-stack-item--link"
                 style={{ zIndex: z }}
                 role="listitem"

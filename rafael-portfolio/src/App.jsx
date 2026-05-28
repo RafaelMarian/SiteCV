@@ -15,6 +15,8 @@ import Contact from './pages/Contact';
 import HobbyDetail from './pages/HobbyDetail';
 import Hobbies from './pages/Hobbies';
 import TechStack from './pages/TechStack';
+import AppsIndex from './pages/AppsIndex';
+import AppLanding from './pages/AppLanding';
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
   const { onLogoChipClick, logoBoot } = useEasterEggs();
@@ -141,6 +143,8 @@ function App() {
                 <Route path="/hobbies" element={<Hobbies lang={lang} />} />
                 <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
                 <Route path="/contact" element={<Contact lang={lang} />} />
+                <Route path="/apps" element={<AppsIndex lang={lang} />} />
+                <Route path="/apps/:slug" element={<AppLanding lang={lang} />} />
               </Routes>
             </div>
           </div>

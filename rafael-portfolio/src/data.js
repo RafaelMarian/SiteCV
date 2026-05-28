@@ -58,21 +58,21 @@ export const playStoreLinks = {
 
 /** Mobile apps: logos in /public/LogoAplicatii — url = site, playStore = Google Play */
 export const mobileApps = [
-  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: 'https://bibledailyprayer.netlify.app/en', playStore: playStoreLinks.bible },
-  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: 'https://focusnet.netlify.app/', playStore: playStoreLinks.focusnet },
-  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: 'https://offlineaccountant.netlify.app/', playStore: playStoreLinks.accounting },
-  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: 'https://budgetappmoneytrack.netlify.app/', playStore: playStoreLinks.budget },
-  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: 'https://nrstrength.netlify.app/', playStore: playStoreLinks.fitness },
+  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: '/apps/bible-daily-prayer', playStore: playStoreLinks.bible },
+  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: '/apps/focus-net', playStore: playStoreLinks.focusnet },
+  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: '/apps/offlinebooks', playStore: playStoreLinks.accounting },
+  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: '/apps/budget-planner', playStore: playStoreLinks.budget },
+  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: '/apps/nrstrength', playStore: playStoreLinks.fitness },
   { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: null },
   { id: 'plant', name: 'Plant care', logo: '/LogoAplicatii/LogoPlant.png', url: null },
-  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: 'https://timemeansmoney.netlify.app/' },
-  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: null },
-  { id: 'soundmeter', name: 'Sound Measure', logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png', url: null },
-  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: null },
+  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: '/apps/time-means-money' },
+  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: '/apps/stockflow' },
+  { id: 'soundmeter', name: 'Sound Measure', logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png', url: '/apps/sound-measure' },
+  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: '/apps/plant-light-meter' },
   { id: 'metaldetector', name: 'Metal Detector', logo: '/LogoAplicatii/LogoMetalDetector.png', url: null },
-  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: null },
+  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: '/apps/client-base-crm' },
   { id: 'batterycharge', name: 'Battery Charging Speed', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.png', url: null },
-  { id: 'barometer', name: 'Barometer', logo: '/LogoAplicatii/LogoBarometer.png', url: null }
+  { id: 'barometer', name: 'Barometer', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/barometer' }
 ];
 
 export const personalInfo = {
@@ -357,7 +357,7 @@ export const projects = [
     image: "/images/flutter/cover.png", 
     gallery: ["/images/flutter/img1.png", "/images/flutter/img2.png", "/images/flutter/img3.png", "/images/flutter/img4.png", "/images/flutter/img5.png", "/images/flutter/img6.png"],
     playStore: playStoreLinks.fitness,
-    link: "https://nrstrength.netlify.app/",
+    link: "/apps/nrstrength",
     github: "https://github.com/RafaelMarian",
     desc: {
       en: "Comprehensive fitness app with real-time syncing and analytics replacing traditional paper logs.",
@@ -803,7 +803,7 @@ export const projects = [
     image: "/LogoAplicatii/LogoBibble.png",
     gallery: ["/LogoAplicatii/LogoBibble.png"],
     playStore: playStoreLinks.bible,
-    link: "https://bibledailyprayer.netlify.app/en",
+    link: "/apps/bible-daily-prayer",
     desc: {
       en: "Android app for daily Scripture reading, prayer, and Orthodox devotion.",
       ro: "Aplicație Android pentru lectură zilnică din Scriptură, rugăciune și devoțiune ortodoxă."
@@ -826,7 +826,7 @@ export const projects = [
     image: "/LogoAplicatii/LogoFocusNet.png",
     gallery: ["/LogoAplicatii/LogoFocusNet.png"],
     playStore: playStoreLinks.focusnet,
-    link: "https://focusnet.netlify.app/",
+    link: "/apps/focus-net",
     desc: {
       en: "Productivity app with focus timers and deep-work sessions.",
       ro: "Aplicație de productivitate cu timer-e de focus și sesiuni de lucru profund."
@@ -849,7 +849,7 @@ export const projects = [
     image: "/LogoAplicatii/LogoBudget.png",
     gallery: ["/LogoAplicatii/LogoBudget.png"],
     playStore: playStoreLinks.budget,
-    link: "https://budgetappmoneytrack.netlify.app/",
+    link: "/apps/budget-planner",
     desc: {
       en: "Personal finance app for budgeting, expenses, and money tracking.",
       ro: "Aplicație de finanțe personale pentru buget, cheltuieli și urmărirea banilor."
@@ -878,7 +878,7 @@ export const projects = [
       "/images/AccountingApp/img5.png"
     ],
     playStore: playStoreLinks.accounting,
-    link: "https://offlineaccountant.netlify.app/",
+    link: "/apps/offlinebooks",
     desc: {
       en: "Offline accounting and invoicing app for freelancers and small businesses.",
       ro: "Aplicație de contabilitate și facturare offline pentru freelanceri și mici afaceri."
@@ -900,7 +900,7 @@ export const projects = [
     tech: "Flutter, Android",
     image: "/LogoAplicatii/LogoTimeMoney.png",
     gallery: ["/LogoAplicatii/LogoTimeMoney.png"],
-    link: "https://timemeansmoney.netlify.app/",
+    link: "/apps/time-means-money",
     desc: {
       en: "Mobile app connecting time tracking with financial value and productivity insights.",
       ro: "Aplicație mobilă care leagă urmărirea timpului de valoarea financiară și insight-uri de productivitate."
@@ -1007,11 +1007,12 @@ export const projects = [
   {
     id: "plant-monitor-app",
     categoryFilter: ["mobile", "software"],
-    title: "Plant Care Monitor",
+    title: "Plant Light Meter: Lux Test",
     category: "Mobile App",
     tech: "Flutter, Android",
     image: "/LogoAplicatii/LogoPlantCareMonitorLight.png",
     gallery: ["/LogoAplicatii/LogoPlantCareMonitorLight.png"],
+    link: "/apps/plant-light-meter",
     desc: {
       en: "Monitors light conditions for indoor plants using the device sensors.",
       ro: "Monitorizează condițiile de lumină pentru plantele de interior folosind senzorii dispozitivului."
