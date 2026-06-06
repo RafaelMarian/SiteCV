@@ -69,10 +69,10 @@ export const mobileApps = [
   { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: '/apps/stockflow' },
   { id: 'soundmeter', name: 'Sound Measure', logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png', url: '/apps/sound-measure' },
   { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: '/apps/plant-light-meter' },
-  { id: 'metaldetector', name: 'Metal Detector', logo: '/LogoAplicatii/LogoMetalDetector.png', url: null },
+  { id: 'metaldetector', name: 'EMF Radar', logo: '/LogoAplicatii/LogoMetalDetector.png', url: '/apps/emf-radar' },
   { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: '/apps/client-base-crm' },
   { id: 'batterycharge', name: 'Battery Charging Speed', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.png', url: null },
-  { id: 'barometer', name: 'Barometer', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/barometer' }
+  { id: 'barometer', name: 'BaroScan', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/baroscan' }
 ];
 
 export const personalInfo = {
@@ -1029,18 +1029,19 @@ export const projects = [
   {
     id: "metal-detector-app",
     categoryFilter: ["mobile", "software"],
-    title: "Metal Detector",
+    title: "EMF Radar: Find Metal & Wires",
     category: "Mobile App",
     tech: "Flutter, Android",
     image: "/LogoAplicatii/LogoMetalDetector.png",
     gallery: ["/LogoAplicatii/LogoMetalDetector.png"],
+    link: "/apps/emf-radar",
     desc: {
-      en: "Turns the phone into a simple metal detector using magnetometer readings.",
-      ro: "Transformă telefonul într-un detector de metale simplu folosind magnetometrul."
+      en: "EMF radar and metal detector using the phone magnetometer to find metal and wires.",
+      ro: "Radar EMF și detector de metale cu magnetometrul telefonului, pentru metal și fire."
     },
     extendedSummary: {
-      en: "Detects magnetic field changes to help locate metal objects nearby — useful as a quick utility tool on Android devices.",
-      ro: "Detectează variațiile câmpului magnetic pentru a localiza obiecte metalice din apropiere — util ca instrument rapid pe dispozitive Android."
+      en: "EMF Radar visualizes magnetic field changes in real time to help locate metal objects, studs, and wires. A practical utility for quick checks on Android devices.",
+      ro: "EMF Radar vizualizează în timp real variațiile câmpului magnetic pentru a localiza obiecte metalice, cuie și fire. Utilitar practic pentru verificări rapide pe Android."
     },
     details: {
       en: ["Magnetometer-based detection.", "Live signal visualization.", "Sensitivity feedback.", "Portable utility app."],
@@ -1098,7 +1099,7 @@ export const projects = [
   {
     id: "barometer-app",
     categoryFilter: ["mobile", "software"],
-    title: "Barometer",
+    title: "BaroScan: Altimeter Barometer",
     category: "Mobile App",
     tech: "Flutter, Android",
     image: "/images/BarometerApp/img1.png",

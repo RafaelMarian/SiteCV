@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
 import './App.css';
 import { labels } from './data';
@@ -144,6 +144,7 @@ function App() {
                 <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
                 <Route path="/contact" element={<Contact lang={lang} />} />
                 <Route path="/apps" element={<AppsIndex lang={lang} />} />
+                <Route path="/apps/barometer" element={<Navigate to="/apps/baroscan" replace />} />
                 <Route path="/apps/:slug" element={<AppLanding lang={lang} />} />
               </Routes>
             </div>

@@ -1,1 +1,6 @@
-/* /index.html 200
+# Static files (AdMob / crawlers) — must stay before SPA fallback
+/app-ads.txt   /app-ads.txt   200
+/robots.txt    /robots.txt    200
+
+# React SPA
+/*    /index.html   200

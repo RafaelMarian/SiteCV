@@ -7,13 +7,15 @@ export default function AppsIndex({ lang }) {
   const t = {
     en: {
       title: 'Mobile Apps',
-      subtitle: 'Official app pages on this site — use these URLs in Google Play (Website / Developer).',
+      subtitle:
+        'Official app pages on this site. In Google Play Console set Website to this domain root (e.g. https://yoursite.com). AdMob needs /app-ads.txt at that same root.',
       play: 'On Play Store',
       page: 'App page',
     },
     ro: {
       title: 'Aplicații mobile',
-      subtitle: 'Pagini oficiale pe acest site — folosește aceste URL-uri în Google Play (Website / Developer).',
+      subtitle:
+        'Pagini oficiale pe acest site. În Google Play Console pune Website la domeniul rădăcină (ex. https://siteul-tau.com). AdMob cere /app-ads.txt la aceeași rădăcină.',
       play: 'Pe Play Store',
       page: 'Pagina app',
     },

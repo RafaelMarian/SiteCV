@@ -31,6 +31,30 @@ export const appPages = [
     },
   },
   {
+    slug: 'emf-radar',
+    name: { en: 'EMF Radar: Find Metal & Wires', ro: 'EMF Radar: Find Metal & Wires' },
+    tagline: {
+      en: 'Detect metal and wires using your phone’s magnetometer — EMF field visualization.',
+      ro: 'Detectează metal și fire cu magnetometrul telefonului — vizualizare câmp EMF.',
+    },
+    logo: '/LogoAplicatii/LogoMetalDetector.png',
+    playStore: null,
+    features: {
+      en: [
+        'Live EMF / magnetic field strength display',
+        'Helps locate metal objects and hidden wires',
+        'Sensitivity feedback and visual gauge',
+        'Works offline — no account required',
+      ],
+      ro: [
+        'Afișare live a câmpului EMF / magnetic',
+        'Ajută la localizarea metalelor și firelor ascunse',
+        'Feedback de sensibilitate și indicator vizual',
+        'Funcționează offline — fără cont',
+      ],
+    },
+  },
+  {
     slug: 'bible-daily-prayer',
     name: { en: 'Bible: Daily Prayer', ro: 'Bible: Daily Prayer' },
     tagline: {
@@ -157,17 +181,32 @@ export const appPages = [
     },
   },
   {
-    slug: 'barometer',
-    name: { en: 'Barometer', ro: 'Barometer' },
+    slug: 'baroscan',
+    name: {
+      en: 'BaroScan: Altimeter Barometer',
+      ro: 'BaroScan: Altimeter Barometer',
+    },
     tagline: {
-      en: 'Barometric pressure and weather trends.',
-      ro: 'Presiune barometrică și tendințe meteo.',
+      en: 'Atmospheric pressure, altitude, and weather trends from your phone sensors.',
+      ro: 'Presiune atmosferică, altitudine și tendințe meteo din senzorii telefonului.',
     },
     logo: '/LogoAplicatii/LogoBarometer.png',
     playStore: null,
     features: {
-      en: ['Pressure sensor readings', 'Trend view', 'Simple weather utility'],
-      ro: ['Citiri senzor presiune', 'Vizualizare tendințe', 'Utilitar meteo simplu'],
+      en: [
+        'Live barometric pressure (hPa, inHg, mmHg)',
+        'Altimeter / elevation estimates',
+        'Pressure history and trend charts',
+        'Works with device barometer sensor',
+        'Lightweight utility — data stays on device',
+      ],
+      ro: [
+        'Presiune barometrică live (hPa, inHg, mmHg)',
+        'Altimetru / estimări de altitudine',
+        'Istoric presiune și grafice de tendință',
+        'Folosește senzorul barometric al dispozitivului',
+        'Utilitar ușor — datele rămân pe dispozitiv',
+      ],
     },
   },
 ];
