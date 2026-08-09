@@ -14,7 +14,7 @@ export const appPages = [
       ro: 'Măsoară lumina pentru plante cu senzorul telefonului.',
     },
     logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png',
-    playStore: null,
+    playStore: playStoreLinks.plantlux,
     features: {
       en: [
         'Ambient light (lux) readings in real time',
@@ -38,7 +38,7 @@ export const appPages = [
       ro: 'Detectează metal și fire cu magnetometrul telefonului — vizualizare câmp EMF.',
     },
     logo: '/LogoAplicatii/LogoMetalDetector.png',
-    playStore: null,
+    playStore: playStoreLinks.emfradar,
     features: {
       en: [
         'Live EMF / magnetic field strength display',
@@ -125,6 +125,20 @@ export const appPages = [
     },
   },
   {
+    slug: 'photoboom',
+    name: { en: 'PhotoBoom 360 Studio', ro: 'PhotoBoom 360 Studio' },
+    tagline: {
+      en: 'Photo booth and camera studio for capture, edits, and sharing.',
+      ro: 'Photo booth și studio foto pentru captură, editări și partajare.',
+    },
+    logo: '/LogoAplicatii/LogoPhotoBoom.png',
+    playStore: playStoreLinks.photoboom,
+    features: {
+      en: ['Camera capture & gallery', 'Quick edits and export', 'Booth-style photo workflows'],
+      ro: ['Captură cameră & galerie', 'Editări rapide și export', 'Fluxuri tip photo booth'],
+    },
+  },
+  {
     slug: 'time-means-money',
     name: { en: 'Time Means Money', ro: 'Time Means Money' },
     tagline: {
@@ -132,7 +146,7 @@ export const appPages = [
       ro: 'Leagă timpul petrecut de valoarea financiară.',
     },
     logo: '/LogoAplicatii/LogoTimeMoney.png',
-    playStore: null,
+    playStore: playStoreLinks.timemoney,
     features: {
       en: ['Time sessions', 'Value mapping', 'Productivity insights'],
       ro: ['Sesiuni de timp', 'Mapare valoare', 'Insight-uri productivitate'],
@@ -160,7 +174,7 @@ export const appPages = [
       ro: 'Gestiune stocuri și inventar.',
     },
     logo: '/LogoAplicatii/LogoStockFlow.png',
-    playStore: null,
+    playStore: playStoreLinks.stockflow,
     features: {
       en: ['Product tracking', 'Stock in/out', 'Offline-first'],
       ro: ['Urmărire produse', 'Intrări/ieșiri stoc', 'Offline-first'],
@@ -174,7 +188,7 @@ export const appPages = [
       ro: 'CRM offline pentru clienți și follow-up.',
     },
     logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png',
-    playStore: null,
+    playStore: playStoreLinks.clientcrm,
     features: {
       en: ['Client profiles', 'Notes & reminders', 'No cloud required'],
       ro: ['Profiluri clienți', 'Note & reminder-e', 'Fără cloud obligatoriu'],
@@ -191,7 +205,7 @@ export const appPages = [
       ro: 'Presiune atmosferică, altitudine și tendințe meteo din senzorii telefonului.',
     },
     logo: '/LogoAplicatii/LogoBarometer.png',
-    playStore: null,
+    playStore: playStoreLinks.barometer,
     features: {
       en: [
         'Live barometric pressure (hPa, inHg, mmHg)',

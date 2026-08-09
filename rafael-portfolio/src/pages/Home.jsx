@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Download, Cpu, Globe,
-  Zap, Briefcase, BookOpen, Layers, Youtube, Linkedin, Github, X as XLogo, Facebook, Instagram,
+  ArrowRight, Download, Cpu, Smartphone,
+  Briefcase, BookOpen, Layers, Youtube, Linkedin, Github, X as XLogo, Facebook, Instagram,
 } from 'lucide-react';
 import { personalInfo, labels } from '../data';
 import AppLogoStack from '../components/AppLogoStack';
@@ -33,7 +33,7 @@ const Home = ({ lang }) => {
   const content = {
     en: {
       greeting: "Hello, I'm",
-      description: "An innovative Embedded Software Engineer passionate about automotive technologies, FPGA systems, and full-stack development. I turn complex problems into efficient, scalable solutions.",
+      description: "Embedded Software Engineer passionate about automotive technologies, FPGA systems, and indie development. I turn complex problems into efficient, scalable solutions.",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
       downloadCv: "Download CV",
@@ -45,13 +45,12 @@ const Home = ({ lang }) => {
       },
       skills: {
         emb: "Embedded Systems",
-        web: "Web Development",
-        hw: "Hardware Design"
+        web: "Android & iOS Development"
       }
     },
     ro: {
       greeting: "Salut, sunt",
-      description: "Un Inginer Software Embedded pasionat de tehnologii automotive, sisteme FPGA și dezvoltare full-stack. Transform probleme complexe în soluții eficiente și scalabile.",
+      description: "Inginer Software Embedded pasionat de tehnologii automotive, sisteme FPGA și dezvoltare indie. Transform probleme complexe în soluții eficiente și scalabile.",
       viewProjects: "Vezi Proiecte",
       contactMe: "Contact",
       downloadCv: "Descarcă CV",
@@ -63,8 +62,7 @@ const Home = ({ lang }) => {
       },
       skills: {
         emb: "Sisteme Embedded",
-        web: "Dezvoltare Web",
-        hw: "Design Hardware"
+        web: "Dezvoltare Android & iOS"
       }
     }
   };
@@ -206,17 +204,12 @@ const Home = ({ lang }) => {
         <div className="skill-card-home">
           <Cpu size={32} className="skill-icon" />
           <h3>{txt.skills.emb}</h3>
-          <p>C/C++, Matlab, Simulink, RTOS, Automotive Protocols</p>
+          <p>C/C++, Matlab, Simulink, Automotive Protocols, Circuit Analysis</p>
         </div>
         <div className="skill-card-home">
-          <Zap size={32} className="skill-icon" />
-          <h3>{txt.skills.hw}</h3>
-          <p>FPGA (Xilinx), VHDL, PCB Design, Circuit Analysis</p>
-        </div>
-        <div className="skill-card-home">
-          <Globe size={32} className="skill-icon" />
+          <Smartphone size={32} className="skill-icon" />
           <h3>{txt.skills.web}</h3>
-          <p>React, Python, Flutter, Docker, CI/CD</p>
+          <p>Flutter, CI/CD, GitHub Actions</p>
         </div>
       </section>
 

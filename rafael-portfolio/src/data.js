@@ -54,6 +54,13 @@ export const playStoreLinks = {
   budget: 'https://play.google.com/store/apps/details?id=com.aplicatiiidentifier.budgetapp',
   accounting: 'https://play.google.com/store/apps/details?id=com.accountingapp.accounting_app',
   fitness: 'https://play.google.com/store/apps/details?id=com.nrstrength.app',
+  photoboom: 'https://play.google.com/store/apps/details?id=com.vanca.photobooth360studio',
+  timemoney: 'https://play.google.com/store/apps/details?id=com.timesmeansmoney.app',
+  stockflow: 'https://play.google.com/store/apps/details?id=com.stockflow.inventory.stockflow',
+  barometer: 'https://play.google.com/store/apps/details?id=com.aplicatiiidentifier.barometer_altimeter',
+  plantlux: 'https://play.google.com/store/apps/details?id=com.vanca.plantluxmeter',
+  clientcrm: 'https://play.google.com/store/apps/details?id=com.clientbase.client_base_crm',
+  emfradar: 'https://play.google.com/store/apps/details?id=com.emfradar.detector',
 };
 
 /** Mobile apps: logos in /public/LogoAplicatii — url = site, playStore = Google Play */
@@ -63,16 +70,14 @@ export const mobileApps = [
   { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: '/apps/offlinebooks', playStore: playStoreLinks.accounting },
   { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: '/apps/budget-planner', playStore: playStoreLinks.budget },
   { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: '/apps/nrstrength', playStore: playStoreLinks.fitness },
-  { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: null },
-  { id: 'plant', name: 'Plant care', logo: '/LogoAplicatii/LogoPlant.png', url: null },
-  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: '/apps/time-means-money' },
-  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: '/apps/stockflow' },
-  { id: 'soundmeter', name: 'Sound Measure', logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png', url: '/apps/sound-measure' },
-  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: '/apps/plant-light-meter' },
-  { id: 'metaldetector', name: 'EMF Radar', logo: '/LogoAplicatii/LogoMetalDetector.png', url: '/apps/emf-radar' },
-  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: '/apps/client-base-crm' },
+  { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: '/apps/photoboom', playStore: playStoreLinks.photoboom },
+  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: '/apps/time-means-money', playStore: playStoreLinks.timemoney },
+  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: '/apps/stockflow', playStore: playStoreLinks.stockflow },
+  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: '/apps/plant-light-meter', playStore: playStoreLinks.plantlux },
+  { id: 'metaldetector', name: 'EMF Radar', logo: '/LogoAplicatii/LogoMetalDetector.png', url: '/apps/emf-radar', playStore: playStoreLinks.emfradar },
+  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: '/apps/client-base-crm', playStore: playStoreLinks.clientcrm },
   { id: 'batterycharge', name: 'Battery Charging Speed', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.png', url: null },
-  { id: 'barometer', name: 'BaroScan', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/baroscan' }
+  { id: 'barometer', name: 'BaroScan', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/baroscan', playStore: playStoreLinks.barometer }
 ];
 
 export const personalInfo = {
@@ -347,32 +352,7 @@ export const education = [
 ];
 
 export const projects = [
-  // --- FLUTTER APP ---
-  {
-    id: "flutter-fitness",
-    categoryFilter: ["mobile", "software"],
-    title: "NRStrength — Fitness Tracker",
-    category: "Mobile App",
-    tech: "Flutter, Dart, Android",
-    image: "/images/flutter/cover.png", 
-    gallery: ["/images/flutter/img1.png", "/images/flutter/img2.png", "/images/flutter/img3.png", "/images/flutter/img4.png", "/images/flutter/img5.png", "/images/flutter/img6.png"],
-    playStore: playStoreLinks.fitness,
-    link: "/apps/nrstrength",
-    github: "https://github.com/RafaelMarian",
-    desc: {
-      en: "Comprehensive fitness app with real-time syncing and analytics replacing traditional paper logs.",
-      ro: "Aplicație completă de fitness cu sincronizare în timp real și analize, înlocuind jurnalul clasic."
-    },
-    extendedSummary: {
-      en: "A cross-platform solution developed in Flutter to modernize workout tracking. It uses and AI coach to start a 3 months cycle but also RPG style gamification techniques. The app calculates 1RM, tracks volume history, and provides graphical insights into progress.",
-      ro: "O soluție cross-platform dezvoltată în Flutter pentru modernizarea monitorizării antrenamentelor. Porneste un program pe 3 luni de antrenament folosind un Coach AI. Aplicația calculează 1RM, istoricul volumului și oferă grafice de progres pe langa multe altele."
-    },
-    details: {
-      en: ["Cross-platform Architecture (Mobile/Web).", "State Management (Provider).", "Automated Netlify Deployment."],
-      ro: ["Arhitectură Cross-platform (Mobil/Web).", "State Management (Provider).", "Deploy Automat pe Netlify."]
-    }
-  },
-  
+
   // --- FPGA SOUND EQUALIZER (LICENTA) ---
   {
     id: "sound-eq",
@@ -423,28 +403,132 @@ export const projects = [
     }
   },
 
-  // --- AI PURCHASE PREDICTION ---
+  // --- STEPPER MOTOR CONTROLLER (PIC24) ---
   {
-    id: "ai-purchase",
-    categoryFilter: ["web", "software"],
-    title: "Product Purchase AI Prediction",
-    category: "Full Stack AI",
-    tech: "Python, React, Docker, Flask",
-    image: "/images/ai-purchase/cover.png",
-    gallery: ["/images/ai-purchase/img1.png", "/images/ai-purchase/img2.png", "/images/ai-purchase/img3.png", "/images/ai-purchase/img4.png", "/images/ai-purchase/img5.png", "/images/ai-purchase/img6.png"],
-    link: "https://github.com/RafaelMarian/ai-insights",
-    github: "https://github.com/RafaelMarian/ai-insights",
+    id: "stepper-pic24",
+    categoryFilter: ["embedded-sw", "hardware"],
+    title: "Stepper Motor Controller — PIC24",
+    category: "Embedded Systems",
+    tech: "PIC24FJ256GB110, DRV8825, XC16, NEMA-17",
+    image: "/images/stepper-pic24/cover.png",
+    gallery: [
+      "/images/stepper-pic24/cover.png",
+      "/images/stepper-pic24/img1.png",
+      "/images/stepper-pic24/img2.png"
+    ],
+    link: "https://github.com/RafaelMarian/MotorControlPIC",
+    github: "https://github.com/RafaelMarian/MotorControlPIC",
     desc: {
-      en: "Full-stack web app predicting purchase trends using ML models served via Flask.",
-      ro: "Aplicație web Full-stack ce prezice tendințele de cumpărare folosind modele ML servite prin Flask."
+      en: "Bare-metal PIC24 controller for a NEMA-17 stepper: multiplexed 7-segment UI, ISR-driven STEP pulses, DRV8825 driver.",
+      ro: "Controller bare-metal PIC24 pentru stepper NEMA-17: UI 7-segment multiplexat, impulsuri STEP din ISR, driver DRV8825."
     },
     extendedSummary: {
-      en: "Integrates Data Science with Modern Web Development. A Random Forest model trained on historical data is exposed via a Python Flask API. The frontend is a responsive React dashboard that visualizes prediction confidence. The entire stack is containerized using Docker for consistent deployment.",
-      ro: "Integrează Data Science cu Dezvoltarea Web modernă. Un model Random Forest antrenat pe date istorice este expus printr-un API Python Flask. Frontend-ul este un dashboard React responsiv care vizualizează încrederea predicției. Întregul stack este containerizat folosind Docker pentru un deploy consistent."
+      en: "Embedded control system for a NEMA-17 stepper motor, built around a PIC24FJ256GB110 and a DRV8825 driver. The UI is a multiplexed 3-digit 7-segment display and two buttons: the shown value (000–100) sets motor speed in real time. Three status LEDs run a continuous chase. Stepping is generated with a Timer1 interrupt (STEP pulses), with direction and enable handled in firmware. The board is a custom prototype on perfboard with dense point-to-point wiring. The power section uses Manhattan-style construction on a copper ground plane (solid return path, short power loops, cleaner motor supply). Logic, MCU, display, buttons, and the DRV8825 sit on the perfboard above, programmed in-circuit with a PICkit 5. Motor power is 12 V on VM; coil current is set with AVREF/BVREF (not VM). The stepper uses paired coil wiring into AOUT/BOUT. Demonstrates bare-metal C on PIC24 (MPLAB X / XC16): GPIO, multiplexed display, debounced UI with hold-to-repeat, ISR-driven motion control, and speed mapping from a user setpoint — plus practical hardware skills in prototype layout, mixed Manhattan + wired assembly, and driver bring-up.",
+      ro: "Sistem de control embedded pentru un motor pas cu pas NEMA-17, construit în jurul PIC24FJ256GB110 și al driverului DRV8825. UI-ul e un display 7-segment cu 3 digiți multiplexat și două butoane: valoarea afișată (000–100) setează viteza motorului în timp real. Trei LED-uri de status rulează un chase continuu. Pașii sunt generați cu Timer1 în interrupt (impulsuri STEP), iar direcția și enable sunt gestionate în firmware. Placa e un prototip custom pe perfboard cu cablaj punct-la-punct dens. Secțiunea de alimentare folosește construcție tip Manhattan pe plan de masă cupru (retur solid, bucle scurte, alimentare motor mai curată). Logica, MCU, display, butoane și DRV8825 stau pe perfboard deasupra, programate in-circuit cu PICkit 5. Alimentarea motorului e 12 V pe VM; curentul pe bobine se setează cu AVREF/BVREF (nu VM). Stepperul folosește cablare pe perechi de bobine în AOUT/BOUT. Demonstrează C bare-metal pe PIC24 (MPLAB X / XC16): GPIO, display multiplexat, UI cu debounce și hold-to-repeat, control mișcare din ISR și mapare viteză din setpoint — plus abilități practice de layout prototip, asamblare mixtă Manhattan + cablaj și bring-up driver."
     },
     details: {
-      en: ["Flask API & Python ML.", "React Dashboard.", "Docker Containerization.", "REST API Architecture."],
-      ro: ["API Flask & Python ML.", "Dashboard React.", "Containerizare Docker.", "Arhitectură REST API."]
+      en: [
+        "PIC24FJ256GB110 firmware in XC16 (MPLAB X).",
+        "DRV8825 stepper driver: STEP from Timer1 ISR, DIR/EN in software.",
+        "Multiplexed 3-digit 7-segment UI; speed setpoint 000–100.",
+        "Debounced buttons with hold-to-repeat; LED chase status.",
+        "12 V motor supply on VM; current set via AVREF/BVREF.",
+        "Perfboard + Manhattan copper ground plane; PICkit 5 ISP."
+      ],
+      ro: [
+        "Firmware PIC24FJ256GB110 în XC16 (MPLAB X).",
+        "Driver stepper DRV8825: STEP din Timer1 ISR, DIR/EN în software.",
+        "UI 7-segment 3 digiți multiplexat; setpoint viteză 000–100.",
+        "Butoane cu debounce și hold-to-repeat; chase LED status.",
+        "Alimentare motor 12 V pe VM; curent setat pe AVREF/BVREF.",
+        "Perfboard + plan masă Manhattan; programare PICkit 5."
+      ]
+    }
+  },
+
+  // --- PIC FILTER ANALYZER ---
+  {
+    id: "pic-filter-analyzer",
+    categoryFilter: ["embedded-sw", "hardware"],
+    title: "PIC Filter Analyzer",
+    category: "Embedded Systems",
+    tech: "C, PIC24, MPLAB X, ADC, GPIO, character LCD",
+    image: "/images/pic-filter-analyzer/cover.png",
+    gallery: [
+      "/images/pic-filter-analyzer/cover.png",
+      "/images/pic-filter-analyzer/img1.png",
+      "/images/pic-filter-analyzer/img2.png",
+      "/images/pic-filter-analyzer/img3.png"
+    ],
+    link: "https://github.com/RafaelMarian/PICProjectFilterAnalyzer",
+    github: "https://github.com/RafaelMarian/PICProjectFilterAnalyzer",
+    desc: {
+      en: "Bare-metal PIC24 firmware: buttons, DIP switches, ADC pot, status LEDs, and a custom 20×4 LCD — hardware layer for an interactive filter / signal demo.",
+      ro: "Firmware bare-metal PIC24: butoane, DIP switch, pot ADC, LED-uri status și LCD 20×4 custom — stratul hardware pentru un demo interactiv de filtru / semnal."
+    },
+    extendedSummary: {
+      en: "Bare-metal C firmware for a PIC24FJ256GB110, built in MPLAB X. It wires up the board’s real I/O so the MCU can read user input, sample an analog signal, drive status LEDs, and show feedback on a character LCD — the hardware layer for an interactive filter / signal demo. The firmware configures GPIO for buttons and DIP switches, ADC for a potentiometer (with LED thresholds by range), and a custom 20×4 LCD driver in 4-bit mode (init, commands, cursor, text). Clock and pin setup are done through Microchip’s toolchain so the app stays close to the silicon. Prototype uses Manhattan-style construction on a copper ground plane with PICkit 5 in-circuit programming.",
+      ro: "Firmware C bare-metal pentru PIC24FJ256GB110, construit în MPLAB X. Conectează I/O-ul real al plăcii astfel încât MCU-ul să citească input de la utilizator, să eșantioneze un semnal analogic, să comande LED-uri de status și să afișeze feedback pe un LCD caracter — stratul hardware pentru un demo interactiv de filtru / semnal. Firmware-ul configurează GPIO pentru butoane și DIP switch-uri, ADC pentru un potențiometru (cu praguri LED pe intervale) și un driver LCD 20×4 custom pe 4 biți (init, comenzi, cursor, text). Clock-ul și pinii sunt setați prin toolchain-ul Microchip, aproape de silicon. Prototipul folosește construcție tip Manhattan pe plan de masă cupru, cu programare in-circuit PICkit 5."
+    },
+    details: {
+      en: [
+        "<strong>LCD 20×4 (4-bit):</strong> RD14=RS, RD4=E, RD5=RW, RE4–RE7=D4–D7, RD15=backlight, RA14=reset.",
+        "<strong>Buttons (active low, CN pull-ups):</strong> RB8–RB11 = Button 1–4 (CN26–CN29).",
+        "<strong>DIP switches (active low):</strong> RA1, RB13, RB0, RB1 = Switch 1–4.",
+        "<strong>ADC:</strong> RB5 / AN5 = potentiometer.",
+        "<strong>LEDs by pot range:</strong> RB3 (≤337), RB4 (338–675), RC1 (&gt;675).",
+        "Custom LCD driver + GPIO/ADC bring-up on PIC24FJ256GB110 (MPLAB X)."
+      ],
+      ro: [
+        "<strong>LCD 20×4 (4 biți):</strong> RD14=RS, RD4=E, RD5=RW, RE4–RE7=D4–D7, RD15=backlight, RA14=reset.",
+        "<strong>Butoane (active low, CN pull-up):</strong> RB8–RB11 = Buton 1–4 (CN26–CN29).",
+        "<strong>DIP switch (active low):</strong> RA1, RB13, RB0, RB1 = Switch 1–4.",
+        "<strong>ADC:</strong> RB5 / AN5 = potențiometru.",
+        "<strong>LED-uri pe interval pot:</strong> RB3 (≤337), RB4 (338–675), RC1 (&gt;675).",
+        "Driver LCD custom + bring-up GPIO/ADC pe PIC24FJ256GB110 (MPLAB X)."
+      ]
+    }
+  },
+
+  // --- ARDUINO + RPi SENSING & COOLING ---
+  {
+    id: "arduino-rpi-sensing",
+    categoryFilter: ["embedded-sw", "hardware"],
+    title: "Arduino + Raspberry Pi Sensing & Cooling",
+    category: "Embedded Systems",
+    tech: "Arduino Nano, Arduino Due, C, Raspberry Pi, Python",
+    image: "/images/arduino-rpi-sensing/cover.png",
+    gallery: [
+      "/images/arduino-rpi-sensing/cover.png",
+      "/images/arduino-rpi-sensing/img1.png",
+      "/images/arduino-rpi-sensing/img2.png",
+      "/images/arduino-rpi-sensing/img3.png"
+    ],
+    desc: {
+      en: "Dual-MCU system: Nano cooling for Raspberry Pi and Due multi-sensor front-end (temperature, pH, light/lux).",
+      ro: "Sistem dual-MCU: răcire pe Nano pentru Raspberry Pi și front-end multi-senzor pe Due (temperatură, pH, lumină/lux)."
+    },
+    extendedSummary: {
+      en: "An embedded hardware/software project linking Arduino boards with a Raspberry Pi 3. The Arduino Nano (ATmega328, 16 MHz, 5 V) handles thermal management: NTC thermistor sensing (Steinhart–Hart) and a cooling fan driven via a 2N2222 transistor. The Arduino Due (ARM Cortex-M3, 84 MHz, 3.3 V) acquires analog channels for temperature, pH, and light — including a photodiode path through a transimpedance amplifier (TIA), NTC divider, pH probe conditioning, and a 10k/10k reference. Potentiometers (PT1–PT3) allow simulation of Temp / pH / Lux during bring-up. Sensor data is monitored from the Pi (Python on Debian/Linux).",
+      ro: "Proiect embedded hardware/software care leagă plăci Arduino de un Raspberry Pi 3. Arduino Nano (ATmega328, 16 MHz, 5 V) face management termic: senzor NTC (Steinhart–Hart) și ventilator comandat prin 2N2222. Arduino Due (ARM Cortex-M3, 84 MHz, 3.3 V) achiziționează canale analogice pentru temperatură, pH și lumină — inclusiv cale fotodiodă prin amplificator de transimpedanță (TIA), divizor NTC, condiționare sondă pH și referință 10k/10k. Potențiometrele (PT1–PT3) simulează Temp / pH / Lux la aducerea pe banc. Datele sunt monitorizate de pe Pi (Python pe Debian/Linux)."
+    },
+    details: {
+      en: [
+        "Arduino Nano cooling loop: NTC sensing + 2N2222 fan drive.",
+        "Arduino Due analog front-end: Temp, pH, Lux (photodiode TIA).",
+        "Steinhart–Hart temperature conversion; Nernst-based pH path.",
+        "PT1–PT3 potentiometers for sensor simulation during testing.",
+        "Raspberry Pi 3 host (Python / Debian) for cross-monitoring.",
+        "Bench prototype with dual MCUs, fan, and sensor housing."
+      ],
+      ro: [
+        "Buclă răcire pe Arduino Nano: NTC + ventilator 2N2222.",
+        "Front-end analog Due: Temp, pH, Lux (fotodiodă + TIA).",
+        "Conversie Steinhart–Hart; cale pH pe baza Nernst.",
+        "Potențiometre PT1–PT3 pentru simulare senzori la test.",
+        "Host Raspberry Pi 3 (Python / Debian) pentru monitorizare.",
+        "Prototip pe banc cu dual MCU, ventilator și carcasă senzor."
+      ]
     }
   },
 
@@ -473,7 +557,7 @@ export const projects = [
     }
   },
 
-  // --- PCB DESIGN ---
+  // --- PCB ---
   {
     id: "pcb-design",
     categoryFilter: "hardware",
@@ -523,7 +607,7 @@ export const projects = [
     }
   },
 
-  // --- CLASS B AMP ---
+  // --- CLASS B ---
   {
     id: "class-b",
     categoryFilter: "hardware",
@@ -548,7 +632,7 @@ export const projects = [
     }
   },
 
-  // --- LAPLACE (VISION) ---
+  // --- IMAGE PROCESSING ---
   {
     id: "laplace-img",
     categoryFilter: "software",
@@ -570,6 +654,57 @@ export const projects = [
     details: { 
       en: ["Computer Vision Algorithms.", "Convolution Masks.", "Python Implementation."], 
       ro: ["Algoritmi Computer Vision.", "Măști de Convoluție.", "Implementare Python."] 
+    }
+  },
+
+  // --- FLUTTER APP ---
+  {
+    id: "flutter-fitness",
+    categoryFilter: ["mobile", "software"],
+    title: "NRStrength — Fitness Tracker",
+    category: "Mobile App",
+    tech: "Flutter, Dart, Android",
+    image: "/images/flutter/cover.png", 
+    gallery: ["/images/flutter/img1.png", "/images/flutter/img2.png", "/images/flutter/img3.png", "/images/flutter/img4.png", "/images/flutter/img5.png", "/images/flutter/img6.png"],
+    playStore: playStoreLinks.fitness,
+    link: "/apps/nrstrength",
+    github: "https://github.com/RafaelMarian",
+    desc: {
+      en: "Comprehensive fitness app with real-time syncing and analytics replacing traditional paper logs.",
+      ro: "Aplicație completă de fitness cu sincronizare în timp real și analize, înlocuind jurnalul clasic."
+    },
+    extendedSummary: {
+      en: "A cross-platform solution developed in Flutter to modernize workout tracking. It uses and AI coach to start a 3 months cycle but also RPG style gamification techniques. The app calculates 1RM, tracks volume history, and provides graphical insights into progress.",
+      ro: "O soluție cross-platform dezvoltată în Flutter pentru modernizarea monitorizării antrenamentelor. Porneste un program pe 3 luni de antrenament folosind un Coach AI. Aplicația calculează 1RM, istoricul volumului și oferă grafice de progres pe langa multe altele."
+    },
+    details: {
+      en: ["Cross-platform Architecture (Mobile/Web).", "State Management (Provider).", "Automated Netlify Deployment."],
+      ro: ["Arhitectură Cross-platform (Mobil/Web).", "State Management (Provider).", "Deploy Automat pe Netlify."]
+    }
+  },
+
+  // --- AI PURCHASE PREDICTION ---
+  {
+    id: "ai-purchase",
+    categoryFilter: ["web", "software"],
+    title: "Product Purchase AI Prediction",
+    category: "Full Stack AI",
+    tech: "Python, React, Docker, Flask",
+    image: "/images/ai-purchase/cover.png",
+    gallery: ["/images/ai-purchase/img1.png", "/images/ai-purchase/img2.png", "/images/ai-purchase/img3.png", "/images/ai-purchase/img4.png", "/images/ai-purchase/img5.png", "/images/ai-purchase/img6.png"],
+    link: "https://github.com/RafaelMarian/ai-insights",
+    github: "https://github.com/RafaelMarian/ai-insights",
+    desc: {
+      en: "Full-stack web app predicting purchase trends using ML models served via Flask.",
+      ro: "Aplicație web Full-stack ce prezice tendințele de cumpărare folosind modele ML servite prin Flask."
+    },
+    extendedSummary: {
+      en: "Integrates Data Science with Modern Web Development. A Random Forest model trained on historical data is exposed via a Python Flask API. The frontend is a responsive React dashboard that visualizes prediction confidence. The entire stack is containerized using Docker for consistent deployment.",
+      ro: "Integrează Data Science cu Dezvoltarea Web modernă. Un model Random Forest antrenat pe date istorice este expus printr-un API Python Flask. Frontend-ul este un dashboard React responsiv care vizualizează încrederea predicției. Întregul stack este containerizat folosind Docker pentru un deploy consistent."
+    },
+    details: {
+      en: ["Flask API & Python ML.", "React Dashboard.", "Docker Containerization.", "REST API Architecture."],
+      ro: ["API Flask & Python ML.", "Dashboard React.", "Containerizare Docker.", "Arhitectură REST API."]
     }
   },
 
@@ -622,6 +757,7 @@ export const projects = [
       ro: ["React Hooks & State.", "UI Glassmorphism.", "Motor Dark Mode."]
     }
   },
+
   {
     id: "cns-website",
     categoryFilter: ["web"],
@@ -675,7 +811,7 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Multilingual support (EN)."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Suport multilingv (EN)."]
     }
-  },
+  },,
   {
     id: "time-means-money-web",
     categoryFilter: "web",
@@ -704,7 +840,7 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Product-focused UI/UX."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "UI/UX orientat pe produs."]
     }
-  },
+  },,
   {
     id: "budget-app-web",
     categoryFilter: "web",
@@ -733,7 +869,7 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Finance-focused presentation."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Prezentare axată pe finanțe personale."]
     }
-  },
+  },,
   {
     id: "offlinebooks-web",
     categoryFilter: "web",
@@ -762,7 +898,7 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Offline-first product messaging."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Mesajare produs offline-first."]
     }
-  },
+  },,
   {
     id: "focus-net-web",
     categoryFilter: "web",
@@ -793,76 +929,7 @@ export const projects = [
     }
   },
 
-  // --- MOBILE APPS (Android) ---
-  {
-    id: "bible-daily-prayer-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Bible: Daily Prayer",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoBibble.png",
-    gallery: ["/LogoAplicatii/LogoBibble.png"],
-    playStore: playStoreLinks.bible,
-    link: "/apps/bible-daily-prayer",
-    desc: {
-      en: "Android app for daily Scripture reading, prayer, and Orthodox devotion.",
-      ro: "Aplicație Android pentru lectură zilnică din Scriptură, rugăciune și devoțiune ortodoxă."
-    },
-    extendedSummary: {
-      en: "Bible: Daily Prayer delivers structured spiritual content on mobile — daily verses, prayer guides, and a calm reading experience designed for consistent use.",
-      ro: "Bible: Daily Prayer oferă conținut spiritual structurat pe mobil — versete zilnice, ghiduri de rugăciune și o experiență de lectură calmă, concepută pentru utilizare constantă."
-    },
-    details: {
-      en: ["Daily Scripture & prayer content.", "Orthodox devotion focus.", "Offline-friendly reading.", "Published on Google Play."],
-      ro: ["Conținut zilnic Scriptură și rugăciune.", "Focus devoțiune ortodoxă.", "Lectură funcțională offline.", "Publicat pe Google Play."]
-    }
-  },
-  {
-    id: "focus-net-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Focus Net",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoFocusNet.png",
-    gallery: ["/LogoAplicatii/LogoFocusNet.png"],
-    playStore: playStoreLinks.focusnet,
-    link: "/apps/focus-net",
-    desc: {
-      en: "Productivity app with focus timers and deep-work sessions.",
-      ro: "Aplicație de productivitate cu timer-e de focus și sesiuni de lucru profund."
-    },
-    extendedSummary: {
-      en: "Focus Net helps users stay on task with customizable focus intervals, session tracking, and a distraction-free timer built for deep work.",
-      ro: "Focus Net ajută utilizatorii să rămână concentrați cu intervale de focus personalizabile, urmărirea sesiunilor și un timer fără distrageri, construit pentru lucru profund."
-    },
-    details: {
-      en: ["Pomodoro-style focus timers.", "Session history & stats.", "Minimal distraction-free UI.", "Published on Google Play."],
-      ro: ["Timer-e focus tip Pomodoro.", "Istoric și statistici sesiuni.", "UI minimal, fără distrageri.", "Publicat pe Google Play."]
-    }
-  },
-  {
-    id: "budget-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Budget Planner — MoneyTrack",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoBudget.png",
-    gallery: ["/LogoAplicatii/LogoBudget.png"],
-    playStore: playStoreLinks.budget,
-    link: "/apps/budget-planner",
-    desc: {
-      en: "Personal finance app for budgeting, expenses, and money tracking.",
-      ro: "Aplicație de finanțe personale pentru buget, cheltuieli și urmărirea banilor."
-    },
-    extendedSummary: {
-      en: "MoneyTrack lets users set budgets, log expenses, and visualize spending habits so they can manage personal finances with clarity.",
-      ro: "MoneyTrack permite setarea bugetelor, înregistrarea cheltuielilor și vizualizarea obiceiurilor de consum, pentru o gestionare clară a finanțelor personale."
-    },
-    details: {
-      en: ["Budget & expense tracking.", "Spending categories.", "Financial overview dashboards.", "Published on Google Play."],
-      ro: ["Urmărire buget și cheltuieli.", "Categorii de cheltuieli.", "Dashboard-uri financiare.", "Publicat pe Google Play."]
-    }
-  },
+  // --- MOBILE APPS (Android) — only entries with real screenshots ---
   {
     id: "offlinebooks-app",
     categoryFilter: ["mobile", "software"],
@@ -891,92 +958,7 @@ export const projects = [
       en: ["Invoicing & client management.", "Offline-first architecture.", "Simple accounting workflows.", "Published on Google Play."],
       ro: ["Facturare și gestiune clienți.", "Arhitectură offline-first.", "Fluxuri contabilitate simple.", "Publicat pe Google Play."]
     }
-  },
-  {
-    id: "time-means-money-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Time Means Money",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoTimeMoney.png",
-    gallery: ["/LogoAplicatii/LogoTimeMoney.png"],
-    link: "/apps/time-means-money",
-    desc: {
-      en: "Mobile app connecting time tracking with financial value and productivity insights.",
-      ro: "Aplicație mobilă care leagă urmărirea timpului de valoarea financiară și insight-uri de productivitate."
-    },
-    extendedSummary: {
-      en: "Time Means Money helps users understand how they spend their hours and what that time is worth — bridging productivity habits with financial awareness.",
-      ro: "Time Means Money ajută utilizatorii să înțeleagă cum își petrec orele și ce valoare are acel timp — legând obiceiurile de productivitate de conștientizarea financiară."
-    },
-    details: {
-      en: ["Time tracking sessions.", "Financial value mapping.", "Productivity insights.", "Flutter Android build."],
-      ro: ["Sesiuni de time tracking.", "Mapare valoare financiară.", "Insight-uri productivitate.", "Build Flutter Android."]
-    }
-  },
-  {
-    id: "photoboom-app",
-    categoryFilter: ["mobile", "software"],
-    title: "PhotoBoom",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoPhotoBoom.png",
-    gallery: ["/LogoAplicatii/LogoPhotoBoom.png"],
-    desc: {
-      en: "Mobile app for quick photo capture, editing, and sharing workflows.",
-      ro: "Aplicație mobilă pentru captură rapidă, editare și partajare foto."
-    },
-    extendedSummary: {
-      en: "PhotoBoom is an Android utility focused on a fast, simple photo workflow — from capture to light edits and export, designed for everyday use.",
-      ro: "PhotoBoom este o utilitate Android axată pe un flux foto rapid și simplu — de la captură la editări ușoare și export, concepută pentru utilizare zilnică."
-    },
-    details: {
-      en: ["Flutter cross-platform UI.", "Android release.", "Camera & gallery integration.", "Lightweight editing flow."],
-      ro: ["UI cross-platform Flutter.", "Release Android.", "Integrare cameră și galerie.", "Flux de editare ușor."]
-    }
-  },
-  {
-    id: "plant-care-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Plant Care",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoPlant.png",
-    gallery: ["/LogoAplicatii/LogoPlant.png"],
-    desc: {
-      en: "Plant care reminders and tracking for watering and maintenance schedules.",
-      ro: "Reminder-e și urmărire pentru îngrijirea plantelor — udare și mentenanță."
-    },
-    extendedSummary: {
-      en: "Helps users keep houseplants healthy with scheduled reminders, care notes, and a clear overview of each plant's needs.",
-      ro: "Ajută utilizatorii să își mențină plantele sănătoase prin reminder-e programate, note de îngrijire și o imagine clară a nevoilor fiecărei plante."
-    },
-    details: {
-      en: ["Care schedules & reminders.", "Per-plant profiles.", "Offline-friendly data.", "Simple, focused UX."],
-      ro: ["Programe și reminder-e de îngrijire.", "Profil per plantă.", "Date funcționale offline.", "UX simplu și focusat."]
-    }
-  },
-  {
-    id: "stockflow-app",
-    categoryFilter: ["mobile", "software"],
-    title: "StockFlow",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoStockFlow.png",
-    gallery: ["/LogoAplicatii/LogoStockFlow.png"],
-    desc: {
-      en: "Inventory and stock management app for small businesses and personal use.",
-      ro: "Aplicație de gestiune stocuri și inventar pentru mici afaceri și uz personal."
-    },
-    extendedSummary: {
-      en: "StockFlow streamlines tracking products, quantities, and movements so users always know what is in stock and what needs restocking.",
-      ro: "StockFlow simplifică urmărirea produselor, cantităților și mișcărilor, astfel încât utilizatorii știu mereu ce este în stoc și ce trebuie reaprovizionat."
-    },
-    details: {
-      en: ["Product & quantity tracking.", "Stock in/out flows.", "Clear dashboards.", "Offline-first design."],
-      ro: ["Urmărire produse și cantități.", "Fluxuri intrări/ieșiri stoc.", "Dashboard-uri clare.", "Design offline-first."]
-    }
-  },
+  },,
   {
     id: "sound-measure-app",
     categoryFilter: ["mobile", "software"],
@@ -1003,51 +985,7 @@ export const projects = [
       en: ["Real-time dB monitoring.", "Microphone-based sensing.", "Readable gauges & history.", "Lightweight Android app."],
       ro: ["Monitorizare dB în timp real.", "Senzor bazat pe microfon.", "Grafice și istoric lizibil.", "Aplicație Android ușoară."]
     }
-  },
-  {
-    id: "plant-monitor-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Plant Light Meter: Lux Test",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoPlantCareMonitorLight.png",
-    gallery: ["/LogoAplicatii/LogoPlantCareMonitorLight.png"],
-    link: "/apps/plant-light-meter",
-    desc: {
-      en: "Monitors light conditions for indoor plants using the device sensors.",
-      ro: "Monitorizează condițiile de lumină pentru plantele de interior folosind senzorii dispozitivului."
-    },
-    extendedSummary: {
-      en: "Helps users place plants in optimal light by tracking brightness levels and giving simple guidance for healthier growth.",
-      ro: "Ajută utilizatorii să poziționeze plantele în lumină optimă prin urmărirea nivelului de luminozitate și recomandări simple pentru o creștere mai sănătoasă."
-    },
-    details: {
-      en: ["Ambient light monitoring.", "Plant placement tips.", "Sensor-driven readings.", "Minimal, practical UI."],
-      ro: ["Monitorizare lumină ambientală.", "Sfaturi de poziționare.", "Citiri bazate pe senzori.", "UI minimal și practic."]
-    }
-  },
-  {
-    id: "metal-detector-app",
-    categoryFilter: ["mobile", "software"],
-    title: "EMF Radar: Find Metal & Wires",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoMetalDetector.png",
-    gallery: ["/LogoAplicatii/LogoMetalDetector.png"],
-    link: "/apps/emf-radar",
-    desc: {
-      en: "EMF radar and metal detector using the phone magnetometer to find metal and wires.",
-      ro: "Radar EMF și detector de metale cu magnetometrul telefonului, pentru metal și fire."
-    },
-    extendedSummary: {
-      en: "EMF Radar visualizes magnetic field changes in real time to help locate metal objects, studs, and wires. A practical utility for quick checks on Android devices.",
-      ro: "EMF Radar vizualizează în timp real variațiile câmpului magnetic pentru a localiza obiecte metalice, cuie și fire. Utilitar practic pentru verificări rapide pe Android."
-    },
-    details: {
-      en: ["Magnetometer-based detection.", "Live signal visualization.", "Sensitivity feedback.", "Portable utility app."],
-      ro: ["Detecție bazată pe magnetometru.", "Vizualizare semnal live.", "Feedback de sensibilitate.", "Aplicație utilitară portabilă."]
-    }
-  },
+  },,
   {
     id: "client-crm-app",
     categoryFilter: ["mobile", "software"],
@@ -1062,6 +1000,8 @@ export const projects = [
       "/images/CRMAPP/img4.png",
       "/images/CRMAPP/img5.png"
     ],
+    playStore: playStoreLinks.clientcrm,
+    link: "/apps/client-base-crm",
     desc: {
       en: "Offline CRM for managing clients, notes, and follow-ups without an internet connection.",
       ro: "CRM offline pentru gestionarea clienților, notelor și follow-up-urilor fără internet."
@@ -1074,28 +1014,7 @@ export const projects = [
       en: ["Client profiles & notes.", "Offline-first storage.", "Follow-up tracking.", "Simple CRM workflows."],
       ro: ["Profiluri clienți și note.", "Stocare offline-first.", "Urmărire follow-up.", "Fluxuri CRM simple."]
     }
-  },
-  {
-    id: "battery-charge-app",
-    categoryFilter: ["mobile", "software"],
-    title: "Battery Charging Speed",
-    category: "Mobile App",
-    tech: "Flutter, Android",
-    image: "/LogoAplicatii/LogoBatteryChargingSpeed.png",
-    gallery: ["/LogoAplicatii/LogoBatteryChargingSpeed.png"],
-    desc: {
-      en: "Measures and displays battery charging speed and charging session details.",
-      ro: "Măsoară și afișează viteza de încărcare a bateriei și detaliile sesiunilor de încărcare."
-    },
-    extendedSummary: {
-      en: "Helps users understand how fast their device is charging, compare cables and adapters, and spot unusually slow charging sessions.",
-      ro: "Ajută utilizatorii să înțeleagă cât de repede se încarcă dispozitivul, să compare cabluri și adaptoare și să identifice sesiuni de încărcare neobișnuit de lente."
-    },
-    details: {
-      en: ["Charging rate monitoring.", "Session history.", "Hardware comparison use cases.", "Android system integration."],
-      ro: ["Monitorizare rată încărcare.", "Istoric sesiuni.", "Comparare cabluri/adaptoare.", "Integrare sistem Android."]
-    }
-  },
+  },,
   {
     id: "barometer-app",
     categoryFilter: ["mobile", "software"],
@@ -1110,6 +1029,8 @@ export const projects = [
       "/images/BarometerApp/img4.png",
       "/images/BarometerApp/img5.png"
     ],
+    playStore: playStoreLinks.barometer,
+    link: "/apps/baroscan",
     desc: {
       en: "Barometric pressure app for weather trends and altitude-related readings.",
       ro: "Aplicație de presiune barometrică pentru tendințe meteo și citiri legate de altitudine."

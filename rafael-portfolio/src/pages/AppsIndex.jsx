@@ -7,15 +7,11 @@ export default function AppsIndex({ lang }) {
   const t = {
     en: {
       title: 'Mobile Apps',
-      subtitle:
-        'Official app pages on this site. In Google Play Console set Website to this domain root (e.g. https://yoursite.com). AdMob needs /app-ads.txt at that same root.',
       play: 'On Play Store',
       page: 'App page',
     },
     ro: {
       title: 'Aplicații mobile',
-      subtitle:
-        'Pagini oficiale pe acest site. În Google Play Console pune Website la domeniul rădăcină (ex. https://siteul-tau.com). AdMob cere /app-ads.txt la aceeași rădăcină.',
       play: 'Pe Play Store',
       page: 'Pagina app',
     },
@@ -24,13 +20,6 @@ export default function AppsIndex({ lang }) {
   return (
     <div className="app-landing app-landing-index">
       <h1 className="section-title">{t.title}</h1>
-      <p className="app-landing-index-sub">{t.subtitle}</p>
-      <p className="app-landing-index-sub">
-        <code>/app-ads.txt</code> —{' '}
-        <a href="/app-ads.txt" target="_blank" rel="noopener noreferrer">
-          AdMob verification
-        </a>
-      </p>
 
       <div className="app-landing-grid">
         {appPages.map((app) => (

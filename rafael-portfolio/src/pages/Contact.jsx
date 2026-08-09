@@ -34,20 +34,39 @@ const Contact = ({ lang }) => {
   // Functie de trimitere email cu EmailJS
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceID || !templateID || !publicKey ||
+        serviceID.startsWith('your_') ||
+        templateID.startsWith('your_') ||
+        publicKey.startsWith('your_')) {
+      setSubmissionStatus({
+        status: 'error',
+        message: lang === 'en'
+          ? 'Contact form is not configured yet. Please email me directly.'
+          : 'Formularul nu e configurat încă. Te rog scrie-mi direct pe email.',
+      });
+      return;
+    }
+
     setSubmissionStatus({ status: 'sending', message: '' });
 
-    // --- IMPORTANT ---
-    // Inlocuieste cu datele tale de la EmailJS
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
-    // ---
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      reply_to: formData.email,
+    };
 
-    emailjs.send(serviceID, templateID, formData, publicKey)
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then((result) => {
           console.log(result.text);
           setSubmissionStatus({ status: 'success', message: lang === 'en' ? 'Message sent successfully!' : 'Mesaj trimis cu succes!' });
-          setFormData({ name: '', email: '', subject: '', message: '' }); // Reseteaza formularul
+          setFormData({ name: '', email: '', subject: '', message: '' });
       }, (error) => {
           console.log(error.text);
           setSubmissionStatus({ status: 'error', message: lang === 'en' ? 'Failed to send message. Please try again.' : 'Eroare la trimitere. Vă rugăm să încercați din nou.' });
