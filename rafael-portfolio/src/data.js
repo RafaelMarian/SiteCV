@@ -17,7 +17,7 @@ export const labels = {
     contact: { name: "Your Name", email: "Your Email", subject: "Subject", message: "Message", copy: "Copied!", hello: "Say Hello!" },
     appStack: {
       title: "Mobile apps (Android & iOS)",
-      subtitle: "Hover the stack to spread the icons — click a logo to open the live landing page.",
+      subtitle: "Hover to pause the reel — click an app to open its page.",
       soon: "In development — no public link yet",
       playStore: "View on Google Play"
     }
@@ -40,7 +40,7 @@ export const labels = {
     contact: { name: "Numele Tău", email: "Email-ul Tău", subject: "Subiect", message: "Mesajul Tău", copy: "Copiat!", hello: "Salut!" },
     appStack: {
       title: "Aplicații mobile (Android & iOS)",
-      subtitle: "Treci cu mouse-ul peste stivă pentru a le despărți — apasă pe un logo pentru pagina live.",
+      subtitle: "Treci cu mouse-ul pentru a opri banda — apasă pe o aplicație pentru pagina ei.",
       soon: "În dezvoltare — fără link public încă",
       playStore: "Vezi pe Google Play"
     }

@@ -1,10 +1,50 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { mobileApps, personalInfo } from '../data';
 import AndroidIcon from './AndroidIcon';
+import Magnetic from './motion/Magnetic';
 
 /**
- * Stacked app icons that fan out on hover/focus; live apps link externally.
+ * Slowly auto-scrolling marquee of app icons + names. Pauses on hover/focus;
+ * with prefers-reduced-motion it becomes a static, horizontally scrollable row.
+ * The second copy of the list only exists to make the loop seamless and is
+ * hidden from assistive tech and the tab order.
  */
+function AppChip({ app, t, hidden }) {
+  const inner = (
+    <>
+      <span className="app-chip-icon">
+        <img src={app.logo} alt="" width={44} height={44} loading="lazy" decoding="async" />
+      </span>
+      <span className="app-chip-name">{app.name}</span>
+    </>
+  );
+  const common = {
+    className: 'app-chip',
+    title: app.name,
+    ...(hidden ? { tabIndex: -1 } : {}),
+  };
+  if (!app.url) {
+    return (
+      <span {...common} className="app-chip app-chip--soon" title={`${app.name} — ${t.soon}`}>
+        {inner}
+      </span>
+    );
+  }
+  if (app.url.startsWith('http')) {
+    return (
+      <a {...common} href={app.url} target="_blank" rel="noopener noreferrer" aria-label={hidden ? undefined : `${app.name} (opens in new tab)`}>
+        {inner}
+      </a>
+    );
+  }
+  return (
+    <Link {...common} to={app.url}>
+      {inner}
+    </Link>
+  );
+}
+
 export default function AppLogoStack({ lang, labels }) {
   const t = labels[lang].appStack;
 
@@ -13,67 +53,36 @@ export default function AppLogoStack({ lang, labels }) {
       <div className="app-logo-stack-header">
         <h3 className="app-logo-stack-title">{t.title}</h3>
         <p className="app-logo-stack-subtitle">{t.subtitle}</p>
-        <a
-          href={personalInfo.playStore}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="app-play-store-link"
-          aria-label={`${t.playStore} (opens in new tab)`}
-        >
-          <AndroidIcon size={20} />
-          {t.playStore}
-        </a>
+        <Magnetic strength={0.2}>
+          <a
+            href={personalInfo.playStore}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="app-play-store-link"
+            aria-label={`${t.playStore} (opens in new tab)`}
+          >
+            <AndroidIcon size={20} />
+            {t.playStore}
+          </a>
+        </Magnetic>
       </div>
-      <div
-        className="app-logo-stack"
-        role="list"
-        aria-label={t.title}
-      >
-        {mobileApps.map((app, index) => {
-          const z = index + 1;
-          const img = (
-            <img
-              src={app.logo}
-              alt=""
-              className="app-logo-stack-img"
-              width={56}
-              height={56}
-              loading="lazy"
-              decoding="async"
-            />
-          );
-
-          if (app.url) {
-            const external = app.url.startsWith('http');
-            return (
-              <a
-                key={app.id}
-                href={app.url}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="app-logo-stack-item app-logo-stack-item--link"
-                style={{ zIndex: z }}
-                role="listitem"
-                title={app.name}
-                aria-label={`${app.name} (opens in new tab)`}
-              >
-                {img}
-              </a>
-            );
-          }
-
-          return (
-            <span
-              key={app.id}
-              className="app-logo-stack-item app-logo-stack-item--soon"
-              style={{ zIndex: z }}
-              role="listitem"
-              title={`${app.name} — ${t.soon}`}
-            >
-              {img}
-              <span className="visually-hidden">{`${app.name}. ${t.soon}`}</span>
-            </span>
-          );
-        })}
+      <div className="app-marquee" style={{ '--count': mobileApps.length }}>
+        <div className="app-marquee-track">
+          <ul className="app-marquee-list" aria-label={t.title}>
+            {mobileApps.map((app) => (
+              <li key={app.id}>
+                <AppChip app={app} t={t} />
+              </li>
+            ))}
+          </ul>
+          <ul className="app-marquee-list" aria-hidden="true">
+            {mobileApps.map((app) => (
+              <li key={`dup-${app.id}`}>
+                <AppChip app={app} t={t} hidden />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,496 @@
+/* ==========================================================================
+   Vanra Systems — motion layer (premium interactions)
+   Transform / opacity only; everything degrades under reduced motion.
+   ========================================================================== */
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --glow: rgba(255, 255, 255, 0.10);
+  --glow-border: rgba(255, 255, 255, 0.55);
+  --grid-line: rgba(255, 255, 255, 0.055);
+  --spot: rgba(255, 255, 255, 0.075);
+}
+
+[data-theme='light'] {
+  --glow: rgba(10, 10, 11, 0.045);
+  --glow-border: rgba(10, 10, 11, 0.45);
+  --grid-line: rgba(10, 10, 11, 0.06);
+  --spot: rgba(10, 10, 11, 0.05);
+}
+
+.App { overflow-x: clip; }
+.page-transition { display: block; }
+
+/* --- Scroll progress line ---------------------------------------------- */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--text-color);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- Split text mask ---------------------------------------------------- */
+.split-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.split-word {
+  display: inline-block;
+  will-change: transform;
+}
+.hero-greeting.hero-greeting { display: block; }
+
+/* --- Hero stage --------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  isolation: isolate;
+}
+.hero-text,
+.hero-image-container { position: relative; z-index: 1; }
+
+.hero-backdrop {
+  position: absolute;
+  top: -140px;
+  bottom: -40px;
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute;
+  inset: -64px;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, #000 20%, transparent 75%);
+          mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, #000 20%, transparent 75%);
+  animation: grid-drift 28s linear infinite;
+  will-change: transform;
+}
+@keyframes grid-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(64px, 64px, 0); }
+}
+.hero-spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 820px;
+  height: 820px;
+  margin: -410px 0 0 -410px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--spot) 0%, transparent 62%);
+  will-change: transform;
+}
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme='light'] .hero-grain {
+  opacity: 0.035;
+  filter: invert(1);
+}
+.hero-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--bg-color));
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  width: 1px;
+  height: 56px;
+  overflow: hidden;
+  background: var(--border-color);
+}
+.scroll-cue-line {
+  position: absolute;
+  inset: 0;
+  background: var(--text-color);
+  transform: translateY(-100%);
+  animation: scroll-cue 2.4s var(--ease-premium) infinite;
+}
+@keyframes scroll-cue {
+  0%   { transform: translateY(-100%); }
+  55%  { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+/* Portrait tilt */
+.tilt-stage { perspective: 1100px; }
+.tilt-card {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tilt-stage .profile-frame,
+.tilt-stage:hover .profile-frame,
+.hero-image-container.tilt-stage:hover .profile-frame { transform: none; }
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.16) 0%, transparent 38%);
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-premium);
+  z-index: 3;
+}
+.tilt-stage:hover .tilt-glare { opacity: 1; }
+.image-offset-bg { will-change: transform; }
+
+/* --- Buttons ----------------------------------------------------------- */
+.magnetic {
+  display: inline-flex;
+  will-change: transform;
+}
+.btn-primary-lg,
+.btn-secondary-lg,
+.btn-outline-lg,
+.app-play-store-link {
+  transition:
+    opacity 0.3s ease,
+    background-color 0.35s var(--ease-premium),
+    border-color 0.35s var(--ease-premium),
+    color 0.35s var(--ease-premium),
+    scale 0.25s var(--ease-premium) !important;
+}
+.btn-primary-lg:active,
+.btn-secondary-lg:active,
+.btn-outline-lg:active { scale: 0.97; }
+.btn-arrow-icon { transition: translate 0.45s var(--ease-out-expo); }
+.btn-arrow:hover .btn-arrow-icon,
+.btn-arrow:focus-visible .btn-arrow-icon { translate: 5px 0; }
+
+.social-btn {
+  transition:
+    background-color 0.3s var(--ease-premium),
+    color 0.3s var(--ease-premium),
+    border-color 0.3s var(--ease-premium),
+    translate 0.4s var(--ease-out-expo) !important;
+}
+.social-btn:hover { translate: 0 -3px; }
+
+/* --- Spotlight cards (cursor-following glow + border) ------------------ */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  --mx: 50%;
+  --my: 0%;
+  transition:
+    translate 0.55s var(--ease-out-expo),
+    border-color 0.4s ease,
+    background-color 0.4s ease !important;
+}
+.spotlight-card::before,
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.spotlight-card::before {
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx) var(--my), var(--glow), transparent 55%);
+}
+.spotlight-card::after {
+  z-index: 3;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx) var(--my), var(--glow-border), transparent 65%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+@media (hover: hover) {
+  .spotlight-card:hover::before,
+  .spotlight-card:hover::after { opacity: 1; }
+  .skill-card-home.spotlight-card:hover,
+  .explore-card.spotlight-card:hover { translate: 0 -4px; }
+}
+
+.explore-item { display: flex; }
+.explore-item > .explore-card { flex: 1; width: 100%; }
+.explore-link { display: inline-flex; align-items: center; gap: 8px; }
+.explore-arrow { transition: translate 0.5s var(--ease-out-expo); }
+.explore-card:hover .explore-arrow,
+.explore-card:focus-visible .explore-arrow { translate: 6px 0; }
+.explore-icon,
+.skill-icon { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+.explore-card:hover .explore-icon,
+.skill-card-home:hover .skill-icon {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+/* --- App marquee ------------------------------------------------------- */
+.app-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 0 8px;
+  margin: 0 calc(-1 * min(28px, 4vw));
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+}
+.app-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: app-marquee calc(var(--count, 12) * 3.6s) linear infinite;
+  will-change: transform;
+}
+.app-marquee:hover .app-marquee-track,
+.app-marquee:focus-within .app-marquee-track { animation-play-state: paused; }
+@keyframes app-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.app-marquee-list {
+  display: flex;
+  gap: 12px;
+  padding: 4px 12px 4px 0;
+  margin: 0;
+  list-style: none;
+}
+.app-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 18px 6px 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    translate 0.5s var(--ease-out-expo),
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+a.app-chip:hover,
+a.app-chip:focus-visible {
+  translate: 0 -3px;
+  border-color: var(--border-strong);
+  background: var(--card-bg-hover, var(--card-bg));
+}
+.app-chip-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: var(--surface-2, var(--card-bg));
+}
+.app-chip-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: scale 0.6s var(--ease-out-expo);
+}
+a.app-chip:hover .app-chip-icon img { scale: 1.08; }
+.app-chip-name {
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.app-chip--soon { opacity: 0.7; }
+
+/* --- Projects: filter chips with sliding pill -------------------------- */
+.tab-btn {
+  position: relative;
+  isolation: isolate;
+  transition: color 0.35s var(--ease-premium), border-color 0.35s ease !important;
+}
+.tab-btn.active,
+.tab-btn.active:hover {
+  background: transparent !important;
+  color: var(--on-accent) !important;
+  border-color: var(--primary-color);
+}
+.tab-pill {
+  position: absolute;
+  inset: -1px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  z-index: -1;
+}
+.tab-label { position: relative; }
+
+/* --- Project cards ----------------------------------------------------- */
+.projects-grid {
+  position: relative; /* anchor for popLayout exits */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (max-width: 400px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+.project-card {
+  overflow: hidden;
+  transform-origin: 50% 50%;
+}
+@media (hover: hover) {
+  .project-card.spotlight-card:hover {
+    translate: 0 -4px;
+    border-color: var(--border-strong);
+  }
+}
+.project-card:hover { transform: none; }
+.project-image-container {
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+.project-image {
+  transition: scale 1.1s var(--ease-out-expo), opacity 0.4s ease;
+}
+.project-card:hover .project-image { transform: none; scale: 1.07; }
+.project-open-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 11, 0.7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  translate: 0 8px;
+  transition: opacity 0.4s ease, translate 0.5s var(--ease-out-expo);
+}
+.project-card:hover .project-open-hint {
+  opacity: 1;
+  translate: 0 0;
+}
+.project-open {
+  all: unset;
+  cursor: pointer;
+}
+.project-open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.project-card:has(.project-open:focus-visible) {
+  outline: 1px solid var(--text-color);
+  outline-offset: 3px;
+}
+.project-card .expand-btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Project modal ----------------------------------------------------- */
+.modal-overlay {
+  animation: none;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+[data-theme='light'] .modal-overlay { background: rgba(250, 250, 250, 0.55); }
+.modal-content {
+  animation: none;
+  overscroll-behavior: contain;
+  outline: none;
+  max-width: 860px;
+}
+.modal-img { display: block; height: 340px; }
+@media (max-width: 600px) { .modal-img { height: 220px; } }
+.modal-title {
+  margin: 15px 0 0;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+.modal-lead { font-size: 1.08rem; line-height: 1.65; margin: 20px 0; }
+.modal-summary {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 20px 0;
+  color: var(--secondary-text);
+}
+.modal-divider { border-top: 1px solid var(--border-color); margin: 30px 0; }
+.modal-details { margin: 15px 0 30px; padding-left: 20px; line-height: 1.7; }
+.modal-gallery-title { display: flex; align-items: center; gap: 10px; }
+.close-btn {
+  z-index: 2;
+  background: rgba(10, 10, 11, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+button.gallery-item-wrapper {
+  padding: 0;
+  font: inherit;
+  display: block;
+  width: 100%;
+}
+.gallery-img { transition: scale 0.8s var(--ease-out-expo) !important; }
+.gallery-item-wrapper:hover .gallery-img { transform: none; scale: 1.08; }
+.lightbox-overlay {
+  animation: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- Reduced motion ---------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid,
+  .scroll-cue-line { animation: none; }
+  .scroll-cue { display: none; }
+  .app-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+  .app-marquee-track { animation: none; }
+  .app-marquee-list[aria-hidden='true'] { display: none; }
+  .spotlight-card,
+  .app-chip,
+  .project-image,
+  .btn-arrow-icon,
+  .explore-arrow,
+  .social-btn,
+  .gallery-img { transition-duration: 0.01ms !important; }
+  .spotlight-card:hover,
+  .project-card.spotlight-card:hover,
+  .social-btn:hover,
+  a.app-chip:hover { translate: none !important; }
+  .project-card:hover .project-image,
+  .gallery-item-wrapper:hover .gallery-img { scale: 1; }
+}
+
+@media (max-width: 900px) {
+  .scroll-cue { display: none; }
+  .hero-backdrop { top: -110px; }
+}
+.route-fallback { min-height: 70vh; }

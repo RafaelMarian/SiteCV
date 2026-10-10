@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
 import './App.css';
@@ -8,17 +8,32 @@ import EasterEggProvider, { useEasterEggs } from './components/easterEggs/Easter
 
 // Importam paginile
 import Home from './pages/Home';
-import Experience from './pages/Experience';
-import Projects from './pages/Projects';
-import Education from './pages/Education';
-import Contact from './pages/Contact';
-import HobbyDetail from './pages/HobbyDetail';
-import Hobbies from './pages/Hobbies';
-import TechStack from './pages/TechStack';
-import AppsIndex from './pages/AppsIndex';
-import AppLanding from './pages/AppLanding';
-import NotFound from './pages/NotFound';
+const Experience = lazy(() => import('./pages/Experience'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Education = lazy(() => import('./pages/Education'));
+const Contact = lazy(() => import('./pages/Contact'));
+const HobbyDetail = lazy(() => import('./pages/HobbyDetail'));
+const Hobbies = lazy(() => import('./pages/Hobbies'));
+const TechStack = lazy(() => import('./pages/TechStack'));
+const AppsIndex = lazy(() => import('./pages/AppsIndex'));
+const AppLanding = lazy(() => import('./pages/AppLanding'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+// Page stylesheets are imported eagerly (before the theme layers) so that
+// lazy-loaded route chunks keep the original cascade order.
+import './BookLayout.css';
+import './GamerPage.css';
+import './HikingNaturePage.css';
+import './FitnessCoachPage.css';
+import './pages/AppLanding.css';
+import './pages/FlappyBird.css';
+import './pages/games/MiniGame.css';
 import './theme.css';
+import './motion.css';
+import { LazyMotion, MotionConfig, AnimatePresence } from 'motion/react';
+import SmoothScroll from './components/motion/SmoothScroll';
+import { useLenis } from './components/motion/lenisContext';
+import ScrollProgress from './components/motion/ScrollProgress';
+import PageTransition from './components/motion/PageTransition';
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
   const { onLogoChipClick, logoBoot } = useEasterEggs();
@@ -129,11 +144,49 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
         <Link to="/hobbies" className={`mobile-link ${isActive('/hobbies')}`}>{t.hobbies}</Link>
         <Link to="/contact" className={`mobile-link ${isActive('/contact')}`}>{t.contact}</Link>
       </div>
+      <ScrollProgress />
     </nav>
   );
 };
 
-// ... Restul fisierului App (function App) ramane la fel
+const loadMotionFeatures = () => import('./components/motion/features').then((r) => r.default);
+
+// Each route fades/slides in; lazy pages show an empty, height-holding fallback.
+const PT = ({ children }) => (
+  <PageTransition>
+    <Suspense fallback={<div className="route-fallback" aria-busy="true" />}>{children}</Suspense>
+  </PageTransition>
+);
+
+// Route-level fade/slide transitions; scroll resets between the exit and enter.
+const AnimatedRoutes = ({ lang }) => {
+  const location = useLocation();
+  const lenis = useLenis();
+  const onExitComplete = () => {
+    if (location.hash) return;
+    if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo(0, 0);
+  };
+  return (
+    <AnimatePresence mode="wait" initial={false} onExitComplete={onExitComplete}>
+      <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<PT><Home lang={lang} /></PT>} />
+                <Route path="/experience" element={<PT><Experience lang={lang} /></PT>} />
+                <Route path="/projects" element={<PT><Projects lang={lang} /></PT>} />
+                <Route path="/tech-stack" element={<PT><TechStack lang={lang} /></PT>} />
+                <Route path="/education" element={<PT><Education lang={lang} /></PT>} />
+                <Route path="/hobbies" element={<PT><Hobbies lang={lang} /></PT>} />
+                <Route path="/hobbies/:hobbyId" element={<PT><HobbyDetail lang={lang} /></PT>} />
+                <Route path="/contact" element={<PT><Contact lang={lang} /></PT>} />
+                <Route path="/apps" element={<PT><AppsIndex lang={lang} /></PT>} />
+                <Route path="/apps/barometer" element={<PT><Navigate to="/apps/baroscan" replace /></PT>} />
+                <Route path="/apps/:slug" element={<PT><AppLanding lang={lang} /></PT>} />
+                <Route path="*" element={<PT><NotFound lang={lang} /></PT>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 function App() {
     // ... codul existent
     const [lang, setLang] = useState('en');
@@ -164,26 +217,16 @@ function App() {
   
     return (
       <Router>
+       <LazyMotion features={loadMotionFeatures} strict>
+        <MotionConfig reducedMotion="user">
+        <SmoothScroll>
         <EasterEggProvider lang={lang}>
           <div className="App">
             <RouteMeta lang={lang} />
             <Navbar lang={lang} setLang={setLang} theme={theme} toggleTheme={toggleTheme} />
 
             <div className="container">
-              <Routes>
-                <Route path="/" element={<Home lang={lang} />} />
-                <Route path="/experience" element={<Experience lang={lang} />} />
-                <Route path="/projects" element={<Projects lang={lang} />} />
-                <Route path="/tech-stack" element={<TechStack lang={lang} />} />
-                <Route path="/education" element={<Education lang={lang} />} />
-                <Route path="/hobbies" element={<Hobbies lang={lang} />} />
-                <Route path="/hobbies/:hobbyId" element={<HobbyDetail lang={lang} />} />
-                <Route path="/contact" element={<Contact lang={lang} />} />
-                <Route path="/apps" element={<AppsIndex lang={lang} />} />
-                <Route path="/apps/barometer" element={<Navigate to="/apps/baroscan" replace />} />
-                <Route path="/apps/:slug" element={<AppLanding lang={lang} />} />
-                <Route path="*" element={<NotFound lang={lang} />} />
-              </Routes>
+              <AnimatedRoutes lang={lang} />
             </div>
             <footer className="site-footer">
               <div className="site-footer-inner">
@@ -195,6 +238,9 @@ function App() {
             </footer>
           </div>
         </EasterEggProvider>
+        </SmoothScroll>
+        </MotionConfig>
+       </LazyMotion>
       </Router>
     );
   }

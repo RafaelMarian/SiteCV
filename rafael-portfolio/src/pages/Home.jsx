@@ -1,5 +1,6 @@
 // src/pages/Home.jsx
-import React from 'react';
+import React, { useRef } from 'react';
+import { m } from 'motion/react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Download, Cpu, Smartphone,
@@ -9,6 +10,20 @@ import { personalInfo, labels } from '../data';
 import AppLogoStack from '../components/AppLogoStack';
 import ProfilePhoto from '../components/ProfilePhoto';
 import AndroidIcon from '../components/AndroidIcon';
+import SplitText from '../components/motion/SplitText';
+import Magnetic from '../components/motion/Magnetic';
+import HeroBackdrop from '../components/motion/HeroBackdrop';
+import TiltPortrait from '../components/motion/TiltPortrait';
+import { Reveal, Stagger, StaggerItem } from '../components/motion/Reveal';
+import { EASE } from '../components/motion/ease';
+import { trackSpotlight } from '../components/motion/spotlight';
+
+// Hero lines after the masked headline fade/slide in on a short stagger.
+const heroLine = (i) => ({
+  initial: { opacity: 0, y: 22 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.9, ease: EASE, delay: 0.55 + i * 0.09 },
+});
 
 const Home = ({ lang }) => {
 
@@ -55,37 +70,44 @@ const Home = ({ lang }) => {
   };
 
   const txt = content[lang];
+  const heroRef = useRef(null);
 
   return (
     <div className="home-container">
       
       {/* --- 1. HERO SECTION --- */}
-      <section className="hero-section">
+      <section className="hero-section" ref={heroRef}>
+        <HeroBackdrop targetRef={heroRef} />
         <div className="hero-text">
-          <span className="hero-greeting">{txt.greeting}</span>
-          <h1 className="hero-name">{personalInfo.name}</h1>
-          <h2 className="hero-role">{personalInfo.role}</h2>
-          <p className="hero-founder">
+          <SplitText key={`g-${lang}`} as="span" className="hero-greeting" text={txt.greeting} delay={0.05} stagger={0.04} duration={0.7} />
+          <SplitText as="h1" className="hero-name" text={personalInfo.name} delay={0.15} stagger={0.08} duration={1.05} />
+          <SplitText as="h2" className="hero-role" text={personalInfo.role} delay={0.4} stagger={0.035} duration={0.85} />
+          <m.p className="hero-founder" {...heroLine(0)}>
             <img src="/brand/vanra-mark-dark.svg" alt="" className="hero-founder-mark hero-founder-mark--dark" width="18" height="18" />
             <img src="/brand/vanra-mark-light.svg" alt="" className="hero-founder-mark hero-founder-mark--light" width="18" height="18" />
             <span>{txt.founderPrefix} <strong>Vanra Systems</strong> — {txt.founderSuffix}</span>
-          </p>
-          <p className="hero-desc">{txt.description}</p>
+          </m.p>
+          <m.p className="hero-desc" {...heroLine(1)}>{txt.description}</m.p>
           
-          <div className="hero-actions">
-            <Link to="/projects" className="btn-primary-lg">
-              {txt.viewProjects} <ArrowRight size={20} />
-            </Link>
-            <Link to="/contact" className="btn-secondary-lg">
-              {txt.contactMe}
-            </Link>
-            {/* Buton Download CV - Poti pune link-ul catre PDF-ul tau in href */}
-            <a href="/cv-rafael.pdf" target="_blank" rel="noreferrer" className="btn-outline-lg">
-              <Download size={20} /> CV
-            </a>
-          </div>
+          <m.div className="hero-actions" {...heroLine(2)}>
+            <Magnetic>
+              <Link to="/projects" className="btn-primary-lg btn-arrow">
+                {txt.viewProjects} <ArrowRight size={20} className="btn-arrow-icon" />
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/contact" className="btn-secondary-lg">
+                {txt.contactMe}
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <a href="/cv-rafael.pdf" target="_blank" rel="noreferrer" className="btn-outline-lg">
+                <Download size={20} /> CV
+              </a>
+            </Magnetic>
+          </m.div>
 
-          <div className="hero-social" role="navigation" aria-label={txt.followMe}>
+          <m.div className="hero-social" role="navigation" aria-label={txt.followMe} {...heroLine(3)}>
             <span className="hero-social-label">{txt.followMe}</span>
             <div className="hero-social-links">
               <a
@@ -125,14 +147,10 @@ const Home = ({ lang }) => {
                 <Youtube size={20} strokeWidth={1.75} />
               </a>
             </div>
-          </div>
+          </m.div>
         </div>
 
-        <div className="hero-image-container">
-          {/* Elementul decorativ din spate */}
-          <div className="image-offset-bg"></div>
-          
-          {/* Rama principala cu imaginea */}
+        <TiltPortrait>
           <ProfilePhoto
             src="/images/profile.jpg?v=20260524"
             alt="Vanca Rafael Marian"
@@ -141,63 +159,78 @@ const Home = ({ lang }) => {
                 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';
             }}
           />
-        </div>
+        </TiltPortrait>
+        <m.div
+          className="scroll-cue"
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.6, duration: 1 }}
+        >
+          <span className="scroll-cue-line" />
+        </m.div>
       </section>
 
-      <AppLogoStack lang={lang} labels={labels} />
+      <Reveal><AppLogoStack lang={lang} labels={labels} /></Reveal>
 
       {/* --- 2. SKILLS OVERVIEW (3 Cards) --- */}
-      <section className="skills-overview">
-        <div className="skill-card-home">
+      <Stagger as="section" className="skills-overview">
+        <StaggerItem className="skill-card-home spotlight-card" onPointerMove={trackSpotlight}>
           <Cpu size={32} strokeWidth={1.5} className="skill-icon" />
           <h3>{txt.skills.emb}</h3>
           <p>C/C++, Matlab, Simulink, Automotive Protocols, Circuit Analysis</p>
-        </div>
-        <div className="skill-card-home">
+        </StaggerItem>
+        <StaggerItem className="skill-card-home spotlight-card" onPointerMove={trackSpotlight}>
           <Smartphone size={32} strokeWidth={1.5} className="skill-icon" />
           <h3>{txt.skills.web}</h3>
           <p>Flutter, CI/CD, GitHub Actions</p>
-        </div>
-      </section>
+        </StaggerItem>
+      </Stagger>
 
       {/* --- 3. EXPLORE SECTIONS --- */}
       <section className="explore-section">
-        <div className="section-header-center">
+        <Reveal className="section-header-center">
           <h2>Explore the Portfolio</h2>
           <div className="underline-center"></div>
-        </div>
+        </Reveal>
 
-        <div className="explore-grid">
+        <Stagger className="explore-grid" stagger={0.1}>
           {/* Card Experience */}
-          <Link to="/experience" className="explore-card">
+          <StaggerItem className="explore-item">
+          <Link to="/experience" className="explore-card spotlight-card" onPointerMove={trackSpotlight}>
             <div className="explore-icon"><Briefcase size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.exp.title}</h3>
               <p>{txt.sections.exp.desc}</p>
-              <span className="explore-link">Go to Experience →</span>
+              <span className="explore-link">Go to Experience <ArrowRight size={14} className="explore-arrow" aria-hidden="true" /></span>
             </div>
           </Link>
+          </StaggerItem>
 
           {/* Card Projects */}
-          <Link to="/projects" className="explore-card featured">
+          <StaggerItem className="explore-item">
+          <Link to="/projects" className="explore-card spotlight-card featured" onPointerMove={trackSpotlight}>
             <div className="explore-icon"><Layers size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.proj.title}</h3>
               <p>{txt.sections.proj.desc}</p>
-              <span className="explore-link">See Projects →</span>
+              <span className="explore-link">See Projects <ArrowRight size={14} className="explore-arrow" aria-hidden="true" /></span>
             </div>
           </Link>
+          </StaggerItem>
 
           {/* Card Education */}
-          <Link to="/education" className="explore-card">
+          <StaggerItem className="explore-item">
+          <Link to="/education" className="explore-card spotlight-card" onPointerMove={trackSpotlight}>
             <div className="explore-icon"><BookOpen size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.edu.title}</h3>
               <p>{txt.sections.edu.desc}</p>
-              <span className="explore-link">View Education →</span>
+              <span className="explore-link">View Education <ArrowRight size={14} className="explore-arrow" aria-hidden="true" /></span>
             </div>
           </Link>
-        </div>
+          </StaggerItem>
+        </Stagger>
       </section>
 
     </div>
