@@ -3,29 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Download, Cpu, Smartphone,
-  Briefcase, BookOpen, Layers, Youtube, Linkedin, Github, X as XLogo, Facebook, Instagram,
+  Briefcase, BookOpen, Layers, Youtube, Linkedin, Github,
 } from 'lucide-react';
 import { personalInfo, labels } from '../data';
 import AppLogoStack from '../components/AppLogoStack';
 import ProfilePhoto from '../components/ProfilePhoto';
 import AndroidIcon from '../components/AndroidIcon';
-
-function TikTokIcon({ size = 22 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-    </svg>
-  );
-}
-
-/** Product Hunt mark (geometric “PH”, same path as Simple Icons). */
-function ProductHuntIcon({ size = 22 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M13.6048 10.5894h3.6518l1.7049 4.9053h-3.6518l-1.7049-4.9053zm-6.4405 0h3.6518l1.7049 4.9053H8.8692l-1.7049-4.9053zm11.361-4.9053H13.3l-1.4372 4.15h5.4848l1.4372-4.15zm-7.6556 0H5.6444L4.2072 9.834h5.4848l1.4372-4.15z" />
-    </svg>
-  );
-}
 
 const Home = ({ lang }) => {
 
@@ -38,6 +21,8 @@ const Home = ({ lang }) => {
       contactMe: "Contact Me",
       downloadCv: "Download CV",
       followMe: "Follow me",
+      founderPrefix: "Founder of",
+      founderSuffix: "Android apps & embedded systems",
       sections: {
         exp: { title: "Work Experience", desc: "My professional journey in the Automotive Industry and beyond." },
         proj: { title: "Projects Showcase", desc: "A collection of my work: Embedded, FPGA, and Web Apps." },
@@ -55,6 +40,8 @@ const Home = ({ lang }) => {
       contactMe: "Contact",
       downloadCv: "Descarcă CV",
       followMe: "Urmărește-mă",
+      founderPrefix: "Fondator",
+      founderSuffix: "aplicații Android & sisteme embedded",
       sections: {
         exp: { title: "Experiență", desc: "Parcursul meu profesional în industria Auto și nu numai." },
         proj: { title: "Portofoliu Proiecte", desc: "O colecție a lucrărilor mele: Embedded, FPGA și Aplicații Web." },
@@ -78,6 +65,11 @@ const Home = ({ lang }) => {
           <span className="hero-greeting">{txt.greeting}</span>
           <h1 className="hero-name">{personalInfo.name}</h1>
           <h2 className="hero-role">{personalInfo.role}</h2>
+          <p className="hero-founder">
+            <img src="/brand/vanra-mark-dark.svg" alt="" className="hero-founder-mark hero-founder-mark--dark" width="18" height="18" />
+            <img src="/brand/vanra-mark-light.svg" alt="" className="hero-founder-mark hero-founder-mark--light" width="18" height="18" />
+            <span>{txt.founderPrefix} <strong>Vanra Systems</strong> — {txt.founderSuffix}</span>
+          </p>
           <p className="hero-desc">{txt.description}</p>
           
           <div className="hero-actions">
@@ -103,34 +95,7 @@ const Home = ({ lang }) => {
                 className="social-btn github"
                 aria-label="GitHub"
               >
-                <Github size={24} />
-              </a>
-              <a
-                href={personalInfo.x}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn x-com"
-                aria-label="X"
-              >
-                <XLogo size={22} strokeWidth={2.25} />
-              </a>
-              <a
-                href={personalInfo.tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn tiktok"
-                aria-label="TikTok"
-              >
-                <TikTokIcon size={22} />
-              </a>
-              <a
-                href={personalInfo.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn youtube"
-                aria-label="YouTube"
-              >
-                <Youtube size={24} />
+                <Github size={20} strokeWidth={1.75} />
               </a>
               <a
                 href={personalInfo.linkedin}
@@ -139,34 +104,7 @@ const Home = ({ lang }) => {
                 className="social-btn linkedin"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href={personalInfo.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn facebook"
-                aria-label="Facebook"
-              >
-                <Facebook size={24} />
-              </a>
-              <a
-                href={personalInfo.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn instagram"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
-              </a>
-              <a
-                href={personalInfo.producthunt}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn producthunt"
-                aria-label="Product Hunt"
-              >
-                <ProductHuntIcon size={20} />
+                <Linkedin size={20} strokeWidth={1.75} />
               </a>
               <a
                 href={personalInfo.playStore}
@@ -175,7 +113,16 @@ const Home = ({ lang }) => {
                 className="social-btn playstore"
                 aria-label="Google Play"
               >
-                <AndroidIcon size={24} />
+                <AndroidIcon size={20} />
+              </a>
+              <a
+                href={personalInfo.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn youtube"
+                aria-label="YouTube"
+              >
+                <Youtube size={20} strokeWidth={1.75} />
               </a>
             </div>
           </div>
@@ -202,12 +149,12 @@ const Home = ({ lang }) => {
       {/* --- 2. SKILLS OVERVIEW (3 Cards) --- */}
       <section className="skills-overview">
         <div className="skill-card-home">
-          <Cpu size={32} className="skill-icon" />
+          <Cpu size={32} strokeWidth={1.5} className="skill-icon" />
           <h3>{txt.skills.emb}</h3>
           <p>C/C++, Matlab, Simulink, Automotive Protocols, Circuit Analysis</p>
         </div>
         <div className="skill-card-home">
-          <Smartphone size={32} className="skill-icon" />
+          <Smartphone size={32} strokeWidth={1.5} className="skill-icon" />
           <h3>{txt.skills.web}</h3>
           <p>Flutter, CI/CD, GitHub Actions</p>
         </div>
@@ -223,7 +170,7 @@ const Home = ({ lang }) => {
         <div className="explore-grid">
           {/* Card Experience */}
           <Link to="/experience" className="explore-card">
-            <div className="explore-icon"><Briefcase size={28}/></div>
+            <div className="explore-icon"><Briefcase size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.exp.title}</h3>
               <p>{txt.sections.exp.desc}</p>
@@ -233,7 +180,7 @@ const Home = ({ lang }) => {
 
           {/* Card Projects */}
           <Link to="/projects" className="explore-card featured">
-            <div className="explore-icon"><Layers size={28}/></div>
+            <div className="explore-icon"><Layers size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.proj.title}</h3>
               <p>{txt.sections.proj.desc}</p>
@@ -243,7 +190,7 @@ const Home = ({ lang }) => {
 
           {/* Card Education */}
           <Link to="/education" className="explore-card">
-            <div className="explore-icon"><BookOpen size={28}/></div>
+            <div className="explore-icon"><BookOpen size={24} strokeWidth={1.5} /></div>
             <div className="explore-content">
               <h3>{txt.sections.edu.title}</h3>
               <p>{txt.sections.edu.desc}</p>

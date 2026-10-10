@@ -1,17 +1,24 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/sora';
+
 :root {
-  --font-family: 'Times New Roman', Times, serif;
+  --font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Sora Variable', 'Sora', 'Inter Variable', system-ui, sans-serif;
 }
 
 html {
   font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: #f0f2f5;
-  color: #333;
-  line-height: 1.6;
+  background-color: #0A0A0B;
+  color: #FFFFFF;
+  line-height: 1.65;
 }
 
 #root,
@@ -20,6 +27,11 @@ input,
 textarea,
 select {
   font-family: var(--font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
 }
 
 * {

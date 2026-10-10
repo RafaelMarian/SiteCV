@@ -13,7 +13,7 @@ export const appPages = [
       en: 'Measure light for your plants with the phone sensor.',
       ro: 'Măsoară lumina pentru plante cu senzorul telefonului.',
     },
-    logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png',
+    logo: '/LogoAplicatii/LogoPlantCareMonitorLight.webp',
     playStore: playStoreLinks.plantlux,
     features: {
       en: [
@@ -37,7 +37,7 @@ export const appPages = [
       en: 'Detect metal and wires using your phone’s magnetometer — EMF field visualization.',
       ro: 'Detectează metal și fire cu magnetometrul telefonului — vizualizare câmp EMF.',
     },
-    logo: '/LogoAplicatii/LogoMetalDetector.png',
+    logo: '/LogoAplicatii/LogoMetalDetector.webp',
     playStore: playStoreLinks.emfradar,
     features: {
       en: [
@@ -61,7 +61,7 @@ export const appPages = [
       en: 'Scripture, Orthodox prayers, and daily devotion.',
       ro: 'Scriptură, rugăciuni ortodoxe și devoțiune zilnică.',
     },
-    logo: '/LogoAplicatii/LogoBibble.png',
+    logo: '/LogoAplicatii/LogoBibble.webp',
     playStore: playStoreLinks.bible,
     features: {
       en: ['Multi-language Bible offline', 'Daily prayer & Orthodox prayers', 'Bookmarks & highlights'],
@@ -70,12 +70,12 @@ export const appPages = [
   },
   {
     slug: 'focus-net',
-    name: { en: 'Focus Net', ro: 'Focus Net' },
+    name: { en: 'Focus Net Timer', ro: 'Focus Net Timer' },
     tagline: {
       en: 'Productivity timer and deep-focus sessions.',
       ro: 'Timer de productivitate și sesiuni de focus profund.',
     },
-    logo: '/LogoAplicatii/LogoFocusNet.png',
+    logo: '/LogoAplicatii/LogoFocusNet.webp',
     playStore: playStoreLinks.focusnet,
     features: {
       en: ['Pomodoro-style timers', 'Focus tags & stats', 'Companion progression'],
@@ -84,12 +84,12 @@ export const appPages = [
   },
   {
     slug: 'budget-planner',
-    name: { en: 'Budget Planner — MoneyTrack', ro: 'Budget Planner — MoneyTrack' },
+    name: { en: 'Budget Planner MoneyTrack', ro: 'Budget Planner MoneyTrack' },
     tagline: {
       en: 'Personal budget and expense tracking, privacy-first.',
       ro: 'Buget personal și cheltuieli, cu focus pe confidențialitate.',
     },
-    logo: '/LogoAplicatii/LogoBudget.png',
+    logo: '/LogoAplicatii/LogoBudget.webp',
     playStore: playStoreLinks.budget,
     features: {
       en: ['Budget limits & categories', 'Charts & cash flow', 'Data stored on device'],
@@ -98,12 +98,12 @@ export const appPages = [
   },
   {
     slug: 'offlinebooks',
-    name: { en: 'OfflineBooks', ro: 'OfflineBooks' },
+    name: { en: 'Accounting OfflineBooks', ro: 'Accounting OfflineBooks' },
     tagline: {
       en: 'Offline accounting and invoicing for small business.',
       ro: 'Contabilitate și facturare offline pentru mici afaceri.',
     },
-    logo: '/LogoAplicatii/LogoAccounting.png',
+    logo: '/LogoAplicatii/LogoAccounting.webp',
     playStore: playStoreLinks.accounting,
     features: {
       en: ['Invoices & estimates', 'Expenses & bills', 'Reports & CSV export'],
@@ -117,7 +117,7 @@ export const appPages = [
       en: 'Gym log, workouts, and fitness gamification.',
       ro: 'Jurnal sală, antrenamente și gamificare fitness.',
     },
-    logo: '/LogoAplicatii/LogoFitness.png',
+    logo: '/LogoAplicatii/LogoFitness.webp',
     playStore: playStoreLinks.fitness,
     features: {
       en: ['Workout tracking & 1RM', 'AI training plans', 'RPG-style progression'],
@@ -126,12 +126,12 @@ export const appPages = [
   },
   {
     slug: 'photoboom',
-    name: { en: 'PhotoBoom 360 Studio', ro: 'PhotoBoom 360 Studio' },
+    name: { en: 'PhotoBooth 360 Studio', ro: 'PhotoBooth 360 Studio' },
     tagline: {
       en: 'Photo booth and camera studio for capture, edits, and sharing.',
       ro: 'Photo booth și studio foto pentru captură, editări și partajare.',
     },
-    logo: '/LogoAplicatii/LogoPhotoBoom.png',
+    logo: '/LogoAplicatii/LogoPhotoBoom.webp',
     playStore: playStoreLinks.photoboom,
     features: {
       en: ['Camera capture & gallery', 'Quick edits and export', 'Booth-style photo workflows'],
@@ -140,12 +140,12 @@ export const appPages = [
   },
   {
     slug: 'time-means-money',
-    name: { en: 'Time Means Money', ro: 'Time Means Money' },
+    name: { en: 'Time Means Money: Pay Tracker', ro: 'Time Means Money: Pay Tracker' },
     tagline: {
       en: 'Connect time tracking with financial awareness.',
       ro: 'Leagă timpul petrecut de valoarea financiară.',
     },
-    logo: '/LogoAplicatii/LogoTimeMoney.png',
+    logo: '/LogoAplicatii/LogoTimeMoney.webp',
     playStore: playStoreLinks.timemoney,
     features: {
       en: ['Time sessions', 'Value mapping', 'Productivity insights'],
@@ -159,7 +159,7 @@ export const appPages = [
       en: 'Decibel meter for ambient noise levels.',
       ro: 'Sonometru pentru nivelul de zgomot ambiental.',
     },
-    logo: '/LogoAplicatii/LogoSoundMeasureDecibel.png',
+    logo: '/LogoAplicatii/LogoSoundMeasureDecibel.webp',
     playStore: null,
     features: {
       en: ['Live dB display', 'Microphone-based sensing', 'Lightweight utility'],
@@ -168,12 +168,12 @@ export const appPages = [
   },
   {
     slug: 'stockflow',
-    name: { en: 'StockFlow', ro: 'StockFlow' },
+    name: { en: 'StockFlow: Offline Inventory', ro: 'StockFlow: Offline Inventory' },
     tagline: {
       en: 'Inventory and stock management.',
       ro: 'Gestiune stocuri și inventar.',
     },
-    logo: '/LogoAplicatii/LogoStockFlow.png',
+    logo: '/LogoAplicatii/LogoStockFlow.webp',
     playStore: playStoreLinks.stockflow,
     features: {
       en: ['Product tracking', 'Stock in/out', 'Offline-first'],
@@ -182,12 +182,12 @@ export const appPages = [
   },
   {
     slug: 'client-base-crm',
-    name: { en: 'Client Base CRM', ro: 'Client Base CRM' },
+    name: { en: 'ClientBase: Offline CRM', ro: 'ClientBase: Offline CRM' },
     tagline: {
       en: 'Offline CRM for clients and follow-ups.',
       ro: 'CRM offline pentru clienți și follow-up.',
     },
-    logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png',
+    logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.webp',
     playStore: playStoreLinks.clientcrm,
     features: {
       en: ['Client profiles', 'Notes & reminders', 'No cloud required'],
@@ -204,7 +204,7 @@ export const appPages = [
       en: 'Atmospheric pressure, altitude, and weather trends from your phone sensors.',
       ro: 'Presiune atmosferică, altitudine și tendințe meteo din senzorii telefonului.',
     },
-    logo: '/LogoAplicatii/LogoBarometer.png',
+    logo: '/LogoAplicatii/LogoBarometer.webp',
     playStore: playStoreLinks.barometer,
     features: {
       en: [

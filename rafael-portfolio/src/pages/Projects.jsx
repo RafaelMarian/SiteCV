@@ -84,7 +84,15 @@ const Projects = ({ lang }) => {
               onClick={() => setSelectedProject(proj)}
             >
               <div className="project-image-container">
-                <img src={proj.image} alt={proj.title} className="project-image" />
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="project-image"
+                  loading="lazy"
+                  decoding="async"
+                  width={480}
+                  height={270}
+                />
                 {/* Badge pentru tip */}
                 <span className={`category-badge ${filterKey}`}>
                   {proj.category}
@@ -129,11 +137,11 @@ const Projects = ({ lang }) => {
         <div className="modal-overlay" onClick={(e) => handleOverlayClick(e, 'modal')}>
           <div className="modal-content">
             <div className="modal-header">
-              <img src={selectedProject.image} alt="Cover" className="modal-img" />
+              <img src={selectedProject.image} alt={selectedProject.title} className="modal-img" decoding="async" />
               <button className="close-btn" onClick={closeModal}><X size={20} /></button>
             </div>
             <div className="modal-body">
-              <span className="tech-tag" style={{background: 'var(--accent-color)', color: 'white'}}>
+              <span className="modal-category">
                 {selectedProject.category}
               </span>
               <h2 style={{marginTop: '15px', fontSize: '2rem', color: 'var(--text-color)'}}>
@@ -182,7 +190,7 @@ const Projects = ({ lang }) => {
                   <div className="modal-gallery">
                     {selectedProject.gallery.map((imgSrc, index) => (
                       <div key={index} className="gallery-item-wrapper" onClick={() => setLightboxImage(imgSrc)}>
-                        <img src={imgSrc} alt={`Screenshot ${index}`} className="gallery-img"/>
+                        <img src={imgSrc} alt={`${selectedProject.title} screenshot ${index + 1}`} className="gallery-img" loading="lazy" decoding="async"/>
                         <div className="zoom-icon"><ZoomIn size={24} color="white"/></div>
                       </div>
                     ))}

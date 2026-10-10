@@ -61,23 +61,26 @@ export const playStoreLinks = {
   plantlux: 'https://play.google.com/store/apps/details?id=com.vanca.plantluxmeter',
   clientcrm: 'https://play.google.com/store/apps/details?id=com.clientbase.client_base_crm',
   emfradar: 'https://play.google.com/store/apps/details?id=com.emfradar.detector',
+  harrowtide: 'https://play.google.com/store/apps/details?id=com.harrowtide.survivor',
+  battery: 'https://play.google.com/store/apps/details?id=com.battery.chargemonitor.charging_speed_monitor',
 };
 
 /** Mobile apps: logos in /public/LogoAplicatii — url = site, playStore = Google Play */
 export const mobileApps = [
-  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.png', url: '/apps/bible-daily-prayer', playStore: playStoreLinks.bible },
-  { id: 'focusnet', name: 'Focus Net', logo: '/LogoAplicatii/LogoFocusNet.png', url: '/apps/focus-net', playStore: playStoreLinks.focusnet },
-  { id: 'accounting', name: 'OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.png', url: '/apps/offlinebooks', playStore: playStoreLinks.accounting },
-  { id: 'budget', name: 'Budget tracker', logo: '/LogoAplicatii/LogoBudget.png', url: '/apps/budget-planner', playStore: playStoreLinks.budget },
-  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.png', url: '/apps/nrstrength', playStore: playStoreLinks.fitness },
-  { id: 'photoboom', name: 'PhotoBoom', logo: '/LogoAplicatii/LogoPhotoBoom.png', url: '/apps/photoboom', playStore: playStoreLinks.photoboom },
-  { id: 'timemoney', name: 'Time & Money', logo: '/LogoAplicatii/LogoTimeMoney.png', url: '/apps/time-means-money', playStore: playStoreLinks.timemoney },
-  { id: 'stockflow', name: 'StockFlow', logo: '/LogoAplicatii/LogoStockFlow.png', url: '/apps/stockflow', playStore: playStoreLinks.stockflow },
-  { id: 'plantmonitor', name: 'Plant Care Monitor', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.png', url: '/apps/plant-light-meter', playStore: playStoreLinks.plantlux },
-  { id: 'metaldetector', name: 'EMF Radar', logo: '/LogoAplicatii/LogoMetalDetector.png', url: '/apps/emf-radar', playStore: playStoreLinks.emfradar },
-  { id: 'clientcrm', name: 'Client Base CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.png', url: '/apps/client-base-crm', playStore: playStoreLinks.clientcrm },
-  { id: 'batterycharge', name: 'Battery Charging Speed', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.png', url: null },
-  { id: 'barometer', name: 'BaroScan', logo: '/LogoAplicatii/LogoBarometer.png', url: '/apps/baroscan', playStore: playStoreLinks.barometer }
+  { id: 'harrowtide', name: 'Harrowtide Survivor', logo: '/LogoAplicatii/LogoHarrowtide.webp', url: playStoreLinks.harrowtide, playStore: playStoreLinks.harrowtide },
+  { id: 'bibble', name: 'Bible: Daily Prayer', logo: '/LogoAplicatii/LogoBibble.webp', url: '/apps/bible-daily-prayer', playStore: playStoreLinks.bible },
+  { id: 'focusnet', name: 'Focus Net Timer', logo: '/LogoAplicatii/LogoFocusNet.webp', url: '/apps/focus-net', playStore: playStoreLinks.focusnet },
+  { id: 'accounting', name: 'Accounting OfflineBooks', logo: '/LogoAplicatii/LogoAccounting.webp', url: '/apps/offlinebooks', playStore: playStoreLinks.accounting },
+  { id: 'budget', name: 'Budget Planner MoneyTrack', logo: '/LogoAplicatii/LogoBudget.webp', url: '/apps/budget-planner', playStore: playStoreLinks.budget },
+  { id: 'fitness', name: 'NRStrength', logo: '/LogoAplicatii/LogoFitness.webp', url: '/apps/nrstrength', playStore: playStoreLinks.fitness },
+  { id: 'photoboom', name: 'PhotoBooth 360 Studio', logo: '/LogoAplicatii/LogoPhotoBoom.webp', url: '/apps/photoboom', playStore: playStoreLinks.photoboom },
+  { id: 'timemoney', name: 'Time Means Money', logo: '/LogoAplicatii/LogoTimeMoney.webp', url: '/apps/time-means-money', playStore: playStoreLinks.timemoney },
+  { id: 'stockflow', name: 'StockFlow: Offline Inventory', logo: '/LogoAplicatii/LogoStockFlow.webp', url: '/apps/stockflow', playStore: playStoreLinks.stockflow },
+  { id: 'plantmonitor', name: 'Plant Light Meter', logo: '/LogoAplicatii/LogoPlantCareMonitorLight.webp', url: '/apps/plant-light-meter', playStore: playStoreLinks.plantlux },
+  { id: 'metaldetector', name: 'EMF Radar', logo: '/LogoAplicatii/LogoMetalDetector.webp', url: '/apps/emf-radar', playStore: playStoreLinks.emfradar },
+  { id: 'clientcrm', name: 'ClientBase: Offline CRM', logo: '/LogoAplicatii/LogoClientBaseOfflineCRM.webp', url: '/apps/client-base-crm', playStore: playStoreLinks.clientcrm },
+  { id: 'batterycharge', name: 'Battery Charging Monitor', logo: '/LogoAplicatii/LogoBatteryChargingSpeed.webp', url: playStoreLinks.battery, playStore: playStoreLinks.battery },
+  { id: 'barometer', name: 'BaroScan', logo: '/LogoAplicatii/LogoBarometer.webp', url: '/apps/baroscan', playStore: playStoreLinks.barometer }
 ];
 
 export const personalInfo = {
@@ -89,9 +92,9 @@ export const personalInfo = {
   location: "Cluj-Napoca, Romania", 
   github: "https://github.com/RafaelMarian",
   linkedin: "https://www.linkedin.com/in/rafael-vanca-958399209/",
-  tiktok: "https://www.tiktok.com/@vantech22",
+  tiktok: "https://www.tiktok.com/@vanrasystems",
   youtube: "https://www.youtube.com/@rafaelmarianvanca",
-  x: "https://x.com/VancaMarian",
+  x: "https://x.com/vanrasystems",
   facebook: "https://www.facebook.com/vancarafael.vancarafael/",
   instagram: "https://www.instagram.com/rafael.vanca/",
   producthunt: "https://www.producthunt.com/@rafael_marian_vanca",
@@ -360,8 +363,8 @@ export const projects = [
     title: "FPGA Hardware Sound Equalizer",
     category: "FPGA & Embedded",
     tech: "VHDL, C, Zybo Z7, Vivado",
-    image: "/images/sound-eq/cover.png",
-    gallery: ["/images/sound-eq/img1.png", "/images/sound-eq/img2.png", "/images/sound-eq/img3.png", "/images/sound-eq/img4.png", "/images/sound-eq/img5.png", "/images/sound-eq/img6.png"],
+    image: "/images/sound-eq/cover.webp",
+    gallery: ["/images/sound-eq/img1.webp", "/images/sound-eq/img2.webp", "/images/sound-eq/img3.webp", "/images/sound-eq/img4.webp", "/images/sound-eq/img5.webp", "/images/sound-eq/img6.webp"],
     link: "https://github.com/RafaelMarian/SoundEqualizer",
     github: "https://github.com/RafaelMarian/SoundEqualizer",
     desc: {
@@ -385,8 +388,8 @@ export const projects = [
     title: "EV Control System (RL)",
     category: "Automotive & AI",
     tech: "Matlab, Simulink, Reinforcement Learning",
-    image: "/images/disertatie/cover.png",
-    gallery: ["/images/disertatie/img1.png", "/images/disertatie/img2.png", "/images/disertatie/img3.png", "/images/disertatie/img4.png", "/images/disertatie/img5.png", "/images/disertatie/img6.png"],
+    image: "/images/disertatie/cover.webp",
+    gallery: ["/images/disertatie/img1.webp", "/images/disertatie/img2.webp", "/images/disertatie/img3.webp", "/images/disertatie/img4.webp", "/images/disertatie/img5.webp", "/images/disertatie/img6.webp"],
     link: "https://github.com/RafaelMarian/DisertatieRaf",
     github: "https://github.com/RafaelMarian/DisertatieRaf",
     desc: {
@@ -410,11 +413,11 @@ export const projects = [
     title: "Stepper Motor Controller — PIC24",
     category: "Embedded Systems",
     tech: "PIC24FJ256GB110, DRV8825, XC16, NEMA-17",
-    image: "/images/stepper-pic24/cover.png",
+    image: "/images/stepper-pic24/cover.webp",
     gallery: [
-      "/images/stepper-pic24/cover.png",
-      "/images/stepper-pic24/img1.png",
-      "/images/stepper-pic24/img2.png"
+      "/images/stepper-pic24/cover.webp",
+      "/images/stepper-pic24/img1.webp",
+      "/images/stepper-pic24/img2.webp"
     ],
     link: "https://github.com/RafaelMarian/MotorControlPIC",
     github: "https://github.com/RafaelMarian/MotorControlPIC",
@@ -453,12 +456,12 @@ export const projects = [
     title: "PIC Filter Analyzer",
     category: "Embedded Systems",
     tech: "C, PIC24, MPLAB X, ADC, GPIO, character LCD",
-    image: "/images/pic-filter-analyzer/cover.png",
+    image: "/images/pic-filter-analyzer/cover.webp",
     gallery: [
-      "/images/pic-filter-analyzer/cover.png",
-      "/images/pic-filter-analyzer/img1.png",
-      "/images/pic-filter-analyzer/img2.png",
-      "/images/pic-filter-analyzer/img3.png"
+      "/images/pic-filter-analyzer/cover.webp",
+      "/images/pic-filter-analyzer/img1.webp",
+      "/images/pic-filter-analyzer/img2.webp",
+      "/images/pic-filter-analyzer/img3.webp"
     ],
     link: "https://github.com/RafaelMarian/PICProjectFilterAnalyzer",
     github: "https://github.com/RafaelMarian/PICProjectFilterAnalyzer",
@@ -497,12 +500,12 @@ export const projects = [
     title: "Arduino + Raspberry Pi Sensing & Cooling",
     category: "Embedded Systems",
     tech: "Arduino Nano, Arduino Due, C, Raspberry Pi, Python",
-    image: "/images/arduino-rpi-sensing/cover.png",
+    image: "/images/arduino-rpi-sensing/cover.webp",
     gallery: [
-      "/images/arduino-rpi-sensing/cover.png",
-      "/images/arduino-rpi-sensing/img1.png",
-      "/images/arduino-rpi-sensing/img2.png",
-      "/images/arduino-rpi-sensing/img3.png"
+      "/images/arduino-rpi-sensing/cover.webp",
+      "/images/arduino-rpi-sensing/img1.webp",
+      "/images/arduino-rpi-sensing/img2.webp",
+      "/images/arduino-rpi-sensing/img3.webp"
     ],
     desc: {
       en: "Dual-MCU system: Nano cooling for Raspberry Pi and Due multi-sensor front-end (temperature, pH, light/lux).",
@@ -539,8 +542,8 @@ export const projects = [
     title: "8051 Environment Monitor",
     category: "Embedded Systems",
     tech: "Assembly, Proteus",
-    image: "/images/micro-8051/cover.png",
-    gallery: ["/images/micro-8051/img1.png", "/images/micro-8051/img2.png", "/images/micro-8051/img3.png", "/images/micro-8051/img4.png", "/images/micro-8051/img5.png", "/images/micro-8051/img6.png"],
+    image: "/images/micro-8051/cover.webp",
+    gallery: ["/images/micro-8051/img1.webp", "/images/micro-8051/img2.webp", "/images/micro-8051/img3.webp", "/images/micro-8051/img4.webp", "/images/micro-8051/img5.webp", "/images/micro-8051/img6.webp"],
     link: "https://github.com/RafaelMarian/8051-microcontrollers.-",
     github: "https://github.com/RafaelMarian/8051-microcontrollers.-",
     desc: {
@@ -564,8 +567,8 @@ export const projects = [
     title: "Multi-layer PCB Design",
     category: "Electronics",
     tech: "OrCad",
-    image: "/images/pcb/cover.png",
-    gallery: ["/images/pcb/img1.png", "/images/pcb/img2.png", "/images/pcb/img3.png", "/images/pcb/img4.png", "/images/pcb/img5.png", "/images/pcb/img6.png"],
+    image: "/images/pcb/cover.webp",
+    gallery: ["/images/pcb/img1.webp", "/images/pcb/img2.webp", "/images/pcb/img3.webp", "/images/pcb/img4.webp", "/images/pcb/img5.webp", "/images/pcb/img6.webp"],
     link: "https://github.com/RafaelMarian/PCB-Design",
     github: "https://github.com/RafaelMarian/PCB-Design",
     desc: { 
@@ -589,8 +592,8 @@ export const projects = [
     title: "Liquid Level Control",
     category: "Simulation",
     tech: "PSpice",
-    image: "/images/liquid-control/cover.png",
-    gallery: ["/images/liquid-control/img1.png", "/images/liquid-control/img2.png", "/images/liquid-control/img3.png", "/images/liquid-control/img4.png", "/images/liquid-control/img5.png", "/images/liquid-control/img6.png"],
+    image: "/images/liquid-control/cover.webp",
+    gallery: ["/images/liquid-control/img1.webp", "/images/liquid-control/img2.webp", "/images/liquid-control/img3.webp", "/images/liquid-control/img4.webp", "/images/liquid-control/img5.webp", "/images/liquid-control/img6.webp"],
     link: "https://github.com/RafaelMarian/Liquid-level-control-system-",
     github: "https://github.com/RafaelMarian/Liquid-level-control-system-",
     desc: { 
@@ -614,8 +617,8 @@ export const projects = [
     title: "Class B Amplifier",
     category: "Electronics",
     tech: "Simulink",
-    image: "/images/class-b/cover.png",
-    gallery: ["/images/class-b/img1.png", "/images/class-b/img2.png", "/images/class-b/img3.png", "/images/class-b/img4.png", "/images/class-b/img5.png", "/images/class-b/img6.png"],
+    image: "/images/class-b/cover.webp",
+    gallery: ["/images/class-b/img1.webp", "/images/class-b/img2.webp", "/images/class-b/img3.webp", "/images/class-b/img4.webp", "/images/class-b/img5.webp", "/images/class-b/img6.webp"],
     link: "https://github.com/RafaelMarian/Class-B-Amplifier-",
     github: "https://github.com/RafaelMarian/Class-B-Amplifier-",
     desc: { 
@@ -639,8 +642,8 @@ export const projects = [
     title: "Image Filtering Algorithms",
     category: "Computer Vision",
     tech: "Python, OpenCV",
-    image: "/images/laplace/cover.png",
-    gallery: ["/images/laplace/img1.png", "/images/laplace/img2.png", "/images/laplace/img3.png", "/images/laplace/img4.png", "/images/laplace/img5.png", "/images/laplace/img6.png"],
+    image: "/images/laplace/cover.webp",
+    gallery: ["/images/laplace/img1.webp", "/images/laplace/img2.webp", "/images/laplace/img3.webp", "/images/laplace/img4.webp", "/images/laplace/img5.webp", "/images/laplace/img6.webp"],
     link: "https://github.com/RafaelMarian/ImageProcessing-Laplacian.Gaussian",
     github: "https://github.com/RafaelMarian/ImageProcessing-Laplacian.Gaussian",
     desc: { 
@@ -664,8 +667,8 @@ export const projects = [
     title: "NRStrength — Fitness Tracker",
     category: "Mobile App",
     tech: "Flutter, Dart, Android",
-    image: "/images/flutter/cover.png", 
-    gallery: ["/images/flutter/img1.png", "/images/flutter/img2.png", "/images/flutter/img3.png", "/images/flutter/img4.png", "/images/flutter/img5.png", "/images/flutter/img6.png"],
+    image: "/images/flutter/cover.webp", 
+    gallery: ["/images/flutter/img1.webp", "/images/flutter/img2.webp", "/images/flutter/img3.webp", "/images/flutter/img4.webp", "/images/flutter/img5.webp", "/images/flutter/img6.webp"],
     playStore: playStoreLinks.fitness,
     link: "/apps/nrstrength",
     github: "https://github.com/RafaelMarian",
@@ -690,8 +693,8 @@ export const projects = [
     title: "Product Purchase AI Prediction",
     category: "Full Stack AI",
     tech: "Python, React, Docker, Flask",
-    image: "/images/ai-purchase/cover.png",
-    gallery: ["/images/ai-purchase/img1.png", "/images/ai-purchase/img2.png", "/images/ai-purchase/img3.png", "/images/ai-purchase/img4.png", "/images/ai-purchase/img5.png", "/images/ai-purchase/img6.png"],
+    image: "/images/ai-purchase/cover.webp",
+    gallery: ["/images/ai-purchase/img1.webp", "/images/ai-purchase/img2.webp", "/images/ai-purchase/img3.webp", "/images/ai-purchase/img4.webp", "/images/ai-purchase/img5.webp", "/images/ai-purchase/img6.webp"],
     link: "https://github.com/RafaelMarian/ai-insights",
     github: "https://github.com/RafaelMarian/ai-insights",
     desc: {
@@ -715,8 +718,8 @@ export const projects = [
     title: "NRStrength — Website",
     category: "Web Development",
     tech: "React, CSS3",
-    image: "/images/nrstrength-web/cover.png",
-    gallery: ["/images/nrstrength-web/img1.png", "/images/nrstrength-web/img2.png", "/images/nrstrength-web/img3.png", "/images/nrstrength-web/img4.png", "/images/nrstrength-web/img5.png", "/images/nrstrength-web/img6.png"],
+    image: "/images/nrstrength-web/cover.webp",
+    gallery: ["/images/nrstrength-web/img1.webp", "/images/nrstrength-web/img2.webp", "/images/nrstrength-web/img3.webp", "/images/nrstrength-web/img4.webp", "/images/nrstrength-web/img5.webp", "/images/nrstrength-web/img6.webp"],
     link: "https://nrstrength.netlify.app/",
     github: "https://github.com/RafaelMarian",
     desc: {
@@ -740,8 +743,8 @@ export const projects = [
     title: "Personal Portfolio Website",
     category: "Web Development",
     tech: "React, Vite, CSS3",
-    image: "/images/portfolio/cover.png", 
-    gallery: ["/images/portfolio/img1.png", "/images/portfolio/img2.png", "/images/portfolio/img3.png", "/images/portfolio/img4.png", "/images/portfolio/img5.png", "/images/portfolio/img6.png"],
+    image: "/images/portfolio/cover.webp", 
+    gallery: ["/images/portfolio/img1.webp", "/images/portfolio/img2.webp", "/images/portfolio/img3.webp", "/images/portfolio/img4.webp", "/images/portfolio/img5.webp", "/images/portfolio/img6.webp"],
     link: "#",
     github: "https://github.com/RafaelMarian/rafael-portfolio",
     desc: {
@@ -764,8 +767,8 @@ export const projects = [
     title: "CNS Website",
     category: "Web Development",
     tech: "React, CSS, JavaScript",
-    image: "/images/cns-website/cover.png",
-    gallery: ["/images/cns-website/img1.png", "/images/cns-website/img2.png", "/images/cns-website/img3.png", "/images/cns-website/img4.png", "/images/cns-website/img5.png", "/images/cns-website/img6.png"],
+    image: "/images/cns-website/cover.webp",
+    gallery: ["/images/cns-website/img1.webp", "/images/cns-website/img2.webp", "/images/cns-website/img3.webp", "/images/cns-website/img4.webp", "/images/cns-website/img5.webp", "/images/cns-website/img6.webp"],
     link: "#",
     github: "#",
     desc: {
@@ -789,14 +792,14 @@ export const projects = [
     title: "Bible: Daily Prayer — Website",
     category: "Web Development",
     tech: "React, Netlify",
-    image: "/images/BibleDailyPrayerSite/cover.png",
+    image: "/images/BibleDailyPrayerSite/cover.webp",
     gallery: [
-      "/images/BibleDailyPrayerSite/img1.png",
-      "/images/BibleDailyPrayerSite/img2.png",
-      "/images/BibleDailyPrayerSite/img3.png",
-      "/images/BibleDailyPrayerSite/img4.png",
-      "/images/BibleDailyPrayerSite/img5.png",
-      "/images/BibleDailyPrayerSite/img6.png"
+      "/images/BibleDailyPrayerSite/img1.webp",
+      "/images/BibleDailyPrayerSite/img2.webp",
+      "/images/BibleDailyPrayerSite/img3.webp",
+      "/images/BibleDailyPrayerSite/img4.webp",
+      "/images/BibleDailyPrayerSite/img5.webp",
+      "/images/BibleDailyPrayerSite/img6.webp"
     ],
     link: "https://bibledailyprayer.netlify.app/en",
     desc: {
@@ -811,21 +814,21 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Multilingual support (EN)."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Suport multilingv (EN)."]
     }
-  },,
+  },
   {
     id: "time-means-money-web",
     categoryFilter: "web",
     title: "Time Means Money — Website",
     category: "Web Development",
     tech: "React, Netlify",
-    image: "/images/TimeMeansMoneySite/cover.png",
+    image: "/images/TimeMeansMoneySite/cover.webp",
     gallery: [
-      "/images/TimeMeansMoneySite/img1.png",
-      "/images/TimeMeansMoneySite/img2.png",
-      "/images/TimeMeansMoneySite/img3.png",
-      "/images/TimeMeansMoneySite/img4.png",
-      "/images/TimeMeansMoneySite/img5.png",
-      "/images/TimeMeansMoneySite/img6.png"
+      "/images/TimeMeansMoneySite/img1.webp",
+      "/images/TimeMeansMoneySite/img2.webp",
+      "/images/TimeMeansMoneySite/img3.webp",
+      "/images/TimeMeansMoneySite/img4.webp",
+      "/images/TimeMeansMoneySite/img5.webp",
+      "/images/TimeMeansMoneySite/img6.webp"
     ],
     link: "https://timemeansmoney.netlify.app/",
     desc: {
@@ -840,21 +843,21 @@ export const projects = [
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Product-focused UI/UX."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "UI/UX orientat pe produs."]
     }
-  },,
+  },
   {
     id: "budget-app-web",
     categoryFilter: "web",
     title: "Budget Planner — MoneyTrack — Website",
     category: "Web Development",
     tech: "React, Netlify",
-    image: "/images/BudgetPlannerSite/cover.png",
+    image: "/images/BudgetPlannerSite/cover.webp",
     gallery: [
-      "/images/BudgetPlannerSite/img1.png",
-      "/images/BudgetPlannerSite/img2.png",
-      "/images/BudgetPlannerSite/img3.png",
-      "/images/BudgetPlannerSite/img4.png",
-      "/images/BudgetPlannerSite/img5.png",
-      "/images/BudgetPlannerSite/img6.png"
+      "/images/BudgetPlannerSite/img1.webp",
+      "/images/BudgetPlannerSite/img2.webp",
+      "/images/BudgetPlannerSite/img3.webp",
+      "/images/BudgetPlannerSite/img4.webp",
+      "/images/BudgetPlannerSite/img5.webp",
+      "/images/BudgetPlannerSite/img6.webp"
     ],
     link: "https://budgetappmoneytrack.netlify.app/",
     desc: {
@@ -862,28 +865,28 @@ export const projects = [
       ro: "Landing page pentru o aplicație de buget personal și urmărire a cheltuielilor."
     },
     extendedSummary: {
-      en: "A promotional website for the Budget Planner app. It showcases budgeting features, expense tracking, and download paths for users who want to manage their finances.",
-      ro: "Un site promoțional pentru aplicația Budget Planner. Prezintă funcții de bugetare, urmărirea cheltuielilor și căile de acces pentru utilizatorii care își gestionează finanțele."
+      en: "A promotional website for the Budget Planner MoneyTrack app. It showcases budgeting features, expense tracking, and download paths for users who want to manage their finances.",
+      ro: "Un site promoțional pentru aplicația Budget Planner MoneyTrack. Prezintă funcții de bugetare, urmărirea cheltuielilor și căile de acces pentru utilizatorii care își gestionează finanțele."
     },
     details: {
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Finance-focused presentation."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Prezentare axată pe finanțe personale."]
     }
-  },,
+  },
   {
     id: "offlinebooks-web",
     categoryFilter: "web",
-    title: "OfflineBooks — Website",
+    title: "Accounting OfflineBooks — Website",
     category: "Web Development",
     tech: "React, Netlify",
-    image: "/images/OfflineBooksSite/cover.png",
+    image: "/images/OfflineBooksSite/cover.webp",
     gallery: [
-      "/images/OfflineBooksSite/img1.png",
-      "/images/OfflineBooksSite/img2.png",
-      "/images/OfflineBooksSite/img3.png",
-      "/images/OfflineBooksSite/img4.png",
-      "/images/OfflineBooksSite/img5.png",
-      "/images/OfflineBooksSite/img6.png"
+      "/images/OfflineBooksSite/img1.webp",
+      "/images/OfflineBooksSite/img2.webp",
+      "/images/OfflineBooksSite/img3.webp",
+      "/images/OfflineBooksSite/img4.webp",
+      "/images/OfflineBooksSite/img5.webp",
+      "/images/OfflineBooksSite/img6.webp"
     ],
     link: "https://offlineaccountant.netlify.app/",
     desc: {
@@ -891,28 +894,28 @@ export const projects = [
       ro: "Landing page pentru o aplicație de contabilitate și facturare offline, pentru mici afaceri."
     },
     extendedSummary: {
-      en: "A presentation website for OfflineBooks — simple accounting and invoicing that works without an internet connection. Highlights offline-first workflows and core business features.",
-      ro: "Un site de prezentare pentru OfflineBooks — contabilitate și facturare simplă, funcțională fără conexiune la internet. Evidențiază fluxurile offline-first și funcționalitățile esențiale pentru afaceri."
+      en: "A presentation website for Accounting OfflineBooks — simple accounting and invoicing that works without an internet connection. Highlights offline-first workflows and core business features.",
+      ro: "Un site de prezentare pentru Accounting OfflineBooks — contabilitate și facturare simplă, funcțională fără conexiune la internet. Evidențiază fluxurile offline-first și funcționalitățile esențiale pentru afaceri."
     },
     details: {
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Offline-first product messaging."],
       ro: ["React SPA.", "Layout responsiv.", "Deploy pe Netlify.", "Mesajare produs offline-first."]
     }
-  },,
+  },
   {
     id: "focus-net-web",
     categoryFilter: "web",
-    title: "Focus Net — Website",
+    title: "Focus Net Timer — Website",
     category: "Web Development",
     tech: "React, Netlify",
-    image: "/images/FocusNetSite/cover.png",
+    image: "/images/FocusNetSite/cover.webp",
     gallery: [
-      "/images/FocusNetSite/img1.png",
-      "/images/FocusNetSite/img2.png",
-      "/images/FocusNetSite/img3.png",
-      "/images/FocusNetSite/img4.png",
-      "/images/FocusNetSite/img5.png",
-      "/images/FocusNetSite/img6.png"
+      "/images/FocusNetSite/img1.webp",
+      "/images/FocusNetSite/img2.webp",
+      "/images/FocusNetSite/img3.webp",
+      "/images/FocusNetSite/img4.webp",
+      "/images/FocusNetSite/img5.webp",
+      "/images/FocusNetSite/img6.webp"
     ],
     link: "https://focusnet.netlify.app/",
     desc: {
@@ -920,8 +923,8 @@ export const projects = [
       ro: "Landing page pentru o aplicație de productivitate și timer pentru focus profund."
     },
     extendedSummary: {
-      en: "A modern landing page for Focus Net — a productivity tool built around timed focus sessions. The site presents features, benefits, and links to the live app experience.",
-      ro: "Un landing page modern pentru Focus Net — un instrument de productivitate construit în jurul sesiunilor de focus cronometrate. Site-ul prezintă funcții, beneficii și link către experiența live."
+      en: "A modern landing page for Focus Net Timer — a productivity tool built around timed focus sessions. The site presents features, benefits, and links to the live app experience.",
+      ro: "Un landing page modern pentru Focus Net Timer — un instrument de productivitate construit în jurul sesiunilor de focus cronometrate. Site-ul prezintă funcții, beneficii și link către experiența live."
     },
     details: {
       en: ["React SPA.", "Responsive Layout.", "Netlify Deployment.", "Productivity-focused UI/UX."],
@@ -931,18 +934,47 @@ export const projects = [
 
   // --- MOBILE APPS (Android) — only entries with real screenshots ---
   {
+    id: "harrowtide-survivor",
+    categoryFilter: ["mobile", "software"],
+    title: "Harrowtide Survivor",
+    category: "Mobile Game",
+    tech: "Android, Game Development",
+    image: "/images/Harrowtide/cover.webp",
+    gallery: [
+      "/images/Harrowtide/img1.webp",
+      "/images/Harrowtide/img2.webp",
+      "/images/Harrowtide/img3.webp",
+      "/images/Harrowtide/img4.webp",
+      "/images/Harrowtide/img5.webp",
+      "/images/Harrowtide/img6.webp"
+    ],
+    playStore: playStoreLinks.harrowtide,
+    desc: {
+      en: "A gothic roguelike survivor game in the Vampire Survivors / bullet-heaven style, playable fully offline.",
+      ro: "Un joc gotic roguelike de tip survivor, în stilul Vampire Survivors / bullet-heaven, jucabil complet offline."
+    },
+    extendedSummary: {
+      en: "Hold the line until dawn against endless undead, orc and vampire hordes. Weapons fire automatically while you move and dodge; every level-up adds or upgrades an ability, so each run builds a different hero.",
+      ro: "Rezistă până în zori în fața hoardelor nesfârșite de strigoi, orci și vampiri. Armele atacă automat în timp ce te miști și te ferești; fiecare level-up adaugă sau îmbunătățește o abilitate, astfel încât fiecare rundă construiește alt erou."
+    },
+    details: {
+      en: ["Auto-attack roguelike combat with one-thumb controls.", "20 champions, each with unique stats and a signature ability.", "3 gothic campaigns (Undead, Orcs, Vampires) with 21 stages and bosses.", "Permanent rank-up progression; plays fully offline.", "Published on Google Play by Vanra Systems."],
+      ro: ["Luptă roguelike cu atac automat și control cu un deget.", "20 de campioni, fiecare cu statistici și abilitate proprie.", "3 campanii gotice (Strigoi, Orci, Vampiri) cu 21 de niveluri și boși.", "Progresie permanentă prin rank-up; funcționează complet offline.", "Publicat pe Google Play de Vanra Systems."]
+    }
+  },
+  {
     id: "offlinebooks-app",
     categoryFilter: ["mobile", "software"],
-    title: "OfflineBooks",
+    title: "Accounting OfflineBooks",
     category: "Mobile App",
     tech: "Flutter, Android",
-    image: "/images/AccountingApp/img1.png",
+    image: "/images/AccountingApp/img1.webp",
     gallery: [
-      "/images/AccountingApp/img1.png",
-      "/images/AccountingApp/img2.png",
-      "/images/AccountingApp/img3.png",
-      "/images/AccountingApp/img4.png",
-      "/images/AccountingApp/img5.png"
+      "/images/AccountingApp/img1.webp",
+      "/images/AccountingApp/img2.webp",
+      "/images/AccountingApp/img3.webp",
+      "/images/AccountingApp/img4.webp",
+      "/images/AccountingApp/img5.webp"
     ],
     playStore: playStoreLinks.accounting,
     link: "/apps/offlinebooks",
@@ -951,27 +983,27 @@ export const projects = [
       ro: "Aplicație de contabilitate și facturare offline pentru freelanceri și mici afaceri."
     },
     extendedSummary: {
-      en: "OfflineBooks keeps invoices, clients, and basic accounting on-device — no internet required. Built for simple, reliable business bookkeeping on Android.",
-      ro: "OfflineBooks păstrează facturi, clienți și contabilitate de bază pe dispozitiv — fără internet. Construită pentru evidență simplă și fiabilă pe Android."
+      en: "Accounting OfflineBooks keeps invoices, clients, and basic accounting on-device — no internet required. Built for simple, reliable business bookkeeping on Android.",
+      ro: "Accounting OfflineBooks păstrează facturi, clienți și contabilitate de bază pe dispozitiv — fără internet. Construită pentru evidență simplă și fiabilă pe Android."
     },
     details: {
       en: ["Invoicing & client management.", "Offline-first architecture.", "Simple accounting workflows.", "Published on Google Play."],
       ro: ["Facturare și gestiune clienți.", "Arhitectură offline-first.", "Fluxuri contabilitate simple.", "Publicat pe Google Play."]
     }
-  },,
+  },
   {
     id: "sound-measure-app",
     categoryFilter: ["mobile", "software"],
     title: "Sound Measure",
     category: "Mobile App",
     tech: "Flutter, Android",
-    image: "/images/SoundMeasureApp/img1.png",
+    image: "/images/SoundMeasureApp/img1.webp",
     gallery: [
-      "/images/SoundMeasureApp/img1.png",
-      "/images/SoundMeasureApp/img2.png",
-      "/images/SoundMeasureApp/img3.png",
-      "/images/SoundMeasureApp/img4.png",
-      "/images/SoundMeasureApp/img5.png"
+      "/images/SoundMeasureApp/img1.webp",
+      "/images/SoundMeasureApp/img2.webp",
+      "/images/SoundMeasureApp/img3.webp",
+      "/images/SoundMeasureApp/img4.webp",
+      "/images/SoundMeasureApp/img5.webp"
     ],
     desc: {
       en: "Decibel meter app for measuring ambient sound levels in real time.",
@@ -985,20 +1017,20 @@ export const projects = [
       en: ["Real-time dB monitoring.", "Microphone-based sensing.", "Readable gauges & history.", "Lightweight Android app."],
       ro: ["Monitorizare dB în timp real.", "Senzor bazat pe microfon.", "Grafice și istoric lizibil.", "Aplicație Android ușoară."]
     }
-  },,
+  },
   {
     id: "client-crm-app",
     categoryFilter: ["mobile", "software"],
-    title: "Client Base CRM",
+    title: "ClientBase: Offline CRM",
     category: "Mobile App",
     tech: "Flutter, Android",
-    image: "/images/CRMAPP/img1.png",
+    image: "/images/CRMAPP/img1.webp",
     gallery: [
-      "/images/CRMAPP/img1.png",
-      "/images/CRMAPP/img2.png",
-      "/images/CRMAPP/img3.png",
-      "/images/CRMAPP/img4.png",
-      "/images/CRMAPP/img5.png"
+      "/images/CRMAPP/img1.webp",
+      "/images/CRMAPP/img2.webp",
+      "/images/CRMAPP/img3.webp",
+      "/images/CRMAPP/img4.webp",
+      "/images/CRMAPP/img5.webp"
     ],
     playStore: playStoreLinks.clientcrm,
     link: "/apps/client-base-crm",
@@ -1007,27 +1039,27 @@ export const projects = [
       ro: "CRM offline pentru gestionarea clienților, notelor și follow-up-urilor fără internet."
     },
     extendedSummary: {
-      en: "Client Base CRM keeps customer data on-device so freelancers and small teams can manage relationships reliably, even offline.",
-      ro: "Client Base CRM păstrează datele clienților pe dispozitiv, astfel încât freelancerii și echipele mici pot gestiona relațiile în mod fiabil, chiar și offline."
+      en: "ClientBase: Offline CRM keeps customer data on-device so freelancers and small teams can manage relationships reliably, even offline.",
+      ro: "ClientBase: Offline CRM păstrează datele clienților pe dispozitiv, astfel încât freelancerii și echipele mici pot gestiona relațiile în mod fiabil, chiar și offline."
     },
     details: {
       en: ["Client profiles & notes.", "Offline-first storage.", "Follow-up tracking.", "Simple CRM workflows."],
       ro: ["Profiluri clienți și note.", "Stocare offline-first.", "Urmărire follow-up.", "Fluxuri CRM simple."]
     }
-  },,
+  },
   {
     id: "barometer-app",
     categoryFilter: ["mobile", "software"],
     title: "BaroScan: Altimeter Barometer",
     category: "Mobile App",
     tech: "Flutter, Android",
-    image: "/images/BarometerApp/img1.png",
+    image: "/images/BarometerApp/img1.webp",
     gallery: [
-      "/images/BarometerApp/img1.png",
-      "/images/BarometerApp/img2.png",
-      "/images/BarometerApp/img3.png",
-      "/images/BarometerApp/img4.png",
-      "/images/BarometerApp/img5.png"
+      "/images/BarometerApp/img1.webp",
+      "/images/BarometerApp/img2.webp",
+      "/images/BarometerApp/img3.webp",
+      "/images/BarometerApp/img4.webp",
+      "/images/BarometerApp/img5.webp"
     ],
     playStore: playStoreLinks.barometer,
     link: "/apps/baroscan",
@@ -1220,8 +1252,8 @@ export const certificates = [
   { title: "Electrification Program Module 5 System Electrical Vehicles", path: "/Certificate/ElectrificationProgramModule5SystemElectricalVehicles.pdf", category: "embed_hw" },
   { title: "Electrification Program Module 6 EMC High Voltage", path: "/Certificate/ElectrificationProgramModule6EMCHighVoltage.pdf", category: "embed_hw" },
   { title: "Electrification Program Module 7 Electrical Control", path: "/Certificate/ElectrificationProgramModule7ElectricalControl.pdf", category: "embed_hw" },
-  { title: "Filed Oriented Control (FOC) and PWM Advanced", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Advanced.pdf", category: "embed_hw" },
-  { title: "Filed Oriented Control (FOC) and PWM Basic", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Basic.pdf", category: "embed_hw" },
+  { title: "Field Oriented Control (FOC) and PWM Advanced", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Advanced.pdf", category: "embed_hw" },
+  { title: "Field Oriented Control (FOC) and PWM Basic", path: "/Certificate/FiledOrientedControl(FOC)andPWM-methodofelectricalmachines(PSM)Basic.pdf", category: "embed_hw" },
   { title: "German A1.1", path: "/Certificate/GermanA1.1.pdf", category: "prof_skills" },
   { title: "GitHub and CICD", path: "/Certificate/GitHubandCICD.pdf", category: "soft_dev" },
   { title: "Introduction to Motor Control Mathworks", path: "/Certificate/Introduction to Motor Control Mathworks.pdf", category: "embed_hw" },
@@ -1229,7 +1261,7 @@ export const certificates = [
   { title: "IT Project Management Basic Knowledge", path: "/Certificate/ITPROJECTManagementBasicKnowledge.pdf", category: "prof_skills" },
   { title: "IT Project Management Intro", path: "/Certificate/ITProjectManagementIntro.pdf", category: "prof_skills" },
   { title: "Matlab Simulink Basics", path: "/Certificate/MatlabSimulinkBasics.pdf", category: "embed_hw" },
-  { title: "Multi Core Software Arhitecture", path: "/Certificate/MultiCoreSoftwareArhitecture.pdf", category: "soft_dev" },
+  { title: "Multi-Core Software Architecture", path: "/Certificate/MultiCoreSoftwareArhitecture.pdf", category: "soft_dev" },
   { title: "OMS Polarion Onboarding", path: "/Certificate/OMSPolarionOnboarding.pdf", category: "soft_dev" },
   { title: "PCB Technology & Basics of Printed Circuits Boards", path: "/Certificate/PCBTechnology&BasicsofPrintedCircuitsBoards.pdf", category: "embed_hw" },
   { title: "Physical Basics", path: "/Certificate/PhysicalBasics.pdf", category: "embed_hw" },
@@ -1238,13 +1270,13 @@ export const certificates = [
   { title: "Prototipe Protection", path: "/Certificate/PrototipeProtection.pdf", category: "cybersec" },
   { title: "Rafael-Marian Vanca Certificate EP II", path: "/Certificate/Rafael-Marian Vanca_Certificate EP II.pdf", category: "embed_hw" },
   { title: "SAP Time Management", path: "/Certificate/SAPTimeManagement.pdf", category: "prof_skills" },
-  { title: "Software Arhitecture Design", path: "/Certificate/SoftwareArhitectureDesign.pdf", category: "soft_dev" },
+  { title: "Software Architecture Design", path: "/Certificate/SoftwareArhitectureDesign.pdf", category: "soft_dev" },
   { title: "Software Configuration Management", path: "/Certificate/SoftwareConfigurationManagement.pdf", category: "soft_dev" },
   { title: "Software Construction Methods", path: "/Certificate/SoftwareConstructionMethods.pdf", category: "soft_dev" },
-  { title: "Software Development Guidline", path: "/Certificate/SoftwareDevelopmentGuidline.pdf", category: "soft_dev" },
+  { title: "Software Development Guideline", path: "/Certificate/SoftwareDevelopmentGuidline.pdf", category: "soft_dev" },
   { title: "Software Quality Assurance", path: "/Certificate/SoftwareQualityAssurance.pdf", category: "soft_dev" },
   { title: "Software Release And Prototypes", path: "/Certificate/SoftwareReleaseAndPrototypes.pdf", category: "soft_dev" },
-  { title: "Algoritm Training And Essentials", path: "/Certificate/NewCerficicates/AlgoritmTrainingAndEssentials.pdf", category: "soft_dev" },
+  { title: "Algorithm Training and Essentials", path: "/Certificate/NewCerficicates/AlgoritmTrainingAndEssentials.pdf", category: "soft_dev" },
   { title: "Becoming Indestructible", path: "/Certificate/NewCerficicates/BecomingIndestructible.pdf", category: "prof_skills" },
   { title: "Career Essentials in Cybersecurity by Microsoft and LinkedIn", path: "/Certificate/NewCerficicates/CertificateOfCompletion_Career_Essentials_in_Cybersecurity_by_Microsoft_and_LinkedIn.pdf", category: "cybersec" },
   { title: "Career Essentials in Generative AI by Microsoft and LinkedIn", path: "/Certificate/NewCerficicates/CertificateOfCompletion_Career_Essentials_in_Generative_AI_by_Microsoft_and_LinkedIn.pdf", category: "ai_ml" },
@@ -1253,33 +1285,33 @@ export const certificates = [
   { title: "C++ Essential Training", path: "/Certificate/NewCerficicates/CPlusPlusEssentialTraining.pdf", category: "embed_hw" },
   { title: "C Programming For Embedded Applications", path: "/Certificate/NewCerficicates/CProgrammingForEmbeddedApplications.pdf", category: "embed_hw" },
   { title: "Critical Thinking And Problem Solving", path: "/Certificate/NewCerficicates/CriticalThinkingAndProblemSolving.pdf", category: "prof_skills" },
-  { title: "CyberSecurity Awerness", path: "/Certificate/NewCerficicates/CyberSecurityAwerness.pdf", category: "cybersec" },
-  { title: "CyberSecurity Fundation", path: "/Certificate/NewCerficicates/CyberSecurityFundation.pdf", category: "cybersec" },
+  { title: "Cybersecurity Awareness", path: "/Certificate/NewCerficicates/CyberSecurityAwerness.pdf", category: "cybersec" },
+  { title: "Cybersecurity Foundation", path: "/Certificate/NewCerficicates/CyberSecurityFundation.pdf", category: "cybersec" },
   { title: "Flutter Basics", path: "/Certificate/NewCerficicates/FlutterBasics.pdf", category: "soft_dev" },
   { title: "Generative AI", path: "/Certificate/NewCerficicates/GenerativeAI.pdf", category: "ai_ml" },
   { title: "GitHub", path: "/Certificate/NewCerficicates/GitHub.pdf", category: "soft_dev" },
   { title: "Github Certificate", path: "/Certificate/NewCerficicates/GithubCertificate.pdf", category: "soft_dev" },
-  { title: "Improvment Your Listening Skils", path: "/Certificate/NewCerficicates/ImprovmentYourListeningSkils.pdf", category: "prof_skills" },
+  { title: "Improve Your Listening Skills", path: "/Certificate/NewCerficicates/ImprovmentYourListeningSkils.pdf", category: "prof_skills" },
   { title: "Introduction To Ai Governance", path: "/Certificate/NewCerficicates/IntroductionToAiGovernance.pdf", category: "ai_ml" },
   { title: "Introduction To Artificial Intelligence", path: "/Certificate/NewCerficicates/IntroductionToArtificialIntelligence.pdf", category: "ai_ml" },
-  { title: "Introduction To Carrer Skils In Software", path: "/Certificate/NewCerficicates/IntroductionToCarrerSkilsInSoftware.pdf", category: "soft_dev" },
+  { title: "Introduction to Career Skills in Software", path: "/Certificate/NewCerficicates/IntroductionToCarrerSkilsInSoftware.pdf", category: "soft_dev" },
   { title: "Introduction To Dart", path: "/Certificate/NewCerficicates/IntroductionToDart.pdf", category: "soft_dev" },
   { title: "Involving Your Listening Skills", path: "/Certificate/NewCerficicates/InvolvingYourListeningSkills.pdf", category: "prof_skills" },
-  { title: "Lear Microsoft Copilot", path: "/Certificate/NewCerficicates/LearMicrosoftCopilot.pdf", category: "ai_ml" },
+  { title: "Learn Microsoft Copilot", path: "/Certificate/NewCerficicates/LearMicrosoftCopilot.pdf", category: "ai_ml" },
   { title: "Learning C++", path: "/Certificate/NewCerficicates/LearningCPlusPlus.pdf", category: "embed_hw" },
   { title: "Learning Jenkins", path: "/Certificate/NewCerficicates/LearningJenkins.pdf", category: "soft_dev" },
   { title: "Microsoft Copilot For Security", path: "/Certificate/NewCerficicates/MicrosoftCopilotForSecurity.pdf", category: "cybersec" },
-  { title: "Navigathing Ambiguity", path: "/Certificate/NewCerficicates/NavigathingAmbiguity.pdf", category: "prof_skills" },
+  { title: "Navigating Ambiguity", path: "/Certificate/NewCerficicates/NavigathingAmbiguity.pdf", category: "prof_skills" },
   { title: "Practical Github", path: "/Certificate/NewCerficicates/PracticalGithub.pdf", category: "soft_dev" },
   { title: "Practical Github Actions", path: "/Certificate/NewCerficicates/PracticalGithubActions.pdf", category: "soft_dev" },
   { title: "Practical Github Copilot", path: "/Certificate/NewCerficicates/PracticalGithubCopilot.pdf", category: "ai_ml" },
   { title: "Practical Github Management And Projects", path: "/Certificate/NewCerficicates/PracticalGithubManagementAndProjects.pdf", category: "soft_dev" },
-  { title: "Problem Solving Tehnique", path: "/Certificate/NewCerficicates/ProblemSolvingTehnique.pdf", category: "prof_skills" },
+  { title: "Problem-Solving Techniques", path: "/Certificate/NewCerficicates/ProblemSolvingTehnique.pdf", category: "prof_skills" },
   { title: "Rise And Shine", path: "/Certificate/NewCerficicates/RiseAndShine.pdf", category: "prof_skills" },
-  { title: "Software Application Fundations", path: "/Certificate/NewCerficicates/SoftwareApplicationFundations.pdf", category: "soft_dev" },
+  { title: "Software Application Foundations", path: "/Certificate/NewCerficicates/SoftwareApplicationFundations.pdf", category: "soft_dev" },
   { title: "Streamlining Your Work With Microsoft Copilot", path: "/Certificate/NewCerficicates/StreamliningYourWorkWithMicrosoftCopilot.pdf", category: "ai_ml" },
   { title: "The Cybersecurity Threat", path: "/Certificate/NewCerficicates/TheCybersecurityThreat.pdf", category: "cybersec" },
-  { title: "The Master Key to Overcome Procastination", path: "/Certificate/NewCerficicates/TheMasterKeytoOvercomeProcastination.pdf", category: "prof_skills" },
+  { title: "The Master Key to Overcome Procrastination", path: "/Certificate/NewCerficicates/TheMasterKeytoOvercomeProcastination.pdf", category: "prof_skills" },
   { title: "Training NN In C++", path: "/Certificate/NewCerficicates/TrainingNNInCPlusPlus.pdf", category: "ai_ml" },
   { title: "Training Your Mind And Focus", path: "/Certificate/NewCerficicates/TrainingYourMindAndFocus.pdf", category: "prof_skills" },
   { title: "What Is Generative AI", path: "/Certificate/NewCerficicates/WhatIsGenerativeAI.pdf", category: "ai_ml" }

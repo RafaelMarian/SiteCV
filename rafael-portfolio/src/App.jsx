@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } f
 import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
 import './App.css';
 import { labels } from './data';
-import EmbeddedLogo from './components/EmbeddedLogo';
+import RouteMeta from './components/RouteMeta';
 import EasterEggProvider, { useEasterEggs } from './components/easterEggs/EasterEggProvider';
 
 // Importam paginile
@@ -17,6 +17,8 @@ import Hobbies from './pages/Hobbies';
 import TechStack from './pages/TechStack';
 import AppsIndex from './pages/AppsIndex';
 import AppLanding from './pages/AppLanding';
+import NotFound from './pages/NotFound';
+import './theme.css';
 
 const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
   const { onLogoChipClick, logoBoot } = useEasterEggs();
@@ -50,19 +52,31 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
         
         {/* 1. LOGO BRANDING */}
         <div className="nav-logo-brand">
-          <button
-            type="button"
-            className="nav-logo-chip-btn"
-            onClick={onLogoChipClick}
-            aria-label={lang === 'ro' ? 'Logo microcip' : 'Microchip logo'}
+          <Link
+            to="/"
+            className={`brand-link ${logoBoot ? 'logo-icon--boot' : ''}`}
+            aria-label="Vanra Systems — home"
+            onClick={(e) => {
+              // Easter egg: 5 quick clicks on the logo "flash the firmware"
+              onLogoChipClick({ preventDefault() {}, stopPropagation() {} });
+              if (location.pathname === '/') e.preventDefault();
+            }}
           >
-            <EmbeddedLogo
-              size={28}
-              className={`logo-icon ${logoBoot ? 'logo-icon--boot' : ''}`}
+            <img
+              src="/brand/vanra-wordmark-dark.svg"
+              alt="Vanra Systems"
+              className="brand-wordmark brand-wordmark--dark"
+              width="193"
+              height="24"
             />
-          </button>
-          <Link to="/" className="nav-logo-text-link logo-text">
-            Rafael<span style={{ color: 'var(--accent-color)' }}>.eng</span>
+            <img
+              src="/brand/vanra-wordmark-light.svg"
+              alt=""
+              aria-hidden="true"
+              className="brand-wordmark brand-wordmark--light"
+              width="193"
+              height="24"
+            />
           </Link>
         </div>
 
@@ -84,14 +98,21 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
             <span className="lang-text">{lang.toUpperCase()}</span>
           </button>
 
-          <button onClick={toggleTheme} className="control-btn" title="Toggle Theme">
+          <button
+            onClick={toggleTheme}
+            className="control-btn"
+            title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+            aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+          >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
 
           {/* 4. MOBILE MENU TOGGLE */}
-          <button 
-            className="mobile-toggle" 
+          <button
+            className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -116,21 +137,36 @@ const Navbar = ({ lang, setLang, theme, toggleTheme }) => {
 function App() {
     // ... codul existent
     const [lang, setLang] = useState('en');
-    const [theme, setTheme] = useState('light');
+    // Dark is the default on first visit; a user's explicit choice is remembered.
+    const [theme, setTheme] = useState(() => {
+      try {
+        return localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+      } catch {
+        return 'dark';
+      }
+    });
   
     const toggleTheme = () => {
       const newTheme = theme === 'light' ? 'dark' : 'light';
       setTheme(newTheme);
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch {
+        /* storage unavailable */
+      }
     };
   
     useEffect(() => {
       document.documentElement.setAttribute('data-theme', theme);
+      const tc = document.querySelector('meta[name="theme-color"]');
+      if (tc) tc.setAttribute('content', theme === 'light' ? '#FFFFFF' : '#0A0A0B');
     }, [theme]);
   
     return (
       <Router>
         <EasterEggProvider lang={lang}>
           <div className="App">
+            <RouteMeta lang={lang} />
             <Navbar lang={lang} setLang={setLang} theme={theme} toggleTheme={toggleTheme} />
 
             <div className="container">
@@ -146,8 +182,17 @@ function App() {
                 <Route path="/apps" element={<AppsIndex lang={lang} />} />
                 <Route path="/apps/barometer" element={<Navigate to="/apps/baroscan" replace />} />
                 <Route path="/apps/:slug" element={<AppLanding lang={lang} />} />
+                <Route path="*" element={<NotFound lang={lang} />} />
               </Routes>
             </div>
+            <footer className="site-footer">
+              <div className="site-footer-inner">
+                <span>© {new Date().getFullYear()} Vanca Rafael Marian</span>
+                <a href="https://play.google.com/store/apps/developer?id=NRStrength" target="_blank" rel="noopener noreferrer">
+                  Vanra Systems — Android apps &amp; embedded systems
+                </a>
+              </div>
+            </footer>
           </div>
         </EasterEggProvider>
       </Router>

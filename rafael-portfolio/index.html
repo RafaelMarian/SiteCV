@@ -1,10 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rafael-portfolio</title>
+    <title>Vanca Rafael Marian | Embedded Software Engineer</title>
+    <meta name="description" content="Vanca Rafael Marian — Embedded Software Engineer and founder of Vanra Systems, building Android apps and embedded systems. Automotive, FPGA, firmware and mobile projects." />
+    <meta name="author" content="Vanca Rafael Marian" />
+    <meta name="theme-color" content="#0A0A0B" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://vancarafaelmarian.netlify.app/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vanca Rafael Marian · Vanra Systems" />
+    <meta property="og:title" content="Vanca Rafael Marian | Embedded Software Engineer" />
+    <meta property="og:description" content="Embedded Software Engineer and founder of Vanra Systems — Android apps & embedded systems." />
+    <meta property="og:url" content="https://vancarafaelmarian.netlify.app/" />
+    <meta property="og:image" content="https://vancarafaelmarian.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vanra Systems logo — Vanca Rafael Marian, Embedded Software Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@vanrasystems" />
+    <meta name="twitter:title" content="Vanca Rafael Marian | Embedded Software Engineer" />
+    <meta name="twitter:description" content="Embedded Software Engineer and founder of Vanra Systems — Android apps & embedded systems." />
+    <meta name="twitter:image" content="https://vancarafaelmarian.netlify.app/og-image.png" />
+
+    <script>
+      // Dark is the default; respect a saved choice to avoid a flash on load.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

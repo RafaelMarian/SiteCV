@@ -19,7 +19,7 @@ const Hobbies = ({ lang }) => {
           {lang === 'en' 
             ? "When I'm not coding or designing circuits, here's how I spend my time." 
             : "Când nu scriu cod sau proiectez circuite, iată cum îmi petrec timpul."}
-          <Smile style={{display: 'inline', marginLeft: '8px', verticalAlign: 'middle'}} color="var(--accent-color)"/>
+          <Smile style={{display: 'inline', marginLeft: '8px', verticalAlign: 'middle'}} color="currentColor"/>
         </p>
       </div>
 
@@ -34,7 +34,7 @@ const Hobbies = ({ lang }) => {
                   <img src={hobby.image} alt={hobby.title[lang]} className="hobby-img" />
                   <div className="hobby-overlay"></div>
                   <div className="hobby-icon-circle" style={{backgroundColor: hobby.color}}>
-                    <IconComponent size={28} color="white" />
+                    <IconComponent size={24} color="currentColor" strokeWidth={1.5} />
                   </div>
                 </div>
 

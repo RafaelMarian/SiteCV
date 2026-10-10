@@ -9,18 +9,14 @@ import GamerPage from './GamerPage';
 import '../BookLayout.css';
 import '../GamerPage.css';
 import { ArrowLeft } from 'lucide-react';
+import NotFound from './NotFound';
 
 const HobbyDetail = ({ lang }) => {
   const { hobbyId } = useParams();
   const hobby = hobbies.find((h) => h.id === hobbyId);
 
   if (!hobby) {
-    return (
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h2>Hobby not found</h2>
-        <Link to="/hobbies">Go back to hobbies</Link>
-      </div>
-    );
+    return <NotFound lang={lang} />;
   }
 
   const backLabel =

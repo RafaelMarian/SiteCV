@@ -5,18 +5,14 @@ import { getAppPageBySlug } from '../data/appPages';
 import { personalInfo } from '../data';
 import AndroidIcon from '../components/AndroidIcon';
 import './AppLanding.css';
+import NotFound from './NotFound';
 
 export default function AppLanding({ lang }) {
   const { slug } = useParams();
   const app = getAppPageBySlug(slug);
 
   if (!app) {
-    return (
-      <div className="app-landing">
-        <p>{lang === 'ro' ? 'Aplicația nu a fost găsită.' : 'App not found.'}</p>
-        <Link to="/apps">{lang === 'ro' ? 'Toate aplicațiile' : 'All apps'}</Link>
-      </div>
-    );
+    return <NotFound lang={lang} />;
   }
 
   const t = {

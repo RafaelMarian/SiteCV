@@ -45,7 +45,7 @@ const Education = ({ lang }) => {
               
               <div className="edu-header">
                 <div className="edu-icon-container">
-                  <Icon size={32} color="white" />
+                  <Icon size={30} color="currentColor" strokeWidth={1.5} />
                 </div>
                 
                 <div className="edu-info">

@@ -47,11 +47,12 @@ export default function TechStack({ lang }) {
       <div className="tech-stack-hero">
         <div className="tech-stack-avatar-wrap">
           <img
-            src="/images/profile.jpg?v=20260524"
+            src="/images/profile-thumb.webp"
             alt=""
             className="tech-stack-avatar"
             width={72}
             height={72}
+            decoding="async"
             onError={(e) => {
               e.target.style.display = 'none';
             }}
